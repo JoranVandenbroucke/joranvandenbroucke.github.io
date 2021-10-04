@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="Software Ray Tracer"/>
+    <meta name="author" content="Joran Vandenbroucke"/>
+    <title>Joran Vandenbroucke</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="mastheadRay">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Software Ray Tracer</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="projects-section bg-body">
+    <div class="container px-4 px-lg-5">
+        <!-- Featured Project Row-->
+        <div class="view-port">
+            <div class="image-container">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/1_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/2_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/3_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/4_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/5_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/6_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/7_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/8_BackbufferRender.bmp"
+                     alt="...">
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<section class="code bg-black">
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Ray Sphere Intersection</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 bg-white">
+        <pre class="prettyprint lang-cpp">bool Balbino::Intersection::Sphere( const Balbino::Ray& ray, const Elite::FPoint3& center, const float& radius, float& t )
+{
+	t = 0.f;
+	//radius power 2
+	auto r2 = radius * radius;
+	//camera sphere vector
+	auto l = center - ray.origine;
+	//look how mush of the vector is on the direction vector
+	auto s = Elite::Dot( l, ray.direction );
+	auto l2 = Elite::SqrMagnitude( l );
+	//pointing away
+	if( s < 0 && l2 > r2 )
+		return false;
+	//part of ray that is perpendicular to tvec
+	auto m2 = l2 - s * s;
+	if( m2 > r2 )
+		return false;
+	//part of tvec that is within the sphere
+	auto q = sqrtf( r2 - m2 );
+	if( l2 > r2 )
+		t = s - q;
+	else
+		t = s + q;
+	if( t < ray.tMin || t > ray.tMax )
+		return false;
+	return true;
+}}</pre>
+    </div>
+
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Ray Plane Intersection</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 bg-white">
+        <pre class="prettyprint lang-cpp">bool Balbino::Intersection::Plane( const Balbino::Ray& ray, const Elite::FPoint3& center, const Elite::FVector3& normal, const Balbino::RenderObject::CullMode cullMode, float& t, const bool isShaddowRay )
+{
+	float dotDN{ Elite::Dot( ray.direction, normal ) };
+	if( ( ( !isShaddowRay && cullMode == Balbino::RenderObject::CullMode::BACK ) || ( isShaddowRay && cullMode == Balbino::RenderObject::CullMode::FRONT ) ) && dotDN > 1e-5f )
+		return false;
+	if( ( ( !isShaddowRay && cullMode == Balbino::RenderObject::CullMode::FRONT ) || ( isShaddowRay && cullMode == Balbino::RenderObject::CullMode::BACK ) ) && dotDN < -1e-5f )
+		return false;
+
+	float dotPRN{ Elite::Dot( center - ray.origine, normal ) };
+	t = dotPRN / dotDN;
+
+	if( t > ray.tMax || t < ray.tMin )
+		return false;
+
+	return true;
+}</pre>
+    </div>
+
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Ray Triangle Intersection</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 bg-white">
+        <pre class="prettyprint lang-cpp">bool Balbino::Intersection::Triangle( const Balbino::Ray& ray,
+	const Vertex& v0, const Vertex& v1, const Vertex& v2,
+	Elite::FVector3& normal,
+	Elite::FPoint2& uv,
+	const Balbino::RenderObject::CullMode cullMode, float& t, const bool isShaddowRay )
+{
+	//has some points form https://members.loria.fr/SLazard/ARC-Visi3D/Pant-project/files/Line_Triangle.html
+
+	float BA[6], CB[6], AC[6], PR[6];
+	Plucker::PointsToPlucker( v1.position, v0.position, BA );
+	Plucker::PointsToPlucker( v2.position, v1.position, CB );
+	Plucker::PointsToPlucker( v0.position, v2.position, AC );
+	Plucker::RayToPlucker( ray.origine, ray.direction, PR );
+
+	float w0 = Plucker::Side( PR, CB );
+	float w1 = Plucker::Side( PR, AC );
+	float w2 = Plucker::Side( PR, BA );
+
+	if( ( ( ( cullMode == RenderObject::CullMode::NONE ) ||
+		( cullMode == RenderObject::CullMode::FRONT && !isShaddowRay ) ||
+		( cullMode == RenderObject::CullMode::BACK && isShaddowRay ) )
+		&& ( w0 > 0 && w1 > 0 && w2 > 0 ) ) )
+	{
+		float totalW = w0 + w1 + w2;
+		w0 /= totalW;
+		w1 /= totalW;
+		w2 /= totalW;
+
+		auto p = ( Elite::FVector3 )v0.position * w0 + ( Elite::FVector3 )v1.position * w1 + ( Elite::FVector3 )v2.position * w2;
+		auto tp = ( p - ( Elite::FVector3 )ray.origine ) * ray.invDirection;
+		t = tp.x;
+		if( t < ray.tMin || t > ray.tMax )
+			return false;
+
+		uv.x = v0.uv.x * w0 + v1.uv.x * w1 + v2.uv.x * w2;
+		uv.y = v0.uv.y * w0 + v1.uv.y * w1 + v2.uv.y * w2;
+		normal = v0.normal * w0 + v1.normal * w1 + v2.normal * w2;
+		normal = -normal;
+		return true;
+	}
+	else if( ( ( cullMode == RenderObject::CullMode::NONE ) ||
+		( cullMode == RenderObject::CullMode::BACK && !isShaddowRay ) ||
+		( cullMode == RenderObject::CullMode::FRONT && isShaddowRay ) )
+		&& ( w0 < 0 && w1 < 0 && w2 < 0 ) )
+	{
+		float totalW = w0 + w1 + w2;
+		w0 /= totalW;
+		w1 /= totalW;
+		w2 /= totalW;
+
+		auto p = ( Elite::FVector3 )v0.position * w0 + ( Elite::FVector3 )v1.position * w1 + ( Elite::FVector3 )v2.position * w2;
+		auto tp = ( p - ( Elite::FVector3 )ray.origine ) * ray.invDirection;
+		t = tp.x;
+		if( t < ray.tMin || t > ray.tMax )
+			return false;
+
+		uv.x = v0.uv.x * w0 + v1.uv.x * w1 + v2.uv.x * w2;
+		uv.y = v0.uv.y * w0 + v1.uv.y * w1 + v2.uv.y * w2;
+		normal = v0.normal * w0 + v1.normal * w1 + v2.normal * w2;
+		return true;
+	}
+	return false;
+}</pre>
+    </div>
+
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Ray Cube Intersection</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 bg-white">
+        <pre class="prettyprint lang-cpp">/*
+based on "Fast Ray-Axis Aligned Bounding Box Overlap Tests With Pluecker Coordinates" and https://github.com/erich666/jgt-code/tree/master/Volume_09/Number_1/Mahovsky2004/JGT-float
+
+	  B-------C				     B-------C
+	 /|      /|				    /        |
+	F-|-----G |	<--cubes		   F         |		<--Test for MMM
+	| A-----|-D				   |         D
+	|/      |/				   |        /
+	E-------H				   E-------H
+	Fast Ray-Axis Aligned Bounding Box
+	Overlap Tests with Plucker Coordinates
+*/
+bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const Elite::FPoint3& G, const Elite::FPoint3& A, float& t )
+{
+	float pluckerRay[6]{};
+
+	const Elite::FPoint3 B{ A.x, G.y, A.z };
+	const Elite::FPoint3 C{ G.x, G.y, A.z };
+	const Elite::FPoint3 D{ G.x, A.y, A.z };
+	const Elite::FPoint3 E{ A.x, A.y, G.z };
+	const Elite::FPoint3 F{ A.x, G.y, G.z };
+	const Elite::FPoint3 H{ G.x, A.y, G.z };
+
+	Plucker::RayToPlucker( ray.origine, ray.direction, pluckerRay );
+
+	switch( ray.type )
+	{
+	case Classification::MMM:
+	{
+		if( ( ray.origine.x < A.x ) || ( ray.origine.y < A.y ) || ( ray.origine.z < A.z ) )
+			return false;
+
+		float BC[6]{};
+		float CD[6]{};
+		float DH[6]{};
+		float HE[6]{};
+		float EF[6]{};
+		float FB[6]{};
+
+		Plucker::PointsToPlucker( B, C, BC );
+		Plucker::PointsToPlucker( C, D, CD );
+		Plucker::PointsToPlucker( D, H, DH );
+		Plucker::PointsToPlucker( H, E, HE );
+		Plucker::PointsToPlucker( E, F, EF );
+		Plucker::PointsToPlucker( F, B, FB );
+
+		if( Plucker::Side( pluckerRay, DH ) > 0 ||
+			Plucker::Side( pluckerRay, FB ) > 0 ||
+			Plucker::Side( pluckerRay, EF ) > 0 ||
+			Plucker::Side( pluckerRay, CD ) > 0 ||
+			Plucker::Side( pluckerRay, BC ) > 0 ||
+			Plucker::Side( pluckerRay, HE ) > 0 )
+			return false;
+
+		t = ( G.x - ray.origine.x ) * ray.invDirection.x;
+		float t1 = ( G.y - ray.origine.y ) * ray.invDirection.y;
+		if( t1 > t )
+			t = t1;
+		float t2 = ( G.z - ray.origine.z ) * ray.invDirection.z;
+		if( t2 > t )
+			t = t2;
+		return true;
+	}
+	case Classification::MMP:
+	{
+	&#8942;
+	}
+	case Classification::MPM:
+	{
+	&#8942;
+	}
+	case Classification::MPP:
+	{
+	&#8942;
+	}
+	case Classification::PPP:
+	{
+	&#8942;
+	}
+	case Classification::PPM:
+	{
+	&#8942;
+	}
+	case Classification::PMP:
+	{
+	&#8942;
+	}
+	case Classification::PMM:
+	{
+	&#8942;
+	}
+	default:
+		break;
+	}
+	return false;
+}
+</pre>
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4">
+                <div class="project-text w-100 my-auto text-lg-left">
+					<p class="text-white">For the Ray Cube Intersection function, I based my code on <a href="https://github.com/erich666/jgt-code/blob/master/Volume_09/Number_1/Mahovsky2004/JGT-float/plueckerint_mul_cls_cff.cpp">this code</a>. Mainly because I was intrigued to see if I could do this with Pl&uuml;cker coordinates. I only show a part of it because otherwise, this would be too long.</p>
+					<p class="text-white">To explain what is happening, we create all the corners of the square. Then we look at what direction the ray is heading, MMM means that the x, y, and z component of the ray direction is negative. MMP means that the x and y component is negative and the z component is positive, we have this for all possible.</p>
+					<p class="text-white">Then we do a quick check to see if the box is actually in front of the ray. If the object is in front of the ray, we will start our algorithm. Just for visualization purposes, imagine that the ray is of type MMM, so the x, y, and z components of the ray direction are negative. Then we will turn our cube so that the vertex with a negative x, y, and z component is facing the ray. Following that, we will take the six edges at the outside of the cube and turn them into Pl&uuml;cker lines &nbsp;(see illustration at the top of the code block). Using the sides and the ray we do a Pl&uuml;cker side check, which is similar to doing the cross product, we can determine if the ray is within the cube or not.</p>
+					<p class="text-white">If the ray is inside we subtract the x position from the ray origin from the x position of the closest vertex of the cube, after that, we multiply it with the x component of the inverse of the ray direction (1/direction.x). This also gets don for the y and z components and our final distance is the biggest of the three.</p>
+                </div>
+    </div>
+</section>
+
+<!-- Contact-->
+<section class="signup-section" id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Address</h4>
+                        <hr class="my-4 mx-auto"/>
+                        <div class="small text-black-50"><a href="https://goo.gl/maps/gwBsyTfkswaqsV5F7"
+                                                            target="_blank">Oude Vest 4, 4811 HT Breda, The
+                            Netherlands</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Email</h4>
+                        <hr class="my-4 mx-auto"/>
+                        <div class="small text-black-50"><a href="mailto: joran.vandenbroucke@hotmail.com">joran.vandenbroucke@hotmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Phone</h4>
+                        <hr class="my-4 mx-auto"/>
+                        <div class="small text-black-50"><a href="tel: +32-483-95-24-52">+32 483 95 24 52</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social d-flex justify-content-center">
+            <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i
+                    class="fab fa-github"></i></a>
+            <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i
+                    class="fab fa-twitter"></i></a>
+            <a class="mx-2" href="https://www.facebook.com/joran.vandenbroucke" target="_blank"
+               style="font-size:24px"><i class="fab fa-facebook-f"></i></a>
+            <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank"
+               style="font-size:24px"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
