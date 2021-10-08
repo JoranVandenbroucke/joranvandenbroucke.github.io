@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="Software Ray Tracer"/>
+    <meta name="author" content="Joran Vandenbroucke"/>
+    <title>Joran Vandenbroucke</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="mastheadBal">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Balbino</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="projects-section bg-body">
+    <div class="container px-4 px-lg-5">
+        <!-- Featured Project Row-->
+        <div class="view-port">
+            <div class="image-container">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/5_BackbufferRender.gif"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/1_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/2_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/3_BackbufferRender.bmp"
+                     alt="...">
+                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/4_BackbufferRender.bmp"
+                     alt="...">
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<section class="code bg-black">
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">Ray Sphere Intersection</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 ">
+        <pre class="prettyprint lang-cpp">bool Sphere( const Ray& ray, const float3& center, float radius, float& t )
+{
+	t = 0.0f;
+	//radius power 2
+	float r2 = radius * radius;
+	//camera sphere vector
+	float l = center - ray.origine;
+	//look how mush of the vector is on the direction vector
+	float s = dot( l, ray.direction );
+	float l2 = sqrMagnitude( l );
+	//pointing away
+	if( s < 0 && l2 > r2 )
+		return false;
+	//part of ray that is perpendicular to tvec
+	float m2 = l2 - s * s;
+	if( m2 > r2 )
+		return false;
+	//part of tvec that is within the sphere
+	float q = sqrtf( r2 - m2 );
+	if( l2 > r2 )
+		t = s - q;
+	else
+		t = s + q;
+	if( t < ray.tMin || t > ray.tMax )
+		return false;
+	return true;
+}}</pre>
+    </div>
+</section>
+
+<!-- Contact-->
+<section class="signup-section" id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-4 mb-3 mb-md-0">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Email</h4>
+                        <hr class="my-4 mx-auto"/>
+                        <div class="small text-black-50"><a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social d-flex justify-content-center">
+                <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i
+                        class="fab fa-github"></i></a>
+                <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i
+                        class="fab fa-twitter"></i></a>
+                <a class="mx-2" href="https://www.facebook.com/joran.vandenbroucke" target="_blank"
+                   style="font-size:24px"><i class="fab fa-facebook-f"></i></a>
+                <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank"
+                   style="font-size:24px"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+</section>
+<!-- Footer-->
+<footer class="footer bg-black small text-center text-white-50">
+    <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>

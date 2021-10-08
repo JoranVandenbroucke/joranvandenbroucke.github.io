@@ -59,11 +59,11 @@ const images = document.querySelector(".image-container");
 var intervalId = window.setInterval(function () {
     /// call your function here
     nextImage();
-}, 5000);
+}, 2500);
 
 function nextImage() {
     currentImage++;
     currentImage %= images.children.length - 1;
     images.style.transitionDuration = "0.5s";
-    images.style.transform = `translate(-${(currentImage) * 640}px)`;
+    images.style.transform = `translate(-${(currentImage) * images[0].width}px)`;
 }

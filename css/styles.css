@@ -11591,6 +11591,102 @@ body {
   }
 }
 
+.mastheadBal {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/Balbino.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+.mastheadBal h1, .mastheadBal .h1 {
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.mastheadBal h2, .mastheadBal .h2 {
+    max-width: 32rem;
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .mastheadBal h1, .mastheadBal .h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+@media (min-width: 992px) {
+    .mastheadBal {
+        height: 100vh;
+        padding: 0;
+    }
+    .mastheadBal h1, .mastheadBal .h1 {
+        font-size: 6.5rem;
+        line-height: 6.5rem;
+        letter-spacing: 0.8rem;
+    }
+    .mastheadBal h2, .mastheadBal .h2 {
+        max-width: 64rem;
+        font-size: 1.25rem;
+    }
+}
+
+.mastheadNOX {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/NOX.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+.mastheadNOX h1, .mastheadNOX .h1 {
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.mastheadNOX h2, .mastheadNOX .h2 {
+    max-width: 32rem;
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .mastheadNOX h1, .mastheadNOX .h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+@media (min-width: 992px) {
+    .mastheadNOX {
+        height: 100vh;
+        padding: 0;
+    }
+    .mastheadNOX h1, .mastheadNOX .h1 {
+        font-size: 6.5rem;
+        line-height: 6.5rem;
+        letter-spacing: 0.8rem;
+    }
+    .mastheadNOX h2, .mastheadNOX .h2 {
+        max-width: 64rem;
+        font-size: 1.25rem;
+    }
+}
+
 .mastheadRay {
     position: relative;
     width: 100%;
@@ -11611,7 +11707,7 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    background-clip: text;
+            background-clip: text;
 }
 .mastheadRay h2, .mastheadRay .h2 {
     max-width: 32rem;
@@ -11634,6 +11730,55 @@ body {
         letter-spacing: 0.8rem;
     }
     .mastheadRay h2, .mastheadRay .h2 {
+        max-width: 64rem;
+        font-size: 1.25rem;
+    }
+}
+
+.mastheadRas {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/SoftRasrerizer.bmp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.mastheadRas h1, .mastheadRas .h1 {
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+        background-clip: text;
+}
+.mastheadRas h2, .mastheadRas .h2 {
+    max-width: 32rem;
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .mastheadRas h1, .mastheadRas .h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+@media (min-width: 992px) {
+    .mastheadRas {
+        height: 100vh;
+        padding: 0;
+    }
+    .mastheadRas h1, .mastheadRas .h1 {
+        font-size: 6.5rem;
+        line-height: 6.5rem;
+        letter-spacing: 0.8rem;
+    }
+    .mastheadRas h2, .mastheadRas .h2 {
         max-width: 64rem;
         font-size: 1.25rem;
     }

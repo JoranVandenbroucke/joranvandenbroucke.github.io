@@ -1,13 +1,5 @@
-# mod_rewrite starts here
-
-RewriteEngine on
-
-# Does not apply to existing directories, meaning that if the folder exists on the server then don't change anything and don't run the Rule!
+Options +MultiViews
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
-
-
-# Check for file in directory with .html extention
-RewriteCond %{REQUEST_FILENAME}\.html -f
-
-# Here we actually show the page as the .html extension
-RewriteRule ^(.+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
