@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a9b837e-8464-443d-9fbf-8ff894d17eb7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/Software Rasterizer/1_BackbufferRender.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/Software Rasterizer/2_BackbufferRender.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/Software Rasterizer/3_BackbufferRender.bmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.joranvandenbroucke.github.io.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.joranvandenbroucke.github.io.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRasterizer.html" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRasterizer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SoftwareRayTracer.html" beforeDir="false" afterPath="$PROJECT_DIR$/SoftwareRayTracer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/SoftRasrerizer.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/SoftRasrerizer.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scripts.js" afterDir="false" />
@@ -67,7 +60,7 @@
       <updated>1633253181733</updated>
       <workItem from="1633253184788" duration="16908000" />
       <workItem from="1633370860683" duration="5243000" />
-      <workItem from="1633416377315" duration="14750000" />
+      <workItem from="1633416377315" duration="20475000" />
     </task>
     <servers />
   </component>

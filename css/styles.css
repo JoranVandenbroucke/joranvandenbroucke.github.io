@@ -12228,47 +12228,6 @@ body {
     background-size: cover;
 }
 
-    .masthead h1, .masthead .h1 {
-        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 2.5rem;
-        line-height: 2.5rem;
-        letter-spacing: 0.8rem;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.15));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    .masthead h2, .masthead .h2 {
-        max-width: 32rem;
-        font-size: 1rem;
-    }
-
-@media (min-width: 768px) {
-    .masthead h1, .masthead .h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .masthead {
-        height: 100vh;
-        padding: 0;
-    }
-
-        .masthead h1, .masthead .h1 {
-            font-size: 6.5rem;
-            line-height: 6.5rem;
-            letter-spacing: 0.8rem;
-        }
-
-        .masthead h2, .masthead .h2 {
-            max-width: 64rem;
-            font-size: 1.25rem;
-        }
-}
-
 .mastheadBal {
     position: relative;
     width: 100%;
@@ -12280,47 +12239,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-}
-
-    .mastheadBal h1, .mastheadBal .h1 {
-        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 2.5rem;
-        line-height: 2.5rem;
-        letter-spacing: 0.8rem;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    .mastheadBal h2, .mastheadBal .h2 {
-        max-width: 32rem;
-        font-size: 1rem;
-    }
-
-@media (min-width: 768px) {
-    .mastheadBal h1, .mastheadBal .h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .mastheadBal {
-        height: 100vh;
-        padding: 0;
-    }
-
-        .mastheadBal h1, .mastheadBal .h1 {
-            font-size: 6.5rem;
-            line-height: 6.5rem;
-            letter-spacing: 0.8rem;
-        }
-
-        .mastheadBal h2, .mastheadBal .h2 {
-            max-width: 64rem;
-            font-size: 1.25rem;
-        }
 }
 
 .mastheadNOX {
@@ -12336,47 +12254,6 @@ body {
     background-size: cover;
 }
 
-    .mastheadNOX h1, .mastheadNOX .h1 {
-        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 2.5rem;
-        line-height: 2.5rem;
-        letter-spacing: 0.8rem;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    .mastheadNOX h2, .mastheadNOX .h2 {
-        max-width: 32rem;
-        font-size: 1rem;
-    }
-
-@media (min-width: 768px) {
-    .mastheadNOX h1, .mastheadNOX .h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .mastheadNOX {
-        height: 100vh;
-        padding: 0;
-    }
-
-        .mastheadNOX h1, .mastheadNOX .h1 {
-            font-size: 6.5rem;
-            line-height: 6.5rem;
-            letter-spacing: 0.8rem;
-        }
-
-        .mastheadNOX h2, .mastheadNOX .h2 {
-            max-width: 64rem;
-            font-size: 1.25rem;
-        }
-}
-
 .mastheadRay {
     position: relative;
     width: 100%;
@@ -12388,47 +12265,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-}
-
-    .mastheadRay h1, .mastheadRay .h1 {
-        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 2.5rem;
-        line-height: 2.5rem;
-        letter-spacing: 0.8rem;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
-
-    .mastheadRay h2, .mastheadRay .h2 {
-        max-width: 32rem;
-        font-size: 1rem;
-    }
-
-@media (min-width: 768px) {
-    .mastheadRay h1, .mastheadRay .h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .mastheadRay {
-        height: 100vh;
-        padding: 0;
-    }
-
-        .mastheadRay h1, .mastheadRay .h1 {
-            font-size: 6.5rem;
-            line-height: 6.5rem;
-            letter-spacing: 0.8rem;
-        }
-
-        .mastheadRay h2, .mastheadRay .h2 {
-            max-width: 64rem;
-            font-size: 1.25rem;
-        }
 }
 
 .mastheadRas {
@@ -12444,58 +12280,68 @@ body {
     background-size: cover;
 }
 
-    .mastheadRas h1, .mastheadRas .h1 {
-        font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 2.5rem;
-        line-height: 2.5rem;
-        letter-spacing: 0.8rem;
-        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-    }
+.mastheadAIp {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/Splintered.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
 
-    .mastheadRas h2, .mastheadRas .h2 {
-        max-width: 32rem;
-        font-size: 1rem;
-    }
+.mastheadSpl {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/Splintered.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
 
+.masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1 {
+    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+            background-clip: text;
+}
+.masthead h2, .masthead .h2, .mastheadBal h2, .mastheadBal .h2, .mastheadNOX h2, .mastheadNOX .h2, .mastheadRay h2, .mastheadRay .h2, .mastheadRas h2, .mastheadRas .h2, .mastheadAIp h2, .mastheadAIp .h2, .mastheadSpl h2, .mastheadSpl .h2 {
+    max-width: 32rem;
+    font-size: 1rem;
+}
 @media (min-width: 768px) {
-    .mastheadRas h1, .mastheadRas .h1 {
+    .masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1 {
         font-size: 4rem;
         line-height: 4rem;
     }
 }
 
 @media (min-width: 992px) {
-    .mastheadRas {
+    .masthead, .masthead, .mastheadBal, .mastheadBal, .mastheadNOX, .mastheadNOX, .mastheadRay, .mastheadRay, .mastheadRas, .mastheadRas, .mastheadAIp, .mastheadAIp, .mastheadSpl, .mastheadSpl {
         height: 100vh;
         padding: 0;
     }
 
-        .mastheadRas h1, .mastheadRas .h1 {
-            font-size: 6.5rem;
-            line-height: 6.5rem;
-            letter-spacing: 0.8rem;
-        }
-
-        .mastheadRas h2, .mastheadRas .h2 {
-            max-width: 64rem;
-            font-size: 1.25rem;
-        }
-}
-
-.image-container {
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-}
-
-.view-port {
-    width: fit-content;
-    height: 480px;
-    overflow: hidden;
-    /*position: absolute;*/
+    .masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1 {
+        font-size: 6.5rem;
+        line-height: 6.5rem;
+        letter-spacing: 0.8rem;
+    }
+    .masthead h2, .masthead .h2, .mastheadBal h2, .mastheadBal .h2, .mastheadNOX h2, .mastheadNOX .h2, .mastheadRay h2, .mastheadRay .h2, .mastheadRas h2, .mastheadRas .h2, .mastheadAIp h2, .mastheadAIp .h2, .mastheadSpl h2, .mastheadSpl .h2 {
+        max-width: 64rem;
+        font-size: 1.25rem;
+    }
 }
 
 .about-section {
