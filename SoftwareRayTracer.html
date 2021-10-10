@@ -1,89 +1,132 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Software Ray Tracer"/>
-    <meta name="author" content="Joran Vandenbroucke"/>
-    <title>Joran Vandenbroucke</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Software Ray Tracer" />
+    <meta name="author" content="Joran Vandenbroucke" />
+    <title>Software Ray Tracer</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet"/>
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Masthead-->
-<header class="mastheadRay">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Software Ray Tracer</h1>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</header>
-<section class="projects-section bg-body">
-    <div class="container px-4 px-lg-5">
-        <!-- Featured Project Row-->
-        <div class="view-port">
-            <div class="image-container">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/5_BackbufferRender.gif"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/1_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/2_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/3_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/4_BackbufferRender.bmp"
-                     alt="...">
+    </nav>
+    <!-- Masthead-->
+    <header class="mastheadRay">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Software Ray Tracer</h1>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-</section>
-<section class="code bg-black">
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Sphere Intersection</h4>
+    </header>
+    <section class="projects-section bg-body">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/Software%20Ray%20Tracer/5_BackBufferRender.gif" alt="view 1" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Software%20Ray%20Tracer/1_BackbufferRender.bmp" alt="view 2" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Software%20Ray%20Tracer/2_BackbufferRender.bmp" alt="view 3" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Software%20Ray%20Tracer/3_BackbufferRender.bmp" alt="view 4" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Software%20Ray%20Tracer/4_BackbufferRender.bmp" alt="view 5" class="mx-auto d-block">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+    <section class="explanation bg-black">
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Explanation</h4>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Sphere( const Ray& ray, const float3& center, float radius, float& t )
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <p class="text-white-50">
+                The software ray tracer is a 2nd year Game Developer asignment where each student make there own ray tracer using Visual Studio, C++, SDL2, SDL2_image and Perforce.<br/>The assignment sais that there needs to be 2 scenes, 1 scene with 3 triangles rotating and having a different cull mode. We also needed to have 3 dialectric speres, with roughnesses of 0, 0.5 and 1 respectivly and 3 metalic spheres, with roughnesses of 0, 0.5 and 1 respectivly. The second scene needed to have the low poly stanford bunny provided by the teacher. Both scenes needed to have a directional light and at least 2 point lights with realtime direct hard shaddows.
+            </p>
+            <p class="text-white-50">
+                I also added texture support.
+            </p>
+        </div>
+    </section>
+    <section class="code bg-black">
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Ray Sphere Intersection</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <pre class="prettyprint lang-cpp">bool Sphere( const Ray& ray, const float3& center, float radius, float& t )
 {
 	t = 0.0f;
 	//radius power 2
@@ -110,21 +153,21 @@
 		return false;
 	return true;
 }}</pre>
-    </div>
+        </div>
 
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Plane Intersection</h4>
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Ray Plane Intersection</h4>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Plane( const Ray& ray, const float3& center, const float3& normal, float& t )
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <pre class="prettyprint lang-cpp">bool Plane( const Ray& ray, const float3& center, const float3& normal, float& t )
 {
 	float dotDN{ dot( ray.direction, normal ) };
 	//if paralel with plane
@@ -141,21 +184,26 @@
 
 	return true;
 }</pre>
-    </div>
+        </div>
 
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Triangle Intersection</h4>
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Ray Triangle Intersection</h4>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Triangle( const Ray& ray, const Vertex& v0, const Vertex& v1, const Vertex& v2, float3& normal, float& t )
+        <div class="container px-4 px-lg-5 py-lg-4">
+            <div class="project-text w-100 my-auto text-lg-left">
+                <p class="text-white">My ray triangle intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl&#252cker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <pre class="prettyprint lang-cpp">bool Triangle( const Ray& ray, const Vertex& v0, const Vertex& v1, const Vertex& v2, float3& normal, float& t )
 {
 	float BA[6], CB[6], AC[6], PR[6];
 	Plucker::PointsToPlucker( v1.position, v0.position, BA );
@@ -182,25 +230,36 @@
 		return true;
 	}
 	return false;
-}</pre>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4">
-        <div class="project-text w-100 my-auto text-lg-left">
-            <p class="text-white">My ray triangle intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl ̈ucker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
+}
+            </pre>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">/*
-	  B-------C				     B-------C
-	 /|      /|				    /        |
-	F-|-----G |	<--cubes		   F         |		<--Test for MMM
-	| A-----|-D				   |         D
-	|/      |/				   |        /
-	E-------H				   E-------H
-	Fast Ray-Axis Aligned Bounding Box
-	Overlap Tests with Plucker Coordinates
-*/
-bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const float3& G, const float3& A, float& t )
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Ray Triangle Intersection</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4">
+            <div class="project-text w-100 my-auto text-lg-left">
+                <p class="text-white">My ray box intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl&#252cker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
+                <pre>      B-------C                    B-------C
+     /|      /|                   /        |
+    F-|-----G |    &lt;--cubes F    |         | &lt;--Test for MMM
+    | A-----|-D                  |         D
+    |/      |/                   |        /
+    E-------H                    E-------H
+    Fast Ray-Axis Aligned Bounding Box
+    Overlap Tests with Plucker Coordinates
+</pre>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <pre class="prettyprint lang-cpp">bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const float3& G, const float3& A, float& t )
 {
 	float pluckerRay[6]{};
 
@@ -253,92 +312,88 @@ bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const float3& G, cons
 	}
 	case Classification::MMP:
 	{
-	&#8942;
+	    &#8942;
 	}
 	case Classification::MPM:
 	{
-	&#8942;
+	    &#8942;
 	}
 	case Classification::MPP:
 	{
-	&#8942;
+	    &#8942;
 	}
 	case Classification::PPP:
 	{
-	&#8942;
+	    &#8942;
 	}
 	case Classification::PPM:
 	{
-	&#8942;
+	    &#8942;
 	}
 	case Classification::PMP:
 	{
-	&#8942;
+	    &#8942;
 	}
 	case Classification::PMM:
 	{
-	&#8942;
+	    &#8942;
 	}
 	default:
 		break;
 	}
 	return false;
 }
-</pre>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4">
-                <div class="project-text w-100 my-auto text-lg-left">
-					<p class="text-white">My ray box intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl ̈ucker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
-                </div>
-    </div>
-</section>
+            </pre>
+        </div>
+    </section>
 
-<!-- Contact-->
-<section class="signup-section" id="contact">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Email</h4>
-                        <hr class="my-4 mx-auto"/>
-                        <div class="small text-black-50"><a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+    <!-- Contact-->
+    <section class="signup-section" id="contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">
+                                <a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--            <div class="col-md-4 mb-3 mb-md-0">-->
+                <!--                <div class="card py-4 h-100">-->
+                <!--                    <div class="card-body text-center">-->
+                <!--                        <i class="fas fa-mobile-alt text-primary mb-2"></i>-->
+                <!--                        <h4 class="text-uppercase m-0">Phone</h4>-->
+                <!--                        <hr class="my-4 mx-auto"/>-->
+                <!--                        <div class="small text-black-50"><a href="tel: +32-483-95-24-52">+32 483 95 24 52</a></div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/joran.vandenbroucke" target="_blank" style="font-size:24px"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank" style="font-size:24px"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
-            <!--            <div class="col-md-4 mb-3 mb-md-0">-->
-            <!--                <div class="card py-4 h-100">-->
-            <!--                    <div class="card-body text-center">-->
-            <!--                        <i class="fas fa-mobile-alt text-primary mb-2"></i>-->
-            <!--                        <h4 class="text-uppercase m-0">Phone</h4>-->
-            <!--                        <hr class="my-4 mx-auto"/>-->
-            <!--                        <div class="small text-black-50"><a href="tel: +32-483-95-24-52">+32 483 95 24 52</a></div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </div>-->
-            <div class="social d-flex justify-content-center">
-                <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i class="fab fa-github"></i></a>
-                <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i class="fab fa-twitter"></i></a>
-                <a class="mx-2" href="https://www.facebook.com/joran.vandenbroucke" target="_blank" style="font-size:24px"><i class="fab fa-facebook-f"></i></a>
-                <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank" style="font-size:24px"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-</section>
-<!-- Footer-->
-<footer class="footer bg-black small text-center text-white-50">
-    <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

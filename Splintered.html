@@ -1,324 +1,147 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Software Ray Tracer"/>
-    <meta name="author" content="Joran Vandenbroucke"/>
-    <title>Joran Vandenbroucke</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Splintered" />
+    <meta name="author" content="Joran Vandenbroucke" />
+    <title>Splintered</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet"/>
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
+          rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Masthead-->
-<header class="mastheadRay">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Software Ray Tracer</h1>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</header>
-<section class="projects-section bg-body">
-    <div class="container px-4 px-lg-5">
-        <!-- Featured Project Row-->
-        <div class="view-port">
-            <div class="image-container">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/5_BackbufferRender.gif"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/1_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/2_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/3_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/4_BackbufferRender.bmp"
-                     alt="...">
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-</section>
-<section class="code bg-black">
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Sphere Intersection</h4>
-                    </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="mastheadSpl">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Splintered</h1>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Sphere( const Ray& ray, const float3& center, float radius, float& t )
-{
-	t = 0.0f;
-	//radius power 2
-	float r2 = radius * radius;
-	//camera sphere vector
-	float l = center - ray.origine;
-	//look how mush of the vector is on the direction vector
-	float s = dot( l, ray.direction );
-	float l2 = sqrMagnitude( l );
-	//pointing away
-	if( s < 0 && l2 > r2 )
-		return false;
-	//part of ray that is perpendicular to tvec
-	float m2 = l2 - s * s;
-	if( m2 > r2 )
-		return false;
-	//part of tvec that is within the sphere
-	float q = sqrtf( r2 - m2 );
-	if( l2 > r2 )
-		t = s - q;
-	else
-		t = s + q;
-	if( t < ray.tMin || t > ray.tMax )
-		return false;
-	return true;
-}}</pre>
-    </div>
+    </header>
+    <section class="projects-section bg-body">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Plane Intersection</h4>
-                    </div>
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="8"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/Splintered/1_Splintered.gif" alt="view 1" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/2_Splintered.gif" alt="view 2" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/1_Splintered.png" alt="view 3" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/2_Splintered.png" alt="view 4" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/3_Splintered.png" alt="view 5" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/4_Splintered.png" alt="view 6" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/5_Splintered.png" alt="view 7" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/6_Splintered.png" alt="view 8" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/Splintered/7_Splintered.png" alt="view 9" class="mx-auto d-block">
                 </div>
             </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Plane( const Ray& ray, const float3& center, const float3& normal, float& t )
-{
-	float dotDN{ dot( ray.direction, normal ) };
-	//if paralel with plane
-	if( ( dotDN > 1e-5f )
-		return false;
-
-	//calculate distance
-	float dotPRN{ dot( center - ray.origine, normal ) };
-	t = dotPRN / dotDN;
-
-	//if behind camera or beyond draw distance
-	if( t > ray.tMax || t < ray.tMin )
-		return false;
-
-	return true;
-}</pre>
-    </div>
-
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Triangle Intersection</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Triangle( const Ray& ray, const Vertex& v0, const Vertex& v1, const Vertex& v2, float3& normal, float& t )
-{
-	float BA[6], CB[6], AC[6], PR[6];
-	Plucker::PointsToPlucker( v1.position, v0.position, BA );
-	Plucker::PointsToPlucker( v2.position, v1.position, CB );
-	Plucker::PointsToPlucker( v0.position, v2.position, AC );
-	Plucker::RayToPlucker( ray.origine, ray.direction, PR );
-
-	float w0 = Plucker::Side( PR, CB );
-	float w1 = Plucker::Side( PR, AC );
-	float w2 = Plucker::Side( PR, BA );
-
-	if( w0 > 0 && w1 > 0 && w2 > 0 )
-	{
-		float totalW = w0 + w1 + w2;
-		w0 /= totalW;
-		w1 /= totalW;
-		w2 /= totalW;
-
-		auto p = v0.position * w0 + v1.position * w1 + v2.position * w2;
-		auto tp = ( p - ray.origine ) * ray.invDirection;
-		t = tp.x;
-		if( t < ray.tMin || t > ray.tMax )
-			return false;
-		return true;
-	}
-	return false;
-}</pre>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4">
-        <div class="project-text w-100 my-auto text-lg-left">
-            <p class="text-white">My ray triangle intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl ̈ucker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
-        </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">/*
-	  B-------C				     B-------C
-	 /|      /|				    /        |
-	F-|-----G |	<--cubes		   F         |		<--Test for MMM
-	| A-----|-D				   |         D
-	|/      |/				   |        /
-	E-------H				   E-------H
-	Fast Ray-Axis Aligned Bounding Box
-	Overlap Tests with Plucker Coordinates
-*/
-bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const float3& G, const float3& A, float& t )
-{
-	float pluckerRay[6]{};
-
-	const floatt3 B{ A.x, G.y, A.z };
-	const floatt3 C{ G.x, G.y, A.z };
-	const floatt3 D{ G.x, A.y, A.z };
-	const floatt3 E{ A.x, A.y, G.z };
-	const floatt3 F{ A.x, G.y, G.z };
-	const floatt3 H{ G.x, A.y, G.z };
-
-	Plucker::RayToPlucker( ray.origine, ray.direction, pluckerRay );
-
-	switch( ray.type )
-	{
-	case Classification::MMM:
-	{
-		if( ( ray.origine.x < A.x ) || ( ray.origine.y < A.y ) || ( ray.origine.z < A.z ) )
-			return false;
-
-		float BC[6]{};
-		float CD[6]{};
-		float DH[6]{};
-		float HE[6]{};
-		float EF[6]{};
-		float FB[6]{};
-
-		Plucker::PointsToPlucker( B, C, BC );
-		Plucker::PointsToPlucker( C, D, CD );
-		Plucker::PointsToPlucker( D, H, DH );
-		Plucker::PointsToPlucker( H, E, HE );
-		Plucker::PointsToPlucker( E, F, EF );
-		Plucker::PointsToPlucker( F, B, FB );
-
-		if( Plucker::Side( pluckerRay, DH ) > 0 ||
-			Plucker::Side( pluckerRay, FB ) > 0 ||
-			Plucker::Side( pluckerRay, EF ) > 0 ||
-			Plucker::Side( pluckerRay, CD ) > 0 ||
-			Plucker::Side( pluckerRay, BC ) > 0 ||
-			Plucker::Side( pluckerRay, HE ) > 0 )
-			return false;
-
-		t = ( G.x - ray.origine.x ) * ray.invDirection.x;
-		float t1 = ( G.y - ray.origine.y ) * ray.invDirection.y;
-		if( t1 > t )
-			t = t1;
-		float t2 = ( G.z - ray.origine.z ) * ray.invDirection.z;
-		if( t2 > t )
-			t = t2;
-		return true;
-	}
-	case Classification::MMP:
-	{
-	&#8942;
-	}
-	case Classification::MPM:
-	{
-	&#8942;
-	}
-	case Classification::MPP:
-	{
-	&#8942;
-	}
-	case Classification::PPP:
-	{
-	&#8942;
-	}
-	case Classification::PPM:
-	{
-	&#8942;
-	}
-	case Classification::PMP:
-	{
-	&#8942;
-	}
-	case Classification::PMM:
-	{
-	&#8942;
-	}
-	default:
-		break;
-	}
-	return false;
-}
-</pre>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4">
-                <div class="project-text w-100 my-auto text-lg-left">
-					<p class="text-white">My ray box intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl ̈ucker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
-                </div>
-    </div>
-</section>
-
-<!-- Contact-->
-<section class="signup-section" id="contact">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Email</h4>
-                        <hr class="my-4 mx-auto"/>
-                        <div class="small text-black-50"><a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+    </section>
+    <section class="explanation bg-black">
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Explanation</h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--            <div class="col-md-4 mb-3 mb-md-0">-->
-            <!--                <div class="card py-4 h-100">-->
-            <!--                    <div class="card-body text-center">-->
-            <!--                        <i class="fas fa-mobile-alt text-primary mb-2"></i>-->
-            <!--                        <h4 class="text-uppercase m-0">Phone</h4>-->
-            <!--                        <hr class="my-4 mx-auto"/>-->
-            <!--                        <div class="small text-black-50"><a href="tel: +32-483-95-24-52">+32 483 95 24 52</a></div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </div>-->
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <p class="text-white-50">
+                This is my first year game project at Digital Arts and Entertainment, written in C++14, using a framework from the teachers that only opens a window and calls an Update function and a draw function. I used a perlen noise for the above ground area and I read out an image fot the underground part. I made ai thet wandered around for the above ground and a small dialog system for all npcs. For the underground place I made the enemy walk one derection untill they hit a wall or a drop than they turn around. If the enemy sees you they will charge at you. The weapons the player uses depends on there believe in god, there is also a
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact-->
+    <section class="signup-section" id="contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">
+                                <a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="social d-flex justify-content-center">
                 <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i class="fab fa-github"></i></a>
                 <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i class="fab fa-twitter"></i></a>
@@ -326,19 +149,19 @@ bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const float3& G, cons
                 <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank" style="font-size:24px"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
-</section>
-<!-- Footer-->
-<footer class="footer bg-black small text-center text-white-50">
-    <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

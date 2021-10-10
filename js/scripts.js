@@ -52,18 +52,3 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
-
-let currentImage = 0;
-const images = document.querySelector(".image-container");
-
-var intervalId = window.setInterval(function () {
-    /// call your function here
-    nextImage();
-}, 2500);
-
-function nextImage() {
-    currentImage++;
-    currentImage %= images.children.length - 1;
-    images.style.transitionDuration = "0.5s";
-    images.style.transform = `translate(-${(currentImage) * images[0].width}px)`;
-}

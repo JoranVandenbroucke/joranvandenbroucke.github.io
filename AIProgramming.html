@@ -1,344 +1,217 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Software Ray Tracer"/>
-    <meta name="author" content="Joran Vandenbroucke"/>
-    <title>Joran Vandenbroucke</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="AI Programming" />
+    <meta name="author" content="Joran Vandenbroucke" />
+    <title>AI Programming</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet"/>
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
+          rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Masthead-->
-<header class="mastheadRay">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Software Ray Tracer</h1>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#competitions">Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-</header>
-<section class="projects-section bg-body">
-    <div class="container px-4 px-lg-5">
-        <!-- Featured Project Row-->
-        <div class="view-port">
-            <div class="image-container">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/5_BackbufferRender.gif"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/1_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/2_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/3_BackbufferRender.bmp"
-                     alt="...">
-                <img class="img-fluid" src="assets/img/Software%20Ray%20Tracer/4_BackbufferRender.bmp"
-                     alt="...">
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-</section>
-<section class="code bg-black">
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Sphere Intersection</h4>
-                    </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="mastheadAIp">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">AI Programming</h1>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Sphere( const Ray& ray, const float3& center, float radius, float& t )
-{
-	t = 0.0f;
-	//radius power 2
-	float r2 = radius * radius;
-	//camera sphere vector
-	float l = center - ray.origine;
-	//look how mush of the vector is on the direction vector
-	float s = dot( l, ray.direction );
-	float l2 = sqrMagnitude( l );
-	//pointing away
-	if( s < 0 && l2 > r2 )
-		return false;
-	//part of ray that is perpendicular to tvec
-	float m2 = l2 - s * s;
-	if( m2 > r2 )
-		return false;
-	//part of tvec that is within the sphere
-	float q = sqrtf( r2 - m2 );
-	if( l2 > r2 )
-		t = s - q;
-	else
-		t = s + q;
-	if( t < ray.tMin || t > ray.tMax )
-		return false;
-	return true;
-}}</pre>
-    </div>
+    </header>
+    <section class="projects-section bg-body">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Plane Intersection</h4>
-                    </div>
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/img/AI%20programming/0_GPP_TEST_RELEASE.gif" alt="view 1" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/AI%20programming/1_GPP_TEST_RELEASE.png" alt="view 2" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/AI%20programming/2_GPP_TEST_RELEASE.png" alt="view 3" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/AI%20programming/3_GPP_TEST_RELEASE.png" alt="view 4" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/AI%20programming/4_GPP_TEST_RELEASE.png" alt="view 5" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/AI%20programming/5_GPP_TEST_RELEASE.png" alt="view 6" class="mx-auto d-block">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/img/AI%20programming/6_GPP_TEST_RELEASE.png" alt="view 7" class="mx-auto d-block">
                 </div>
             </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Plane( const Ray& ray, const float3& center, const float3& normal, float& t )
-{
-	float dotDN{ dot( ray.direction, normal ) };
-	//if paralel with plane
-	if( ( dotDN > 1e-5f )
-		return false;
-
-	//calculate distance
-	float dotPRN{ dot( center - ray.origine, normal ) };
-	t = dotPRN / dotDN;
-
-	//if behind camera or beyond draw distance
-	if( t > ray.tMax || t < ray.tMin )
-		return false;
-
-	return true;
-}</pre>
-    </div>
-
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Ray Triangle Intersection</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">bool Triangle( const Ray& ray, const Vertex& v0, const Vertex& v1, const Vertex& v2, float3& normal, float& t )
-{
-	float BA[6], CB[6], AC[6], PR[6];
-	Plucker::PointsToPlucker( v1.position, v0.position, BA );
-	Plucker::PointsToPlucker( v2.position, v1.position, CB );
-	Plucker::PointsToPlucker( v0.position, v2.position, AC );
-	Plucker::RayToPlucker( ray.origine, ray.direction, PR );
-
-	float w0 = Plucker::Side( PR, CB );
-	float w1 = Plucker::Side( PR, AC );
-	float w2 = Plucker::Side( PR, BA );
-
-	if( w0 > 0 && w1 > 0 && w2 > 0 )
-	{
-		float totalW = w0 + w1 + w2;
-		w0 /= totalW;
-		w1 /= totalW;
-		w2 /= totalW;
-
-		auto p = v0.position * w0 + v1.position * w1 + v2.position * w2;
-		auto tp = ( p - ray.origine ) * ray.invDirection;
-		t = tp.x;
-		if( t < ray.tMin || t > ray.tMax )
-			return false;
-		return true;
-	}
-	return false;
-}</pre>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4">
-        <div class="project-text w-100 my-auto text-lg-left">
-            <p class="text-white">My ray triangle intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl ̈ucker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
-        </div>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <pre class="prettyprint lang-cpp">/*
-	  B-------C				     B-------C
-	 /|      /|				    /        |
-	F-|-----G |	<--cubes		   F         |		<--Test for MMM
-	| A-----|-D				   |         D
-	|/      |/				   |        /
-	E-------H				   E-------H
-	Fast Ray-Axis Aligned Bounding Box
-	Overlap Tests with Plucker Coordinates
-*/
-bool Balbino::Intersection::Cube( const Balbino::Ray& ray, const float3& G, const float3& A, float& t )
-{
-	float pluckerRay[6]{};
-
-	const floatt3 B{ A.x, G.y, A.z };
-	const floatt3 C{ G.x, G.y, A.z };
-	const floatt3 D{ G.x, A.y, A.z };
-	const floatt3 E{ A.x, A.y, G.z };
-	const floatt3 F{ A.x, G.y, G.z };
-	const floatt3 H{ G.x, A.y, G.z };
-
-	Plucker::RayToPlucker( ray.origine, ray.direction, pluckerRay );
-
-	switch( ray.type )
-	{
-	case Classification::MMM:
-	{
-		if( ( ray.origine.x < A.x ) || ( ray.origine.y < A.y ) || ( ray.origine.z < A.z ) )
-			return false;
-
-		float BC[6]{};
-		float CD[6]{};
-		float DH[6]{};
-		float HE[6]{};
-		float EF[6]{};
-		float FB[6]{};
-
-		Plucker::PointsToPlucker( B, C, BC );
-		Plucker::PointsToPlucker( C, D, CD );
-		Plucker::PointsToPlucker( D, H, DH );
-		Plucker::PointsToPlucker( H, E, HE );
-		Plucker::PointsToPlucker( E, F, EF );
-		Plucker::PointsToPlucker( F, B, FB );
-
-		if( Plucker::Side( pluckerRay, DH ) > 0 ||
-			Plucker::Side( pluckerRay, FB ) > 0 ||
-			Plucker::Side( pluckerRay, EF ) > 0 ||
-			Plucker::Side( pluckerRay, CD ) > 0 ||
-			Plucker::Side( pluckerRay, BC ) > 0 ||
-			Plucker::Side( pluckerRay, HE ) > 0 )
-			return false;
-
-		t = ( G.x - ray.origine.x ) * ray.invDirection.x;
-		float t1 = ( G.y - ray.origine.y ) * ray.invDirection.y;
-		if( t1 > t )
-			t = t1;
-		float t2 = ( G.z - ray.origine.z ) * ray.invDirection.z;
-		if( t2 > t )
-			t = t2;
-		return true;
-	}
-	case Classification::MMP:
-	{
-	&#8942;
-	}
-	case Classification::MPM:
-	{
-	&#8942;
-	}
-	case Classification::MPP:
-	{
-	&#8942;
-	}
-	case Classification::PPP:
-	{
-	&#8942;
-	}
-	case Classification::PPM:
-	{
-	&#8942;
-	}
-	case Classification::PMP:
-	{
-	&#8942;
-	}
-	case Classification::PMM:
-	{
-	&#8942;
-	}
-	default:
-		break;
-	}
-	return false;
-}
-</pre>
-    </div>
-    <div class="container px-4 px-lg-5 py-lg-4">
-                <div class="project-text w-100 my-auto text-lg-left">
-					<p class="text-white">My ray box intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap Tests with Pl ̈ucker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
-                </div>
-    </div>
-</section>
-
-<!-- Contact-->
-<section class="signup-section" id="contact">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Email</h4>
-                        <hr class="my-4 mx-auto"/>
-                        <div class="small text-black-50"><a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+    </section>
+    <section class="explanation bg-black">
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Explanation</h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--            <div class="col-md-4 mb-3 mb-md-0">-->
-            <!--                <div class="card py-4 h-100">-->
-            <!--                    <div class="card-body text-center">-->
-            <!--                        <i class="fas fa-mobile-alt text-primary mb-2"></i>-->
-            <!--                        <h4 class="text-uppercase m-0">Phone</h4>-->
-            <!--                        <hr class="my-4 mx-auto"/>-->
-            <!--                        <div class="small text-black-50"><a href="tel: +32-483-95-24-52">+32 483 95 24 52</a></div>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--        </div>-->
-            <div class="social d-flex justify-content-center">
-                <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i class="fab fa-github"></i></a>
-                <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i class="fab fa-twitter"></i></a>
-                <a class="mx-2" href="https://www.facebook.com/joran.vandenbroucke" target="_blank" style="font-size:24px"><i class="fab fa-facebook-f"></i></a>
-                <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank" style="font-size:24px"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <p class="text-white-50">
+                This AI programming is a 2nd year Game Developer asignment where each student make there own agent that survives a zombie appocalipse using Visual Studio, C++. The asignment said that we had to write code that prolonges the lifespan of the agent. We only knew the location of a zombies that are in our field of view, the location of items in our fov, the type of item when we trie to grab it and it is withing view and grabbing range and we had acces to navmesh.
+            </p>
+            <p class="text-white-50">The teachers wanted us to delve into AI related toppics that we haven`t seen in class. So I lookt into neural networking and tried to make a network that predicts where the zombies where going. It was supricingly accurate for the size of my net, untill the player started to walk around.</p>
+        </div>
+    </section>
+    <section class="code bg-black">
+        <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+            <div class="col-lg-6">
+                <div class="bg-black text-center h-100 project">
+                    <div class="d-flex h-100">
+                        <div class="project-text w-100 my-auto text-center text-lg-left">
+                            <h4 class="text-white">Neural net loop</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-</section>
-<!-- Footer-->
-<footer class="footer bg-black small text-center text-white-50">
-    <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <div class="container px-4 px-lg-5 py-lg-4">
+            <div class="project-text w-100 my-auto text-lg-left">
+                <p class="text-white">In this code block I look where the zombie was previous frame, using my buffer. Than I put zombies postionn, zombies old position, players postion, players velocity and delta time in an std::vector and gave it to the neural net. Following that I got the result position afterwarts I corrected it with the correct position.</p>
+            </div>
+        </div>
+        <div class="container px-4 px-lg-5 py-lg-4 ">
+            <pre class="px-2 prettyprint lang-cpp">//m_pNet is my neural net of with the following layout 9-8-8-8-2
+std::vector<std::pair<EntityInfo, float>>::iterator it1;
+it1 = std::find_if( m_KnownZombieBuffer.begin(), m_KnownZombieBuffer.end(), [&entity]( const std::pair<EntityInfo, float>& E1 )
+{
+    return E1.first.EntityHash == entity.EntityHash;
+} );
+m_KnownZombie.push_back( { entity, 3.f } );     //3.0f is remembering the zombies for 3 seconds, than position can be off
+if( it1 != m_KnownZombieBuffer.end() )
+{
+    std::vector<float> values{ m_KnownZombie.back().first.Location.x, m_KnownZombie.back().first.Location.y
+        ,( *it1 ).first.Location.x, ( *it1 ).first.Location.y
+        , m_LastAgentInfo.Position.x, m_LastAgentInfo.Position.y
+        , m_LastAgentInfo.LinearVelocity.x
+        , m_LastAgentInfo.LinearVelocity.y
+        , dt };
+    std::vector<float> targetValues{ entity.Location.x, entiy.Location.y };
+    std::vector<float> result{};
+    m_pNet->FeedForward( values );
+    m_pNet->GetResults( result );
+    m_pNet->BackProp( targetValues );
+    std::cout << "Net error: " << std::fixed << std::setprecision( 3 ) << m_pNet->GetRecentAverageError() << '\n';
+    m_GuessPositions.push_back( { { result[0], result[1] } , 3.f } );
+    }
+</pre>
+        </div>
+    </section>
+    <!-- Contact-->
+    <section class="signup-section" id="contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4 mx-auto" />
+                            <div class="small text-black-50">
+                                <a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--            <div class="col-md-4 mb-3 mb-md-0">-->
+                <!--                <div class="card py-4 h-100">-->
+                <!--                    <div class="card-body text-center">-->
+                <!--                        <i class="fas fa-mobile-alt text-primary mb-2"></i>-->
+                <!--                        <h4 class="text-uppercase m-0">Phone</h4>-->
+                <!--                        <hr class="my-4 mx-auto"/>-->
+                <!--                        <div class="small text-black-50"><a href="tel: +32-483-95-24-52">+32 483 95 24 52</a></div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://github.com/JoranVandenbroucke/" target="_blank" style="font-size:24px"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://twitter.com/JoranVandenbrou" target="_blank" style="font-size:24px"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/joran.vandenbroucke" target="_blank" style="font-size:24px"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/" target="_blank" style="font-size:24px"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
