@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a9b837e-8464-443d-9fbf-8ff894d17eb7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CoL.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/CoL.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/CoL/CoL1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/CoL/CoL2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/CoL/CoL3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/CoL/CoL4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/CoL/CoL5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.joranvandenbroucke.github.io.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.joranvandenbroucke.github.io.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOX.html" beforeDir="false" afterPath="$PROJECT_DIR$/NOX.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +67,8 @@
       <updated>1633253181733</updated>
       <workItem from="1633253184788" duration="16908000" />
       <workItem from="1633370860683" duration="5243000" />
-      <workItem from="1633416377315" duration="20475000" />
+      <workItem from="1633416377315" duration="21323000" />
+      <workItem from="1636727134437" duration="4325000" />
     </task>
     <servers />
   </component>

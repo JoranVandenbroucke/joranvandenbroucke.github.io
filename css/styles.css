@@ -12306,7 +12306,20 @@ body {
     background-size: cover;
 }
 
-.masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1 {
+.mastheadCoL {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/CoL.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1, .mastheadCoL h1, .mastheadCoL .h1 {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -12316,29 +12329,29 @@ body {
     -webkit-background-clip: text;
             background-clip: text;
 }
-.masthead h2, .masthead .h2, .mastheadBal h2, .mastheadBal .h2, .mastheadNOX h2, .mastheadNOX .h2, .mastheadRay h2, .mastheadRay .h2, .mastheadRas h2, .mastheadRas .h2, .mastheadAIp h2, .mastheadAIp .h2, .mastheadSpl h2, .mastheadSpl .h2 {
+.masthead h2, .masthead .h2, .mastheadBal h2, .mastheadBal .h2, .mastheadNOX h2, .mastheadNOX .h2, .mastheadRay h2, .mastheadRay .h2, .mastheadRas h2, .mastheadRas .h2, .mastheadAIp h2, .mastheadAIp .h2, .mastheadSpl h2, .mastheadSpl .h2, .mastheadCoL h2, .mastheadCoL .h2 {
     max-width: 32rem;
     font-size: 1rem;
 }
 @media (min-width: 768px) {
-    .masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1 {
+    .masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1, .mastheadCoL h1, .mastheadCoL .h1 {
         font-size: 4rem;
         line-height: 4rem;
     }
 }
 
 @media (min-width: 992px) {
-    .masthead, .masthead, .mastheadBal, .mastheadBal, .mastheadNOX, .mastheadNOX, .mastheadRay, .mastheadRay, .mastheadRas, .mastheadRas, .mastheadAIp, .mastheadAIp, .mastheadSpl, .mastheadSpl {
+    .masthead, .masthead, .mastheadBal, .mastheadBal, .mastheadNOX, .mastheadNOX, .mastheadRay, .mastheadRay, .mastheadRas, .mastheadRas, .mastheadAIp, .mastheadAIp, .mastheadSpl, .mastheadSpl, .mastheadCoL, .mastheadCoL {
         height: 100vh;
         padding: 0;
     }
 
-    .masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1 {
+    .masthead h1, .masthead .h1, .mastheadBal h1, .mastheadBal .h1, .mastheadNOX h1, .mastheadNOX .h1, .mastheadRay h1, .mastheadRay .h1, .mastheadRas h1, .mastheadRas .h1, .mastheadAIp h1, .mastheadAIp .h1, .mastheadSpl h1, .mastheadSpl .h1, .mastheadCoL h1, .mastheadCoL .h1 {
         font-size: 6.5rem;
         line-height: 6.5rem;
         letter-spacing: 0.8rem;
     }
-    .masthead h2, .masthead .h2, .mastheadBal h2, .mastheadBal .h2, .mastheadNOX h2, .mastheadNOX .h2, .mastheadRay h2, .mastheadRay .h2, .mastheadRas h2, .mastheadRas .h2, .mastheadAIp h2, .mastheadAIp .h2, .mastheadSpl h2, .mastheadSpl .h2 {
+    .masthead h2, .masthead .h2, .mastheadBal h2, .mastheadBal .h2, .mastheadNOX h2, .mastheadNOX .h2, .mastheadRay h2, .mastheadRay .h2, .mastheadRas h2, .mastheadRas .h2, .mastheadAIp h2, .mastheadAIp .h2, .mastheadSpl h2, .mastheadSpl .h2, .mastheadCoL h2, .mastheadCoL .h2 {
         max-width: 64rem;
         font-size: 1.25rem;
     }
