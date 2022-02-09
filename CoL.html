@@ -122,6 +122,39 @@
         </div>
     </div>
 </section>
+<section class="explanation bg-black">
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+        <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                        <h4 class="text-white">My Part</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <img class="w-75" src="assets/img/CoL/Brian.png" alt="...">
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 ">
+        <p class="text-white-50">
+            My part in this project was the creation of grenral NPC behavior and of the creation of <b>Brain</b>. Brain is the base NPC for all interactabe NPCs to come and for all witch hunters to follow. Currently Brian is located at a guate and does not want te player to pass. He will only step aside if the player completes hes quest or if he gets destracted bevause the player destroyed a lamp.
+        </p>
+    </div>
+    <div class="text-center">
+        <img class="w-50" src="assets/img/CoL/NodeExcample.png" alt="...">
+    </div>
+    <div class="container px-4 px-lg-5 py-lg-4 ">
+        <p class="text-white-50">
+            To realize this, I used enhanced the navmesh with a technique discussed in a GDC talk: <a href="https://www.gdcvault.com/play/1018038/Spaces-in-the-Sandbox-Tactical">Spaces in the Sandbox Tactical</a>. Each node on the navmesh knows its neighbours and the nodes it's easy to get to, it also knows which of their nodes are visible and they have an interesting value. The interest value tells Brain if there has been something he needs to check out.
+            <br/>
+            Combining that with an EQS (environment query system) I can easily steer/direct Brain where I want him to go.
+            <br/>
+            Our Brain has 4 modes, the first one is "idle", the second one is "suspicious", the third one is "confirmed" and the fourth one is "find clue". 
+        </p>
+    </div>
+</section>
 <!-- Contact-->
 <section class="signup-section" id="contact">
     <div class="container px-4 px-lg-5">
