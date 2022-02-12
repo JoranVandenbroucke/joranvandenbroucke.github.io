@@ -1,0 +1,55 @@
+﻿body {
+    background: #000;
+}
+
+/* Scroll Down */
+
+.scrolldown-wrapper {
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+}
+
+.scrolldown {
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    height: 32px;
+    width: 32px;
+    margin: 0 0 8px;
+    text-align: center;
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.scrolldown-p1,
+.scrolldown-p2 {
+    animation-duration: 1.5s;
+    animation-name: scrolldown;
+    animation-iteration-count: infinite;
+    fill: #FFFFFF;
+}
+
+.scrolldown-p2 {
+    animation-delay: 0.75s;
+}
+
+@keyframes scrolldown {
+    0% {
+        opacity: 0;
+        scale: 100%;
+        transform: translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+        scale: 400%;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        scale: 10%;
+        transform: translate(20px, 20px);
+    }
+}
