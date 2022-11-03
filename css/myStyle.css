@@ -21,8 +21,8 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --first-color: #388087;
-        --second-color: #6FB3B8;
+        --first-color: #215257;
+        --second-color: #3C6467;
         --third-color: #BADFE7;
         --fourth-color: #C2DDCE;
         --fifth-color: #F6F6F2;
@@ -95,7 +95,7 @@ h1, .h1 {
 
 h2, .h2 {
     font-size: calc(1.325rem + 0.9vw);
-    color: var(--fourth-color)
+    color: var(--second-color)
 }
 
 @media (prefers-color-scheme: dark) {
