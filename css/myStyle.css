@@ -12,9 +12,9 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --first-color: #FB2576;
-        --second-color: #4F4F4F;
-        --third-color: #333333;
-        --fourth-color: #1f1f1f;
+        --second-color: #828282;
+        --third-color: #1A1A1A;
+        --fourth-color: #0f0f10;
         --fifth-color: #000000;
     }
 }
