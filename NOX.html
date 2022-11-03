@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="NOX"/>
     <meta name="author" content="Joran Vandenbroucke"/>
+
     <title>NOX</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
@@ -13,23 +14,18 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=desert"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <link href="css/scroll.css" rel="stylesheet"/>
-    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/myStyle.css" rel="stylesheet"/>
 </head>
 <body>
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
+<nav class="navbar navbar-expand fixed-top" id="mainNav">
+    <div class="container px-4">
         <a class="navbar-brand" href="index.html">Joran J. C. Vandenbroucke</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
         </button>
@@ -45,129 +41,126 @@
 </nav>
 <!-- Masthead-->
 <header class="mastheadNOX">
-    <a class="scrolldown-wrapper" href="#Start">
+    <a class="scrolldown-wrapper" href="#start">
         <div class="scrolldown">
             <svg height="40" width="40">
-                <circle class="scrolldown-p1" cx="0" cy="0" r="4" />
-                <circle class="scrolldown-p2" cx="0" cy="0" r="4" />
+                <circle class="scrolldown-p1" cx="0" cy="0" r="4"/>
+                <circle class="scrolldown-p2" cx="0" cy="0" r="4"/>
             </svg>
         </div>
     </a>
 </header>
-<section class="projects-section bg-body"  id="Start">
-    <section class="projects-section bg-body">
-        <!-- Carousel -->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+<section class="projects-section bg-fifth" id="start">
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
-            </div>
-
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/img/NOX/1_Nox.jpg" alt="view 1" class="mx-auto d-block">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/NOX/2_Nox.jpg" alt="view 2" class="mx-auto d-block">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/NOX/3_Nox.jpg" alt="view 3" class="mx-auto d-block">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/NOX/4_Nox.jpg" alt="view 4" class="mx-auto d-block">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/NOX/5_Nox.jpg" alt="view 5" class="mx-auto d-block">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/NOX/6_Nox.jpg" alt="view 6" class="mx-auto d-block">
-                </div>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
         </div>
-    </section>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/img/NOX/1_Nox.jpg" alt="view 1" class="mx-auto d-block w-75 h-75">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/NOX/2_Nox.jpg" alt="view 2" class="mx-auto d-block w-75 h-75">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/NOX/3_Nox.jpg" alt="view 3" class="mx-auto d-block w-75 h-75">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/NOX/4_Nox.jpg" alt="view 4" class="mx-auto d-block w-75 h-75">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/NOX/5_Nox.jpg" alt="view 5" class="mx-auto d-block w-75 h-75">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/NOX/6_Nox.jpg" alt="view 6" class="mx-auto d-block w-75 h-75">
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 </section>
-<section class="explanation bg-black">
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-        <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
+<section class="bg-fourth">
+    <div class="row gx-0 mb-0 justify-content-center">
+        <div class="col-6">
+            <div class="mt-3 text-center h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-lg-left">
-                        <h4 class="text-white">Explanation</h4>
+                    <div class="project-text w-100 my-auto text-center">
+                        <h3>Explanation</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container px-4 px-lg-5 py-lg-4 ">
-        <p class="text-white-50">
+    <div class="container px-5 py-4 ">
+        <p class="text-second">
             Nox was my first group project, here I learned the value of communication and how smooth work goes when you
             are all on the same wavelength. My team had 4 artists and 2 programmers, I was one of the programmers. We
             used Unreal Engine 4 and as part of the assignment, the programmers could only use Unreal C++ if they chose
             to go with Unreal.
         </p>
-        <p class="text-white-50">
+        <p class="text-second">
             In this project, I handled the spiders (enemy), the save mechanic, camera and character movement. The game
             is available on <a href="https://silkevdsmissen.itch.io/nox">itch.io</a>.
         </p>
         <div class="text-center">
-            <iframe 
-                    src="https://itch.io/embed/916038?linkback=true&amp;bg_color=161616&amp;fg_color=ffffff&amp;link_color=bf00d9&amp;border_color=494949"
-                    width="552" height="167" frameborder="0"><a href="https://silkevdsmissen.itch.io/nox">NOX by
-                SilkevdSmissen, leo_newman, Little Shiota, TerSTARboy55, Bente Schoone, 1KawaiiTomato</a></iframe>
-
+            <iframe src="https://itch.io/embed/916038" width="552" height="167" frameborder="0"><a
+                    href="https://silkevdsmissen.itch.io/nox">NOX by SilkevdSmissen, TerSTARboy55, Little Shiota,
+                1KawaiiTomato, Bente Schoone, leo_newman</a></iframe>
         </div>
+
     </div>
 </section>
 <!-- Contact-->
 <section class="signup-section" id="contact">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-4 mb-3 mb-md-0">
+    <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-4 mb-0">
                 <div class="card py-4 h-100">
                     <div class="card-body text-center">
-                        <i class="fab fa-github text-primary mb-2"></i>
+                        <i class="fab fa-github text-first mb-2"></i>
                         <h4 class="text-uppercase m-0">GitHub</h4>
                         <hr class="my-4 mx-auto"/>
-                        <div class="small text-black-50"><a href="https://github.com/JoranVandenbroucke/">https://github.com/JoranVandenbroucke/</a>
+                        <div class="small"><a href="https://github.com/JoranVandenbroucke/">https://github.com/JoranVandenbroucke/</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3 mb-md-0">
+            <div class="col-4 mb-0">
                 <div class="card py-4 h-100">
                     <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <i class="fas fa-envelope text-first mb-2"></i>
                         <h4 class="text-uppercase m-0">Email</h4>
                         <hr class="my-4 mx-auto"/>
-                        <div class="small text-black-50">
+                        <div class="small">
                             <a href="mailto: joran.vandenbroucke@yandex.com">joran.vandenbroucke@yandex.com</a>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3 mb-md-0">
+            <div class="col-4 mb-0">
                 <div class="card py-4 h-100">
                     <div class="card-body text-center">
-                        <i class="fab fa-linkedin text-primary mb-2"></i>
+                        <i class="fab fa-linkedin text-first mb-2"></i>
                         <h4 class="text-uppercase m-0">LinkedIn</h4>
                         <hr class="my-4 mx-auto"/>
-                        <div class="small text-black-50"><a
+                        <div class="small"><a
                                 href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/">https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/</a>
                         </div>
                     </div>
@@ -177,8 +170,8 @@
     </div>
 </section>
 <!-- Footer-->
-<footer class="footer bg-black small text-center text-white-50">
-    <div class="container px-4 px-lg-5">Copyright &copy; Joran Vandenbroucke 2022</div>
+<footer class="footer small text-center">
+    <div class="container px-5">Copyright &copy; Joran Vandenbroucke 2022</div>
 </footer>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
