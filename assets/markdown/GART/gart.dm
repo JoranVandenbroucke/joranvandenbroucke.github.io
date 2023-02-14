@@ -7,15 +7,16 @@ However, you can easily translate the code into other languages.
 This chapter will not show how to setup a software ray tracer and therefor a basic understanding in ray tracing is recommended.
 
 This series consists of seven articles.
-The full source code of each final project is available here.
+The full source code of each final project is available [here](#Todo).
  1. Ray Plane Intersection
  2. Ray Sphere Intersection
  3. Ray Triangle Intersection
  4. Shadow Ray
- 5. Bounding Volume Hierarchy
+ 5. Camera & movement
+ 6. Bounding Volume Hierarchy
 ### <center>Ray Plane Intersection</center>
-This chapter will start with intersection functions because the math behind these the easyist to explane.
-First though, we need to know how a Ray and a plane looks like.
+This chapter will start with intersection functions because the math behind these the easiest to explain.
+First though, we need to know how a Ray and a plane looks like. The math library that we write in this blog can be exchanged by [the klein library](https://github.com/jeremyong/klein/tree/master/public/klein)
 #### Ray
 For a ray we will use a line, a line is defined as: $a\mathbf{e}\_{01}+b\mathbf{e}\_{02}+c\mathbf{e}\_{03}+d\mathbf{e}\_{23}+e\mathbf{e}\_{31}+f\mathbf{e}\_{12}=0$
 Where $a$, $b$ and $c$ represent an infinity line, also called an ideal line, this will decide the position of the line.
@@ -94,19 +95,10 @@ Where $a$, $b$ and $c$ are the direction/normal of the plane, this does not need
 
 # Intersection
 The intersection formula is the easiest one, it is the wedge product between the ray and the plane. $$intersection=ray\wedge plane$$
-working this out
-$$intersection=ray\wedge plane$$
-$$(a\mathbf{e}\_{1}+b\mathbf{e}\_{2}+c\mathbf{e}\_{3}+d\mathbf{e}\_{0})\wedge (e\mathbf{e}\_{01}+f\mathbf{e}\_{02}+g\mathbf{e}\_{03}+h\mathbf{e}\_{23}+i\mathbf{e}\_{31}+j\mathbf{e}\_{12})$$
-$
-ae\mathbf{e}\_{1}\wedge \mathbf{e}\_{01}+af\mathbf{e}\_{1}\wedge \mathbf{e}\_{02}+ag\mathbf{e}\_{1}\wedge \mathbf{e}\_{03}+ah\mathbf{e}\_{1}\wedge \mathbf{e}\_{23}+ai\mathbf{e}\_{1}\wedge \mathbf{e}\_{31}+aj\mathbf{e}\_{1}\wedge \mathbf{e}\_{12}
-+be\mathbf{e}\_{2}\wedge \mathbf{e}\_{01}+bf\mathbf{e}\_{2}\wedge \mathbf{e}\_{02}+bg\mathbf{e}\_{2}\wedge \mathbf{e}\_{03}+bh\mathbf{e}\_{2}\wedge \mathbf{e}\_{23}+bi\mathbf{e}\_{2}\wedge \mathbf{e}\_{31}+bj\mathbf{e}\_{2}\wedge \mathbf{e}\_{12}
-+ce\mathbf{e}\_{3}\wedge \mathbf{e}\_{01}+cf\mathbf{e}\_{3}\wedge \mathbf{e}\_{02}+cg\mathbf{e}\_{3}\wedge \mathbf{e}\_{03}+ch\mathbf{e}\_{3}\wedge \mathbf{e}\_{23}+ci\mathbf{e}\_{3}\wedge \mathbf{e}\_{31}+cj\mathbf{e}\_{3}\wedge \mathbf{e}\_{12}
-+de\mathbf{e}\_{4}\wedge \mathbf{e}\_{01}+df\mathbf{e}\_{4}\wedge \mathbf{e}\_{02}+dg\mathbf{e}\_{4}\wedge \mathbf{e}\_{03}+dh\mathbf{e}\_{4}\wedge \mathbf{e}\_{23}+di\mathbf{e}\_{4}\wedge \mathbf{e}\_{31}+dj\mathbf{e}\_{4}\wedge \mathbf{e}\_{12}
-$
-<br/>cleaning things up we get<br/>
-$point=(bg-cf-dj)\mathbf{e}\_{032}+(-ag+ce-di)\mathbf{e}\_{013}+(af+be-dh)\mathbf{e}\_{021}+(aj+bi+ch)\mathbf{e}\_{123}$
-<br/>
-in code this looks like
+$$intersection=(a\mathbf{e}\_{1}+b\mathbf{e}\_{2}+c\mathbf{e}\_{3}+d\mathbf{e}\_{0})\wedge (e\mathbf{e}\_{01}+f\mathbf{e}\_{02}+g\mathbf{e}\_{03}+h\mathbf{e}\_{23}+i\mathbf{e}\_{31}+j\mathbf{e}\_{12})$$
+working things out like if it were to be multiplications and cleaning thing up gives us
+$$intersection=(bg-cf-dj)\mathbf{e}\_{032}+(-ag+ce-di)\mathbf{e}\_{013}+(af+be-dh)\mathbf{e}\_{021}+(aj+bi+ch)\mathbf{e}\_{123}$$
+which is also the formula of a point, in code this looks like
 <div style="display: flex;justify-content: space-between;">
 <pre><code class="language-cpp">struct Point
 {
@@ -171,7 +163,7 @@ Point operator^( const Plane& p, const Line& l )
 }
 </code></pre></div>
 
-The only thing we now need to know is the distance between hit point and the ray origin. Luckily, we are working with homogenious coordinates, so that means that we just have to decide the $z$ component of our point with our $w$ component.
+The only thing we now need to know is the distance between hit point and the ray origin. Luckily, we are working with homogeneous coordinates, so that means that we just have to decide the $z$ component of our point with our $w$ component.
 Putting it all together we get.
 
 <div style="display: flex;justify-content: space-between;">
@@ -393,3 +385,5 @@ void Render()
 </code></pre></div>
 
 ![](../assets/img/Blogs/GART/PlaneRay.bmp)
+
+Now that we can draw some planes, we will go to sphere intersections in next chapter.
