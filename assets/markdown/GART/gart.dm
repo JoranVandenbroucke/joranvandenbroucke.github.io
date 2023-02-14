@@ -392,4 +392,4 @@ void Render()
 }
 </code></pre></div>
 
-![assets/img/Blogs/GART/PlaneRay.bmp](assets/img/Blogs/GART/PlaneRay.bmp)
+![../assets/img/Blogs/GART/PlaneRay.bmp](assets/img/Blogs/GART/PlaneRay.bmp)
