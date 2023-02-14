@@ -5,7 +5,7 @@
 */
 //
 // Scripts
-// 
+//
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -37,7 +37,6 @@ window.addEventListener('DOMContentLoaded', event => {
             offset: 74,
         });
     }
-    ;
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -52,3 +51,30 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 });
+
+function loadMarkDown(directoin) {
+    var converter = new showdown.Converter({tables: true, strikethrough: true});
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', directoin, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var markdown = xhr.responseText;
+            document.getElementById("output").innerHTML = converter.makeHtml(markdown);
+
+            renderMathInElement(
+                document.body,
+                {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "\\[", right: "\\]", display: true},
+                        {left: "$", right: "$", display: false},
+                        {left: "\\(", right: "\\)", display: false}
+                    ]
+                }
+            );
+            hljs.highlightAll();
+        }
+    };
+    xhr.send();
+}
