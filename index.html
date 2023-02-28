@@ -17,9 +17,9 @@
     <link href="css/scroll.css" rel="stylesheet"/>
     <link href="css/myStyle.css" rel="stylesheet"/>
     <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
+            crossorigin="anonymous"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
+            src="https://code.jquery.com/jquery-3.3.1.js">
     </script>
     <script>
         $(function () {
@@ -36,7 +36,7 @@
         <div class="d-flex">
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Joran Vandenbroucke</h1>
-                <h2 class="mx-auto mt-2 mb-5">Welcome to my Portfolio.<br/><br/>I am a Game Developer that
+                <h2 class="mx-auto mt-2 mb-5 text-fourth">Welcome to my Portfolio.<br/><br/>I am a Game Developer that
                     mainly focuses on Engine, Graphics and AI Programming</h2>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="row gx-5 justify-content-center">
             <div class="col-8">
                 <h2 class="mb-4">Who am I?</h2>
-                <p class="text-second">
+                <p class="">
                     I am a student of Master Game Technology.<br/>
                     My master's is about Geometric Algebra in Ray Tracing.<br/>
                     I am looking for a job that I can start in Julie or August 2023.
@@ -64,15 +64,15 @@
                 <div class="row">
                     <div class="col">
                         <i aria-hidden="true" class="fas fa-file-code"></i>
-                        <p class="text-second">C/C++, C#, HLSL, GLSL</p>
+                        <p class="">C/C++, C#, HLSL, GLSL</p>
                     </div>
                     <div class="col">
                         <i aria-hidden="true" class="fas fa-cogs"></i>
-                        <p class="text-second">Visual Studio, CLion, Rider<br/> Unity, Unreal Engine</p>
+                        <p class="">Visual Studio, CLion, Rider<br/> Unity, Unreal Engine</p>
                     </div>
                     <div class="col">
                         <i aria-hidden="true" class="fas fa-project-diagram"></i>
-                        <p class="text-second">Git, Mercurial, Perforce, Jira</p>
+                        <p class="">Git, Mercurial, Perforce, Jira</p>
                     </div>
                 </div>
             </div>
@@ -86,31 +86,32 @@
 <section id="portfolio">
     <ul class="nav nav-tabs justify-content-center">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active w-auto" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects-tab-pane"
-                    type="button" role="tab" aria-controls="projects-tab-pane" aria-selected="true">Projects
+            <button aria-controls="projects-tab-pane" aria-selected="true" class="nav-link active w-auto"
+                    data-bs-target="#projects-tab-pane"
+                    data-bs-toggle="tab" id="projects-tab" role="tab" type="button">Projects
             </button>
         </li>
         <li class="nav-item w-auto" role="presentation">
-            <button class="nav-link" id="blogs-tab" data-bs-toggle="tab" data-bs-target="#blogs-tab-pane" type="button"
-                    role="tab" aria-controls="blogs-tab-pane" aria-selected="false">Blogs
+            <button aria-controls="blogs-tab-pane" aria-selected="false" class="nav-link" data-bs-target="#blogs-tab-pane" data-bs-toggle="tab"
+                    id="blogs-tab" role="tab" type="button">Blogs
             </button>
         </li>
         <li class="nav-item w-auto" role="presentation">
-            <button class="nav-link" id="competitions-tab" data-bs-toggle="tab" data-bs-target="#competitions-tab-pane"
-                    type="button" role="tab" aria-controls="competitions-tab-pane" aria-selected="false">Competitions
+            <button aria-controls="competitions-tab-pane" aria-selected="false" class="nav-link" data-bs-target="#competitions-tab-pane"
+                    data-bs-toggle="tab" id="competitions-tab" role="tab" type="button">Competitions
             </button>
         </li>
         <li class="nav-item w-auto" role="presentation">
-            <button class="nav-link" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs-tab-pane" type="button"
-                    role="tab" aria-controls="jobs-tab-pane" aria-selected="false">Jobs
+            <button aria-controls="jobs-tab-pane" aria-selected="false" class="nav-link" data-bs-target="#jobs-tab-pane" data-bs-toggle="tab"
+                    id="jobs-tab" role="tab" type="button">Jobs
             </button>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <!-- Projects -->
-        <div class="tab-pane fade show active" id="projects-tab-pane" role="tabpanel" aria-labelledby="projects-tab"
+        <div aria-labelledby="projects-tab" class="tab-pane fade show active" id="projects-tab-pane" role="tabpanel"
              tabindex="0">
-            <div class="portfolio-section bg-fourth">
+            <div class="portfolio-section">
                 <div class="container px-5">
                     <!-- Featured Project Row-->
                     <a href="Balbino.html" style="text-decoration:none">
@@ -136,10 +137,10 @@
                     </a>
                     <!-- Project Two Row-->
                     <a href="CoL.html" style="text-decoration:none">
-                        <div class="row gx-0 justify-content-center">
+                        <div class="row gx-0 justify-content-center bg-fourth">
                             <div class="col-6"><img alt="..." class="img-fluid" src="assets/img/CoL.jpg"/></div>
                             <div class="col-6 order-first">
-                                <div class="bg-third text-center h-100 project">
+                                <div class="text-center h-100 project">
                                     <div class="d-flex h-100">
                                         <div class="project-text w-100 my-auto text-center">
                                             <h4>Child of Lothian</h4>
@@ -161,10 +162,10 @@
                     </a>
                     <!-- Project One Row-->
                     <a href="NOX.html" style="text-decoration:none">
-                        <div class="row gx-0 mb-0 justify-content-center">
+                        <div class="row gx-0 mb-0 justify-content-center bg-fourth">
                             <div class="col-6"><img alt="..." class="img-fluid" src="assets/img/NOX.jpg"/></div>
                             <div class="col-6">
-                                <div class="bg-third text-center h-100 project">
+                                <div class="text-center h-100 project">
                                     <div class="d-flex h-100">
                                         <div class="project-text w-100 my-auto text-center">
                                             <h4 class="">NOX</h4>
@@ -185,13 +186,13 @@
                     </a>
                     <!-- Project Two Row-->
                     <a href="SoftwareRayTracer.html" style="text-decoration:none">
-                        <div class="row gx-0 justify-content-center">
+                        <div class="row gx-0 justify-content-center bg-fourth">
                             <div class="col-6"><img alt="..." class="img-fluid" src="assets/img/SoftRayTracer.bmp"/>
                             </div>
                             <div class="col-6 order-first">
-                                <div class="bg-third text-center h-100 project">
+                                <div class="text-center h-100 project">
                                     <div class="d-flex h-100">
-                                        <div class="project-text w-100 my-auto text-center text-right">
+                                        <div class="project-text w-100 my-auto text-center">
                                             <h4>Software Ray Tracer</h4>
                                             <p class="mb-0">
                                                 In this solo project for school, I made a software ray tracer using
@@ -206,11 +207,11 @@
                     </a>
                     <!-- Project One Row-->
                     <a href="SoftwareRasterizer.html" style="text-decoration:none">
-                        <div class="row gx-0 mb-0 justify-content-center">
+                        <div class="row gx-0 mb-0 justify-content-center bg-fourth">
                             <div class="col-6"><img alt="..." class="img-fluid" src="assets/img/SoftRasrerizer.bmp"/>
                             </div>
                             <div class="col-6">
-                                <div class="bg-third text-center h-100 project">
+                                <div class="text-center h-100 project">
                                     <div class="d-flex h-100">
                                         <div class="project-text w-100 my-auto text-center">
                                             <h4 class="">Software Rasterizer</h4>
@@ -227,13 +228,13 @@
                     </a>
                     <!-- Project Two Row-->
                     <a href="AIProgramming.html" style="text-decoration:none">
-                        <div class="row gx-0 justify-content-center">
+                        <div class="row gx-0 justify-content-center bg-fourth">
                             <div class="col-6"><img alt="..." class="img-fluid" src="assets/img/AIProgramming.png"/>
                             </div>
                             <div class="col-6 order-first">
-                                <div class="bg-third text-center h-100 project">
+                                <div class="text-center h-100 project">
                                     <div class="d-flex h-100">
-                                        <div class="project-text w-100 my-auto text-center text-right">
+                                        <div class="project-text w-100 my-auto text-center">
                                             <h4 class="">AI programming</h4>
                                             <p class="mb-0">
                                                 In this program, we had a character that had to survive as long as
@@ -259,8 +260,8 @@
             </div>
         </div>
         <!-- Blogs -->
-        <div class="tab-pane fade" id="blogs-tab-pane" role="tabpanel" aria-labelledby="blogs-tab" tabindex="0">
-            <div class="portfolio-section bg-fourth">
+        <div aria-labelledby="blogs-tab" class="tab-pane fade" id="blogs-tab-pane" role="tabpanel" tabindex="0">
+            <div class="portfolio-section">
                 <div class="container px-5">
                     <!-- Featured Project Row-->
                     <a href="Balbino.html" style="text-decoration:none">
@@ -283,7 +284,8 @@
             </div>
         </div>
         <!-- Competitions -->
-        <div class="tab-pane fade" id="competitions-tab-pane" role="tabpanel" aria-labelledby="competitions-tab" tabindex="0">
+        <div aria-labelledby="competitions-tab" class="tab-pane fade" id="competitions-tab-pane" role="tabpanel"
+             tabindex="0">
             <div class="portfolio-section">
                 <div class="container px-5">
                     <!-- Featured Project Row-->
@@ -295,7 +297,7 @@
                         <div class="col-4">
                             <div class="featured-text text-center">
                                 <h4>Flemish programming contest</h4>
-                                <p class="text-second mb-2">
+                                <p class=" mb-2">
                                     In this contest, we had to be in a team of three. You got five problems, and you had
                                     to
                                     solve
@@ -310,14 +312,14 @@
                         </div>
                     </div>
                     <!-- Project One Row-->
-                    <div class="row gx-0 mb-0 justify-content-center">
+                    <div class="row gx-0 mb-0 justify-content-center bg-fourth">
                         <div class="col-6"><img alt="..." class="img-fluid" src="assets/img/RobotContest.png"/></div>
                         <div class="col-6 order-first">
-                            <div class="bg-third text-center h-100 project">
+                            <div class="text-center h-100 project">
                                 <div class="d-flex h-100">
                                     <div class="project-text w-100 my-auto text-center">
                                         <h4 class="text">Robocontest at VIVES</h4>
-                                        <p class="text-second mb-2">
+                                        <p class=" mb-2">
                                             The goal was to follow a white line with a small autonomous car via one or
                                             more
                                             optical
@@ -338,7 +340,7 @@
             </div>
         </div>
         <!-- Jobs -->
-        <div class="tab-pane fade" id="jobs-tab-pane" role="tabpanel" aria-labelledby="jobs-tab" tabindex="0">
+        <div aria-labelledby="jobs-tab" class="tab-pane fade" id="jobs-tab-pane" role="tabpanel" tabindex="0">
             <div class="portfolio-section">
                 <div class="container px-5">
                     <!-- Featured Project Row-->
@@ -350,7 +352,7 @@
                         <div class="col-4">
                             <div class="featured-text text-center">
                                 <h4>Internship Unity Technologies</h4>
-                                <p class="text-second mb-2">
+                                <p class=" mb-2">
                                     I had an internship at Unity Technologies back in Q1 and Q2 of 2022. I was part of
                                     the
                                     texture

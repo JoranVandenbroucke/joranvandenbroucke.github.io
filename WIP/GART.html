@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ray tracing using geometric algebra"/>
     <meta name="author" content="Joran Vandenbroucke"/>
-    <meta name="keywords" content="Geometric Algebra, GA, Projective Geometric Algebra, PGA, Ray Tracing, computer graphics">
+    <meta name="keywords"
+          content="Geometric Algebra, GA, Projective Geometric Algebra, PGA, Ray Tracing, computer graphics">
     <title>GART</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
@@ -18,12 +19,19 @@
     <link rel="stylesheet" title="light code" href="../highlightjs/styles/intellij-light.min.css">
     <link rel="alternate stylesheet" title="dark code" href="../highlightjs/styles/srcery.min.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/@jhuix/showdowns@0.5.6/dist/showdowns.min.js" integrity="sha256-366tl/9rlsNvNZt3RSmL4Qw7j+bdB5YBuLUdRUT0JBE=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jhuix/showdowns@0.5.6/dist/showdowns.min.css" integrity="sha256-kWauttBYVWmTG9BpigviTIsmVjg5OwrRAYNwhQgM2Dg=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@jhuix/showdowns@0.5.6/dist/showdowns.min.js"
+            integrity="sha256-366tl/9rlsNvNZt3RSmL4Qw7j+bdB5YBuLUdRUT0JBE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jhuix/showdowns@0.5.6/dist/showdowns.min.css"
+          integrity="sha256-kWauttBYVWmTG9BpigviTIsmVjg5OwrRAYNwhQgM2Dg=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+          integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+            integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+            integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+            crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
     <script src="../highlightjs/highlight.min.js"></script>
@@ -44,14 +52,14 @@
         });
     </script>
 </head>
-<body onload="loadMarkDown('../assets/markdown/GART/gart.dm');hljs.highlightAll();">
+<body onload="loadMarkDown('../assets/markdown/GART/gart.md');hljs.highlightAll();">
 <div id="header"></div>
 <header class="masthead">
     <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex">
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Geometric Algebra in Ray Tracing</h1>
-                <h2 class="mx-auto mt-2 mb-5">A blog post about Geometric Algebra and Ray Tracing</h2>
+                <h2 class="mx-auto mt-2 mb-5 text-fourth">A blog post about Geometric Algebra and Ray Tracing</h2>
             </div>
         </div>
     </div>
@@ -64,8 +72,16 @@
         </div>
     </a>
 </header>
-<section class="bg-fifth" id="about">
-    <div class="container px-5 py-2 " id ="output"></div>
+<section>
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto" id="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <div id="footer"></div>
 <!-- Bootstrap core JS-->

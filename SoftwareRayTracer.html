@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="Software Ray Tracer"/>
     <meta name="author" content="Joran Vandenbroucke"/>
-
     <title>Software Ray Tracer</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
@@ -21,7 +20,6 @@
     <script src="highlightjs/highlight.min.js"></script>
     <script src="js/ThemeSwitcher.js"></script>
 
-
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/scroll.css" rel="stylesheet"/>
     <link href="css/myStyle.css" rel="stylesheet"/>
@@ -31,7 +29,7 @@
             crossorigin="anonymous">
     </script>
     <script>
-        $(function(){
+        $(function () {
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         });
@@ -103,46 +101,50 @@
         </button>
     </div>
 </section>
-<section class="bg-fourth">
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="text-center h-100 project">
+<section>
+    <div class="gx-0 mb-0 justify-content-center bg-fourth">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h3>Explanation</h3>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Explanation</h3>
+                        <p>
+                            The software ray tracer is a 2nd-year Game Developer assignment where each student makes
+                            their ray tracer
+                            using Visual Studio, C++, SDL2, SDL2_image and Perforce.
+                            The assignment says that there need to be 2 scenes, 1 scene with 3 triangles rotating and
+                            having a different
+                            cull mode. We also needed to have 3 dielectric spheres, with a roughness of 0, 0.5 and 1
+                            respectively and 3
+                            metallic spheres, with a roughness of 0, 0.5 and 1 respectively. The second scene needed to
+                            have the low
+                            poly Stanford bunny provided by the teacher. Both scenes needed to have a directional light
+                            and at least 2
+                            point lights with real-time direct hard shadows.
+                        </p>
+                        <p>
+                            I also added texture support.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-5 py-4 ">
-        <p class="text-second">
-            The software ray tracer is a 2nd-year Game Developer assignment where each student makes their ray tracer
-            using Visual Studio, C++, SDL2, SDL2_image and Perforce.
-            The assignment says that there need to be 2 scenes, 1 scene with 3 triangles rotating and having a different
-            cull mode. We also needed to have 3 dielectric spheres, with roughnesses of 0, 0.5 and 1 respectively and 3
-            metallic spheres, with roughnesses of 0, 0.5 and 1 respectively. The second scene needed to have the low
-            poly Stanford bunny provided by the teacher. Both scenes needed to have a directional light and at least 2
-            point lights with real-time direct hard shadows.
-        </p>
-        <p class="text-second">
-            I also added texture support.
-        </p>
     </div>
 </section>
 <section class="bg-fifth">
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="text-center h-100 project">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h3>Ray Sphere Intersection</h3>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Ray Sphere Intersection</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container px-5 py-4 ">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
             <pre><code class="language-cpp">bool Sphere( const Ray& ray, const float3& center, float radius, float& t )
 {
     t = 0.0f;
@@ -170,20 +172,22 @@
         return false;
     return true;
 }</code></pre>
+        </div>
     </div>
 
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="text-center h-100 project">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h4>Ray Plane Intersection</h4>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Ray Plane Intersection</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container px-5 py-4 ">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
             <pre><code class="language-cpp">bool Plane( const Ray& ray, const float3& center, const float3& normal, float& t )
 {
     float dotDN{ dot( ray.direction, normal ) };
@@ -201,26 +205,24 @@
 
     return true;
 }</code></pre>
+        </div>
     </div>
 
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="text-center h-100 project">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h4>Ray Triangle Intersection</h4>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Ray Triangle Intersection</h3>
+                        <p>My ray triangle intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box
+                            Overlap Tests with Pl&#252cker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container px-5 py-4">
-        <div class="project-text w-100 my-auto text-left">
-            <p class="text-second">My ray triangle intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box
-                Overlap Tests with Pl&#252cker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
-        </div>
-    </div>
-    <div class="container px-5 py-4 ">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
             <pre><code class="language-cpp">bool Triangle( const Ray& ray, const Vertex& v0, const Vertex& v1, const Vertex& v2, float3& normal, float& t )
 {
     float BA[6], CB[6], AC[6], PR[6];
@@ -249,22 +251,23 @@
     }
     return false;
 }</code></pre>
+        </div>
     </div>
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="text-center h-100 project">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h4>Ray Box Intersection</h4>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Ray Box Intersection</h3>
+                        <p>My ray box intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box Overlap
+                            Tests with Pl&#252cker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container px-5 py-4">
-        <div class="project-text w-100 my-auto text-left">
-            <p class="text-second">My ray box intersection is based on the paper "Fast Ray-Axis Aligned Bounding Box
-                Overlap Tests with Pl&#252cker Coordinates" from Jeffrey Mahovsky and Brian Wyvill</p>
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
             <pre><code class="language-cpp">      B-------C                    B-------C
      /|      /|                   /        |
     F-|-----G |    &lt;--cubes      F         | &lt;--Test for MMM

@@ -9,23 +9,23 @@
     --bs-body-font-weight: 400;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
-        --first-color: #CCCCCC;
-        --second-color: #FFD700;
-        --third-color: #202124;
-        --fourth-color: #524b5c;
-        --fifth-color: #190f26;
+        --first-color: #222222;
+        --second-color: #303D2D;
+        --third-color: #58584C;
+        --fourth-color: #C2DDCE;
+        --fifth-color: #F6F6F2;
     }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     :root {
-        --first-color: #215257;
-        --second-color: #3C6467;
-        --third-color: #BADFE7;
-        --fourth-color: #C2DDCE;
-        --fifth-color: #F6F6F2;
+        --first-color: #DDDDDD;
+        --second-color: #CFC2D2;
+        --third-color: #A7A7B3;
+        --fourth-color: #3D2231;
+        --fifth-color: #09090D;
     }
 }
 
@@ -95,15 +95,9 @@ h1, .h1 {
 
 h2, .h2 {
     font-size: calc(1.325rem + 0.9vw);
-    color: var(--second-color)
+    color: var(--first-color)
 }
 
-@media (prefers-color-scheme: dark) {
-    h2, .h2 {
-        color: var(--first-color)
-    }
-
-}
 
 @media (min-width: 1200px) {
     h2, .h2 {
@@ -262,6 +256,8 @@ pre code {
     font-size: inherit;
     color: inherit;
     word-break: normal;
+    padding: 0.0%;
+    border: 1px solid var(--fourth-color);
 }
 
 code {
@@ -269,6 +265,8 @@ code {
     font-weight: bold;
     color: var(--first-color);
     word-wrap: break-word;
+    padding: 0.05% .5%;
+    background-color: var(--fourth-color);
 }
 
 a > code {
@@ -300,9 +298,10 @@ svg {
 
 table {
     caption-side: bottom;
-    border: 1px solid var(--fifth-color);
+    border: 1px solid var(--second-color);
     border-collapse: collapse;
-    padding: 6px;
+    padding: 15%;
+    min-width:45%;
 }
 
 caption {
@@ -315,7 +314,7 @@ caption {
 th {
     text-align: inherit;
     text-align: -webkit-match-parent;
-    border: 1px solid var(--fifth-color);
+    border: 1px solid var(--second-color);
 }
 
 thead,
@@ -3153,16 +3152,6 @@ textarea.form-control {
     border-color: var(--second-color);
 }
 
-@media (prefers-color-scheme: dark) {
-    .btn-primary {
-        color: var(--first-color);
-    }
-
-    .btn-primary:hover {
-        color: var(--first-color);
-    }
-}
-
 .btn-check:focus + .btn-primary, .btn-primary:focus {
     color: var(--fifth-color);
     background-color: var(--third-color);
@@ -4221,7 +4210,7 @@ textarea.form-control {
     font-size: 1.25rem;
     text-decoration: none;
     white-space: nowrap;
-    color: var(--fifth-color)
+    color: var(--first-color)
 }
 
 .navbar-nav {
@@ -4725,19 +4714,12 @@ textarea.form-control {
 
 .container a:hover h4,
 .container a:focus h4 {
-    color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-    .container a:hover h4,
-    .container a:focus h4 {
-        color: var(--first-color);
-    }
+    color: var(--second-color);
 }
 
 .container a:hover p,
 .container a:focus p {
-    color: var(--fifth-color);
+    color: var(--third-color);
 }
 
 .card {
@@ -5070,7 +5052,7 @@ textarea.form-control {
 .page-link {
     position: relative;
     display: block;
-    color: var(--fifth-color);
+    color: var(--first-color);
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #dee2e6;
@@ -11608,7 +11590,7 @@ body {
     font-size: 80%;
     padding: 0.75rem;
     color: var(--fifth-color);
-    border: 1px solid #64a19d;
+    border: 1px solid var(--second-color);
 }
 
 #mainNav .navbar-toggler:focus {
@@ -11653,11 +11635,11 @@ body {
     }
 
     #mainNav .nav-link:hover {
-        color: var(--first-color);
+        color: var(--fourth-color);
     }
 
     #mainNav .nav-link:active {
-        color: var(--first-color);
+        color: var(--fourth-color);
     }
 
     #mainNav.navbar-shrink {
@@ -11675,38 +11657,17 @@ body {
     }
 
     #mainNav.navbar-shrink .nav-link:hover {
-        color: var(--first-color);
+        color: var(--third-color);
     }
 
     #mainNav.navbar-shrink .nav-link:active {
-        color: var(--first-color);
+        color: var(--third-color);
     }
 
     #mainNav.navbar-shrink .nav-link.active {
-        color: var(--first-color);
+        color: var(--fifth-color);
         outline: none;
-        border-bottom: 0.25rem solid var(--first-color);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        #mainNav .navbar-brand {
-            padding: 0.5rem 0;
-            color: var(--first-color);
-        }
-
-        #mainNav .nav-link {
-            transition: none;
-            padding: 2rem 1.5rem;
-            color: var(--first-color);
-        }
-
-        #mainNav.navbar-shrink .navbar-brand {
-            color: var(--second-color);
-        }
-
-        #mainNav.navbar-shrink .nav-link {
-            color: var(--second-color);
-        }
+        border-bottom: 0.25rem solid var(--second-color);
     }
 }
 

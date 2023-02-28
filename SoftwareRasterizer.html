@@ -20,7 +20,6 @@
     <script src="highlightjs/highlight.min.js"></script>
     <script src="js/ThemeSwitcher.js"></script>
 
-
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/scroll.css" rel="stylesheet"/>
     <link href="css/myStyle.css" rel="stylesheet"/>
@@ -30,7 +29,7 @@
             crossorigin="anonymous">
     </script>
     <script>
-        $(function(){
+        $(function () {
             $("#header").load("header.html");
             $("#footer").load("footer.html");
         });
@@ -56,7 +55,7 @@
         </div>
     </a>
 </header>
-<section class="portfolio-section bg-fifth" id="start">
+<section class="portfolio-section " id="start">
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -93,49 +92,47 @@
         </button>
     </div>
 </section>
-<section class="bg-fourth">
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="text-center h-100 project">
+<section>
+    <div class="gx-0 mb-0 justify-content-center bg-fourth">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h3>Explanation</h3>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Explanation</h3>
+                        <p>
+                            The software rasterizer is a 2nd-year Game Developer assignment where each student makes
+                            their rasterizer
+                            using Visual Studio, C++, SDL2, SDL2_image and Perforce. The assignment stated that we
+                            should be able to
+                            render the vehicle (3rd image) using a specular workflow, a diffuse map, a specular map, a
+                            glossy map and a
+                            normal map.
+                        </p>
+                        <p>I added an extra model</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container px-5 py-4 ">
-        <p class="text-second">
-            The software rasterizer is a 2nd-year Game Developer assignment where each student makes their rasterizer
-            using Visual Studio, C++, SDL2, SDL2_image and Perforce. The assignment stated that we should be able to
-            render the vehicle (3rd image) using a specular workflow, a diffuse map, a specular map, a glossy map and a
-            normal map.
-        </p>
-        <p class="text-second">I added an extra model</p>
     </div>
 </section>
-<section class="code bg-fifth">
-    <div class="row gx-0 mb-0 justify-content-center">
-        <div class="col-6">
-            <div class="mt-3 text-center h-100 project">
+<section>
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
                 <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto text-center text-left">
-                        <h3>Rasterization</h3>
+                    <div class="project-text w-100 my-auto">
+                        <h3 class="text-center">Rasterization</h3>
+                        <p>
+                            My rasterization technique was inspired by how I implemented my ray-triangle
+                            intersection in the <a href="SoftwareRayTracer.html">Software Ray Tracer</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container px-5 py-4">
-        <div class="project-text w-100 my-auto">
-            <p class="text-second">
-                My rasterization technique was inspired by how I implemented my ray-triangle
-                intersection in the <a href="SoftwareRayTracer.html">Software Ray Tracer</a>
-            </p>
-        </div>
-    </div>
-    <div class="container px-5 py-2 ">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
             <pre><code class="language-cpp">void Rasterize( V2F v0, V2F v1, V2F v2, bool showDepth, const Texture* pDiffuse, const Texture* pNormal, const Texture* pSpecular, const Texture* pGloss )const
 {
     if( !CullingAndToRasterSpace( v0, v1, v2, m_Width, m_Height ) )
@@ -202,6 +199,7 @@
         }
     }
 }</code></pre>
+    </div>
     </div>
 </section>
 
