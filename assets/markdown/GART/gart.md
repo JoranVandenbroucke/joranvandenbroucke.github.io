@@ -181,7 +181,7 @@ a\wedge b=
 &(a\_1 b\_6 + a\_2 b\_5 + a\_3 b\_4)\mathbf{e}\_{123}\\\\
 \end{split}
 \end{equation}$$
-If we look back at the point than we see that (5) gives us the same outcome as (10).
+If we look back at the point than we see that (5) gives us the same outcome as (11).
 <br/>
 Great! Now we only deed the distance. Lucky us, we are using projective geometric algebra, which uses homogenous coordinates. This means tha we just need to divide the `z` by the `w`
 putting this in code we get
