@@ -134,7 +134,7 @@ inline point make_point( const glm::vec2& v1, const glm::vec2& v2 )
  return { v1, v2 };
 }
 </code></pre>
-Voila, most of the work is done, we just need our intersection algorithm, and we are done. Easy right?
+Voila, most of the work is done, we just need our intersection algorithm, and we are done.
 
 ## Intersection
 So, the intersection algorithm, it's complicated right? No! Not at all!
@@ -235,7 +235,7 @@ for ( uint8_t i{}; i < 6; ++i )
 </code></pre>
 <center>
 
-![](../assets/img/Blogs/GART/PlaneRay.bmp "640x480, 90deg fov")
+![](assets/img/Blogs/GART/PlaneRay.bmp "640x480, 90deg fov")
 </center>
 
 Now that we can draw some planes, we will go to sphere intersections in next chapter.
