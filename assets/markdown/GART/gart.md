@@ -13,7 +13,7 @@ We will use C++ as the implementation language and build upon [GLM (OpenGL Math)
 The math expansion that gets created in this chapter is small and easy to use. However, GLM and our expansion can be replaced by the [Klein Library](https://github.com/jeremyong/klein/tree/master/public/klein) for better performance and more accurate results.
 ## Prerequisites
 This chapter about Geometric Algebra and Ray Tracing works best if you have a background in programming, math and ray tracing.
-##Chapter Outline
+## Chapter Outline
 This chapter consists of six parts:
 This chapter consists of six parts.
 The full source code of each final project is available [here](#Todo).
@@ -33,18 +33,18 @@ In Geometric Algebra, instead of just working with vectors and matrices, you als
 To help you understand the differences between traditional vector math and Geometric Algebra, let's take a look at the table below:
 <center>
 
-| Traditional | Geometric Algebra |
-|:--|--:|
-| Vector | Vector |
-| Matrix | Matrix |
+| Traditional          |    Geometric Algebra |
+|:---------------------|---------------------:|
+| Vector               |               Vector |
+| Matrix               |               Matrix |
 | $A\cdot B+A\times B$ | $A\cdot B+A\wedge B$ |
-| x-axis | $\mathbf{e}\_{1}$ |
-| y-axis | $\mathbf{e}\_{2}$ |
-| z-axis | $\mathbf{e}\_{3}$ |
-| w-axis | $\mathbf{e}\_{4}$ |
-| yz-plane | $\mathbf{e}\_{23}$ |
-| zx-plane | $\mathbf{e}\_{31}$ |
-| xy-plane | $\mathbf{e}\_{12}$ |
+| x-axis               |    $\mathbf{e}\_{1}$ |
+| y-axis               |    $\mathbf{e}\_{2}$ |
+| z-axis               |    $\mathbf{e}\_{3}$ |
+| w-axis               |    $\mathbf{e}\_{4}$ |
+| yz-plane             |   $\mathbf{e}\_{23}$ |
+| zx-plane             |   $\mathbf{e}\_{31}$ |
+| xy-plane             |   $\mathbf{e}\_{12}$ |
 
 </center>
 
@@ -235,7 +235,7 @@ for ( uint8_t i{}; i < 6; ++i )
 </code></pre>
 <center>
 
-![](assets/img/Blogs/GART/PlaneRay.bmp "640x480, 90deg fov")
+![]("assets/img/Blogs/GART/PlaneRay.bmp" "640x480, 90deg fov")
 </center>
 
 Now that we can draw some planes, we will go to sphere intersections in next chapter.
