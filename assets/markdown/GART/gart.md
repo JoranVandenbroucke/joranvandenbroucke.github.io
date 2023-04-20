@@ -235,7 +235,7 @@ for ( uint8_t i{}; i < 6; ++i )
 </code></pre>
 <center>
 
-![]("assets/img/Blogs/GART/PlaneRay.bmp" "640x480, 90deg fov")
+![](assets/img/Blogs/GART/PlaneRay.bmp "640x480, 90deg fov")
 </center>
 
 Now that we can draw some planes, we will go to sphere intersections in next chapter.
