@@ -1,4 +1,3 @@
-
 # <center><u>**Applied Geometric Algebra**</u></center>
 ## <center><u>**Chapter 1: Ray Tracing**</u></center>
 Welcome to this series of blog posts where we explore random topics and combine two topics that are usually not combined.
@@ -18,11 +17,12 @@ This chapter consists of six parts:
 This chapter consists of six parts.
 The full source code of each final project is available [here](#Todo).
 1. Ray Plane Intersection
-2. Ray Sphere Intersection
-3. Ray Triangle Intersection
-4. Shadow Ray
-5. Camera & movement
-6. Bounding Volume Hierarchy
+2. Ray Triangle Intersection
+3. Shadow Ray
+4. Camera & movement
+5. Bounding Volume Hierarchy
+6. Advanced: Ray Sphere
+7. Advanced: Multy Geometric Algebra optimizations
 
 # <center><u>Part 1. Ray Plane Intersection</u></center>
 ## Geometric Algebra
@@ -238,4 +238,4 @@ for ( uint8_t i{}; i < 6; ++i )
 ![](assets/img/Blogs/GART/PlaneRay.bmp "640x480, 90deg fov")
 </center>
 
-Now that we can draw some planes, we will go to sphere intersections in next chapter.
+Now that we can draw some planes, let us switch things over to triangles.
