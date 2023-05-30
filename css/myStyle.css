@@ -11760,7 +11760,9 @@ body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/CoL.jpg") no-repeat scroll center;
     background-size: cover;
 }
-.mastheadGART {
+.mastheadGART,
+.mastheadGANM
+{
     position: relative;
     width: 100%;
     height: auto;
@@ -11798,7 +11800,8 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
 }
-.mastheadGART h1, .mastheadGART .h1
+.mastheadGART h1, .mastheadGART .h1,
+.mastheadGANM h1, .mastheadGANM .h1
 {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 2.5rem;
@@ -11818,7 +11821,8 @@ body {
 .mastheadAIp h2, .mastheadAIp .h2,
 .mastheadSpl h2, .mastheadSpl .h2,
 .mastheadCoL h2, .mastheadCoL .h2,
-.mastheadGART h2, .mastheadGART .h2
+.mastheadGART h2, .mastheadGART .h2,
+.mastheadGANM h2, .mastheadGANM .h2
 {
     max-width: 32rem;
     font-size: 1rem;
@@ -11833,7 +11837,8 @@ body {
     .mastheadAIp h1, .mastheadAIp .h1,
     .mastheadSpl h1, .mastheadSpl .h1,
     .mastheadCoL h1, .mastheadCoL .h1,
-    .mastheadGART h1, .mastheadGART .h1
+    .mastheadGART h1, .mastheadGART .h1,
+    .mastheadGANM h1, .mastheadGANM .h1
     {
         font-size: 4rem;
         line-height: 4rem;
@@ -11849,7 +11854,8 @@ body {
     .mastheadAIp, .mastheadAIp,
     .mastheadSpl, .mastheadSpl,
     .mastheadCoL, .mastheadCoL,
-    .mastheadGART, .mastheadGART
+    .mastheadGART, .mastheadGART,
+    .mastheadGANM, .mastheadGANM
     {
         height: 100vh;
         padding: 0;
@@ -11863,7 +11869,8 @@ body {
     .mastheadAIp h1, .mastheadAIp .h1,
     .mastheadSpl h1, .mastheadSpl .h1,
     .mastheadCoL h1, .mastheadCoL .h1,
-    .mastheadGART h1, .mastheadGART .h1
+    .mastheadGART h1, .mastheadGART .h1,
+    .mastheadGANM h1, .mastheadGANM .h1
     {
         font-size: 6.5rem;
         line-height: 6.5rem;
@@ -11878,7 +11885,8 @@ body {
     .mastheadAIp h2, .mastheadAIp .h2,
     .mastheadSpl h2, .mastheadSpl .h2,
     .mastheadCoL h2, .mastheadCoL .h2,
-    .mastheadGART h2, .mastheadGART .h2
+    .mastheadGART h2, .mastheadGART .h2,
+    .mastheadGANM h2, .mastheadGANM .h2
     {
         max-width: 64rem;
         font-size: 1.25rem;

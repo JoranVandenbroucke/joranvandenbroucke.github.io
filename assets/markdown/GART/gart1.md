@@ -13,9 +13,7 @@ The math expansion that gets created in this chapter is small and easy to use. H
 ## Prerequisites
 This chapter about Geometric Algebra and Ray Tracing works best if you have a background in programming, math and ray tracing.
 ## Chapter Outline
-This chapter consists of six parts:
-This chapter consists of six parts.
-The full source code of each final project is available [here](#Todo).
+This chapter consists of seven parts:
 1. Ray Plane Intersection
 2. Ray Triangle Intersection
 3. Shadow Ray
@@ -24,6 +22,7 @@ The full source code of each final project is available [here](#Todo).
 6. Advanced: Ray Sphere
 7. Advanced: Multy Geometric Algebra optimizations
 
+The full source code of each final project is available [here](#Todo).
 # <center><u>Part 1. Ray Plane Intersection</u></center>
 ## Geometric Algebra
 If you've ever worked with vectors and matrices in math or computer programming, you might be interested to know that there's a newer approach called Geometric Algebra.
