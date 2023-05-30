@@ -11895,7 +11895,8 @@ body {
 
 .about-section {
     padding-top: 10rem;
-    background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+    /*background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);*/
+    background-color: var(--fifth-color);
 }
 
 .about-section p {
@@ -11904,6 +11905,7 @@ body {
 
 .projects-section {
     padding: 10rem 0;
+    background-color: var(--fifth-color);
 }
 
 .projects-section .featured-text {
@@ -11953,6 +11955,7 @@ body {
 
 .contact-section {
     padding-top: 5rem;
+    background: var(--fifth-color) linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%) url("../assets/img/Sponza_signup.png") no-repeat scroll center;
 }
 
 .contact-section .card {
@@ -11997,4 +12000,5 @@ body {
 
 .footer {
     padding: 5rem 0;
+    background-color: var(--fifth-color);
 }
