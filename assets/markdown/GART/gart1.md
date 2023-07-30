@@ -1,3 +1,14 @@
+---
+title: 'Tracing the Geometric Algebra Ways'
+pubDate: !!str 2022-11-21
+description: 'This a blog that explores the world of geometric algebra using ray tracing'
+author: 'Joran Vandenbroucke'
+image:
+  url: 'https://joranvandenbroucke.github.io/assets/img/ProfilePicture.png'
+  alt: ';('
+tags: ["Applied Geometric Algebra", "Geometric Algebra", "GA", "Ray Tracing"]
+---
+
 # <center><u>**Applied Geometric Algebra**</u></center>
 ## <center><u>**Chapter 1: Ray Tracing**</u></center>
 Welcome to this series of blog posts where we explore random topics and combine two topics that are usually not combined.

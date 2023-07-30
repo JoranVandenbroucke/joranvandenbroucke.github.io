@@ -10,7 +10,7 @@
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
-    var navbarShrink = function () {
+    const navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -52,15 +52,50 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 });
 
-function loadMarkDown(directoin) {
-    var converter = new showdown.Converter({tables: true, strikethrough: true});
+function loadMarkDown(direction) {
+    const converter = new showdown.Converter({tables: true, strikethrough: true});
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', directoin, true);
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', direction, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var markdown = xhr.responseText;
-            document.getElementById("output").innerHTML = converter.makeHtml(markdown);
+            let markdown = xhr.responseText;
+            const firstSeparatorIndex = markdown.indexOf('---\r\n');
+            if (firstSeparatorIndex === -1) {
+                throw new Error('Invalid markdown format: Header separator (---) not found');
+            }
+            markdown = markdown.slice(firstSeparatorIndex + 4, markdown.length).trim();
+            const secondSeparatorIndex = markdown.indexOf('---\r\n');
+            if (secondSeparatorIndex === -1) {
+                throw new Error('Invalid markdown format: Header separator (---) not found');
+            }
+
+            const header = markdown.slice(0, secondSeparatorIndex).trim();
+            const content = markdown.slice(secondSeparatorIndex + 4, markdown.length).trim();
+
+            let headerHTML;
+            try {
+                const headerData = jsyaml.load(header);
+
+                const wordsPerMinute = 200; // Adjust this value based on your reading speed estimation
+                const wordCount = markdown.trim().split(/\s+/).length;
+                const readTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
+
+                headerHTML = '<dev class="my-0 py-0">';
+                headerHTML += '<h1>' + headerData.title + '</h1>';
+                headerHTML += '<p>Description: ' + headerData.description + '</p>';
+                headerHTML += '<img style="width: 5%;border-radius: 50%;margin-right:10px;" src="' + headerData.image.url + '" alt="' + headerData.image.alt + '" />';
+                headerHTML += '<p style="margin-right:10px;"><b>Author:</b> ' + headerData.author + '</p>';
+                headerHTML += '<p style="display:inline-block;margin-right:10px;"><b>Published on:</b> ' + headerData.pubDate + '</p>';
+                headerHTML += '<p style="display:inline-block;margin-right:10px;"><b>Read Time (Minutes):</b> ' + readTimeMinutes + '</p>';
+                headerHTML += '<p><b>Tags:</b> ' + headerData.tags.join(', ') + '</p>';
+                headerHTML += '</dev>';
+
+            } catch (e) {
+                console.log(e);
+            }
+
+            document.getElementById("output").innerHTML = headerHTML + converter.makeHtml(content);
 
             renderMathInElement(
                 document.body,
