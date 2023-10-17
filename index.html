@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Joran Vandenbroucke</title>
+    <meta name="author" content="Joran Vandenbroucke">
     <meta name="description"
           content="Joran Vandenbroucke is a Game Developer that mainly focuses on Engine, Graphics and AI Programming. This is his portfolio website.">
     <meta name="keywords"
           content="game developer, engine programming, graphics programming, AI programming, portfolio, Joran, Vandenbroucke, Joran Vandenbroucke">
-    <meta name="author" content="Joran Vandenbroucke">
-    <meta property="og:title" content="Joran Vandenbroucke - Game Developer">
-    <meta property="og:description"
-          content="Joran Vandenbroucke is a Game Developer that mainly focuses on Engine, Graphics and AI Programming. This is his portfolio website.">
-    <meta property="og:image" content="https://joranvandenbroucke.github.io/assets/img/ProfilePicture.png">
-    <meta property="og:url" content="https://joranvandenbroucke.github.io/">
-    <meta name="twitter:title" content="Joran Vandenbroucke - Game Developer">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description"
           content="Joran Vandenbroucke is a Game Developer that mainly focuses on Engine, Graphics and AI Programming. This is his portfolio website.">
     <meta name="twitter:image" content="https://joranvandenbroucke.github.io/path/to/image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Joran Vandenbroucke - Game Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta property="og:description"
+          content="Joran Vandenbroucke is a Game Developer that mainly focuses on Engine, Graphics and AI Programming. This is his portfolio website.">
+    <meta property="og:image" content="https://joranvandenbroucke.github.io/assets/img/ProfilePicture.png">
+    <meta property="og:title" content="Joran Vandenbroucke - Game Developer">
+    <meta property="og:url" content="https://joranvandenbroucke.github.io/">
+    <title>Joran Vandenbroucke</title>
     <link rel="canonical" href="https://joranvandenbroucke.github.io/">
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
@@ -34,16 +34,18 @@
     <link rel="stylesheet" href="css/myStyle.css">
 
     <script src="js/scripts.js"></script>
+    <script src="js/CustomHTML.js"></script>
 </head>
-<body onload="includeHTML();">
-<div id="header"></div>
+<body>
+<header-nav>
+</header-nav>
 <!-- Masthead-->
 <header class="masthead">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
+    <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex">
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Joran Vandenbroucke</h1>
-                <h2 class="mx-auto mt-2 mb-5 text-fourth">Welcome to my Portfolio.<br/><br/>I am a Game Developer that mainly
+                <h2 class="mx-auto mt-2 mb-5">Welcome to my Portfolio.<br/><br/>I am a Game Developer that mainly
                     focuses on Engine, Graphics and AI Programming</h2>
             </div>
         </div>
@@ -64,16 +66,17 @@
             <div class="col-lg-8">
                 <h2 class="mb-4">Who am I?</h2>
                 <p class="">
-                    I am a student of Master Game Technology.<br/>My Master Thesis is about Navigation Mesh Generation.
+                    I am a student of Master Game Technology.<br/>My Master Thesis is about size extraction in
+                    Navigation Mesh Generation.
                 </p>
                 <div class="row">
                     <div class="col">
                         <i aria-hidden="true" class="fas fa-file-code"></i>
-                        <p class="">C/C++, C#, HLSL, GLSL</p>
+                        <p class="">C/C++, C#, GLSL, HLSL</p>
                     </div>
                     <div class="col">
                         <i aria-hidden="true" class="fas fa-cogs"></i>
-                        <p class="">Visual Studio, CLion, Rider<br/> Unity, Unreal Engine</p>
+                        <p class="">CLion, Rider, Visual Studio, Unity, Unreal Engine</p>
                     </div>
                     <div class="col">
                         <i aria-hidden="true" class="fas fa-project-diagram"></i>
@@ -121,256 +124,88 @@
              tabindex="0">
             <div class="container px-4 px-lg-5">
                 <!-- Featured Project Row-->
-                <a href="Balbino.html" style="text-decoration:none"
-                   class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7">
-                        <img alt="..." class="img-fluid mb-3 mb-lg-0" src="assets/img/Balbino.jpg"/>
-                    </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Balbino</h4>
-                            <p class="mb-2">
-                                Balbino is my homemade game engine.
-                                I made this during my second year at Digital
-                                Arts and Entertainment.
-                                I decided to overhaul it and keep working on it.<br/> <br/>The
-                                engine is written in C++23 and uses Assimp, EnTT, GLI, GLM, mINI, SDL2, SDL2 images,
-                                Vulkan SDK, ImGui... and GitHub as source control.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project Two Row-->
-                <a href="CoL.html" style="text-decoration:none"
-                   class="row gx-0 justify-content-center bg-fourth">
-                    <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/CoL.jpg"/></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4>Child of Lothian</h4>
-                                    <p class="mb-0">
-                                        This was a group project of about 22 students, in which I was the AI
-                                        programmer.
-                                        In this project, we use Unreal Engine 4 C++ for the heavy lifting and
-                                        blueprinting to create connections.
-                                        We used Perforce and Swarm to sync
-                                        our work
-                                        and to make pull requests.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project One Row-->
-                <a href="NOX.html" style="text-decoration:none"
-                   class="row gx-0 mb-5 mb-lg-0 justify-content-center bg-fourth">
-                    <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/NOX.jpg"/></div>
-                    <div class=" col-lg-6">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="">NOX</h4>
-                                    <p class="mb-0">
-                                        This game was one we made for a group project.
-                                        My group existed of four
-                                        artists
-                                        and two programmers,
-                                        of which I was one.<br/>We used Unreal Engine 4.26,
-                                        and we
-                                        programmed in Unreal C++.
-                                        We also used Perforce to synchronize
-                                        everything
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project Two Row-->
-                <a href="SoftwareRayTracer.html" style="text-decoration:none"
-                   class="row gx-0 justify-content-center bg-fourth">
-                    <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/SoftRayTracer.bmp"/>
-                    </div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4>Software Ray Tracer</h4>
-                                    <p class="mb-0">
-                                        In this solo project for school, I made a software ray tracer using
-                                        Visual
-                                        Studio, C++17, SDL2, and SDL2-Image.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project One Row-->
-                <a href="SoftwareRasterizer.html" style="text-decoration:none"
-                   class="row gx-0 mb-5 mb-lg-0 justify-content-center bg-fourth">
-                    <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/SoftRasrerizer.bmp"/>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="">Software Rasterizer</h4>
-                                    <p class="mb-0">
-                                        In this solo project for school, I made a software rasterizer using
-                                        Visual
-                                        Studio, C++17, SDL2, and SDL2-Image.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project Two Row-->
-                <a href="AIProgramming.html" style="text-decoration:none"
-                   class="row gx-0 justify-content-center bg-fourth">
-                    <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/AIProgramming.png"/>
-                    </div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="">AI programming</h4>
-                                    <p class="mb-0">
-                                        In this program, we had a character that had to survive as long as
-                                        possible in a
-                                        zombie apocalypse.
-                                        We programmed the AI to run from house to house and
-                                        see if an
-                                        item lies within it.
-                                        If the AI found an item, it would pick it up,
-                                        validate how
-                                        useful it is
-                                        and take action accordingly.<br/><br/>In this project, I
-                                        used
-                                        C++17.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                <featured-item link="Balbino.html" image="assets/img/Balbino.jpg" title="Balbino">
+                    Balbino is my homemade game engine. I made this during my second year at Digital Arts and
+                    Entertainment. I decided to overhaul it and keep working on it.<br/> <br/>The engine is written in
+                    C++23 and uses Assimp, EnTT, GLI, GLM, mINI, SDL2, SDL2 images, Vulkan SDK, ImGui... and GitHub as
+                    source control.
+                </featured-item>
+                <left-item link="CoL.html" image="assets/img/CoL.jpg" title="Child of Lothian">
+                    This was a group project of about 22 students, in which I was the AI programmer. In this project, we
+                    use Unreal Engine 4 C++ for the heavy lifting and blueprinting to create connections. We used
+                    Perforce and Swarm to sync our work and to make pull requests.
+                </left-item>
+                <right-item link="CoL.html" image="assets/img/nox.jpg" title="Nox">
+                    This game was one we made for a group project. My group existed of four artists and two programmers,
+                    of which I was one.<br/>We used Unreal Engine 4.26, and we programmed in Unreal C++. We also used
+                    Perforce to synchronize everything
+                </right-item>
+                <left-item link="SoftwareRayTracer.html" image="assets/img/SoftRayTracer.bmp"
+                           title="Software Ray Tracer">
+                    In this solo project for school, I made a software ray tracer using Visual Studio, C++17, SDL2, and
+                    SDL2-Image.
+                </left-item>
+                <right-item link="SoftwareRasterizer.html" image="assets/img/SoftRasrerizer.bmp"
+                            title="Software Rasterizer">
+                    In this solo project for school, I made a software rasterizer using Visual Studio, C++17, SDL2, and
+                    SDL2-Image.g
+                </right-item>
+                <left-item link="AIProgramming.html" image="assets/img/aiprogramming.png"
+                           title="ai programming">
+                    in this program, we had a character that had to survive as long as possible in a zombie apocalypse.
+                    we programmed the ai to run from house to house and see if an item lies within it. if the ai found
+                    an item, it would pick it up, validate how useful it is and take action accordingly.<br/><br/>in
+                    this project, i used c++17.
+                </left-item>
             </div>
         </div>
-        <!-- Blogs -->
+        <!-- blogs -->
         <div aria-labelledby="blogs-tab" class="tab-pane fade" id="blogs-tab-pane" role="tabpanel" tabindex="0">
             <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="justify-content-center"><p class="text-warning">Blogs are work in progress</p></div>
-                <a href="GART1.html" style="text-decoration:none"
-                   class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7">
-                        <img alt="..." class="img-fluid mb-3 mb-lg-0" src="assets/img/Blogs/GART/PlaneRay.bmp"/>
-                    </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Tracing the Geometric Algebra Ways</h4>
-                            <p class="mb-2">
-                                This blog goes over the basics of Geometric Algebra and creates a basic
-                                ray tracer with it.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <a href="GANM1.html" style="text-decoration:none">
-                    <div class="row gx-0 justify-content-center bg-fourth">
-                        <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/AIProgramming.png"/>
-                        </div>
-                        <div class="col-lg-6 order-lg-first">
-                            <div class="text-center h-100 project">
-                                <div class="d-flex h-100">
-                                    <div class="project-text w-100 my-auto text-center text-lg-right">
-                                        <h4 class="">Navigating in Geometric Algebra</h4>
-                                        <p class="mb-0">
-                                            This blog post is about Navigation Meshes and AI navigation in games,
-                                            using Geometric Algebra
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                <div class="justify-content-center"><p class="text-warning">blogs are a work in progress</p></div>
+                <featured-item link="gART1.html" image="assets/img/Blogs/GART/PlaneRay.bmp"
+                               title="Tracing the Geometric Algebra Ways">
+                    This blog goes over the basics of Geometric Algebra and creates a basic ray tracer with it.
+                </featured-item>
+                <right-item link="GANM1.html" image="assets/img/AIProgramming.png"
+                            title="Navigating in Geometric Algebra">
+                    This blog post is about Navigation Meshes and AI navigation in games, using Geometric Algebra
+                </right-item>
             </div>
         </div>
         <!-- Competitions -->
         <div aria-labelledby="competitions-tab" class="tab-pane fade" id="competitions-tab-pane" role="tabpanel"
              tabindex="0">
             <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7">
-                        <img alt="..." class="img-fluid mb-3 mb-lg-0"
-                             src="assets/img/vlaamse programeerwedstrijd 2019.jpg"/>
-                    </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Flemish programming contest</h4>
-                            <p class=" mb-2">
-                                In this contest, we had to be in a team of three. You got five problems, and you had
-                                to
-                                solve them using programming. The twist is that only one screen, keyboard and mouse
-                                were
-                                allowed. Only one person could do the programming. The other two had to figure out
-                                how
-                                to solve the problem and tell the typing programmer what to do.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project One Row-->
-                <div class="row gx-0 mb-0 justify-content-center bg-fourth">
-                    <div class="col-lg-6"><img alt="..." class="img-fluid" src="assets/img/RobotContest.png"/></div>
-                    <div class="col-lg-6 order-lg-first">
-                        <div class="text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text">Robocontest at VIVES</h4>
-                                    <p class=" mb-2">
-                                        The goal was to follow a white line with a small autonomous car via one or
-                                        more
-                                        optical sensor(s).<br/><br/>Because of some mechanical problems, we had to
-                                        rewrite the entire program one minute before the start of the competition.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <featured-item link="" image="assets/img/vlaamse programeerwedstrijd 2019.jpg"
+                               title="Flemish Programming Contest 2019">
+                    In this contest, we had to be in a team of three. You got five problems, and you had to solve them
+                    using programming. The twist is that only one screen, keyboard and mouse were allowed. Only one
+                    person could do the programming. The other two had to figure out how to solve the problem and tell
+                    the typing programmer what to do.
+                </featured-item>
+                <left-item link="" image="assets/img/RobotContest.png"
+                           title="Robocontest at VIVES">
+                    The goal was to follow a white line with a small autonomous car via one or more optical
+                    sensor(s).<br/><br/>Because of some mechanical problems, we had to rewrite the entire program one
+                    minute before the start of the competition.
+                </left-item>
             </div>
         </div>
         <!-- Jobs -->
         <div aria-labelledby="jobs-tab" class="tab-pane fade" id="jobs-tab-pane" role="tabpanel" tabindex="0">
             <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7">
-                        <img alt="..." class="img-fluid mb-3 mb-lg-0" src="https://unity.com/logo-unity-web.png"/>
-                    </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Internship Unity Technologies</h4>
-                            <p class=" mb-2">
-                                I had an internship at Unity Technologies back in Q1 and Q2 of 2022. I was part of
-                                the
-                                texture
-                                API team.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <featured-item image="https://unity.com/logo-unity-web.png"
+                               title="Internship Unity Technologies">
+                    I had an internship at Unity Technologies back in Q1 and Q2 of 2022. I was part of the texture API
+                    team.
+                </featured-item>
             </div>
         </div>
     </div>
 </section>
-<div id="footer"></div>
+<footer-nav>
+</footer-nav>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/NavBar.js"></script>

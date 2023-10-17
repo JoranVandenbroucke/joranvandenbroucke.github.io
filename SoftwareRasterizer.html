@@ -6,37 +6,40 @@
     <meta name="description" content="Software Rasterizer"/>
     <meta name="author" content="Joran Vandenbroucke"/>
     <title>Software Rasterizer</title>
+    <link rel="canonical" href="https://joranvandenbroucke.github.io/SoftwareRasterizer">
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <!-- Core theme CSS (includes Bootstrap)-->
 
-    <link rel="stylesheet" title="light code" href="highlightjs/styles/intellij-light.min.css">
-    <link rel="alternate stylesheet" title="dark code" href="highlightjs/styles/srcery.min.css" disabled>
+    <link rel="stylesheet" title="light code" href="js/highlightjs/styles/intellij-light.min.css">
+    <link rel="alternate stylesheet" title="dark code" href="js/highlightjs/styles/srcery.min.css" disabled>
 
-    <script src="highlightjs/highlight.min.js"></script>
+    <script src="js/highlightjs/highlight.min.js"></script>
     <script src="js/ThemeSwitcher.js"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/scroll.css" rel="stylesheet"/>
-    <link href="css/myStyle.css" rel="stylesheet"/>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-    </script>
-    <script>
-        $(function () {
-            $("#header").load("header.html");
-            $("#footer").load("footer.html");
-        });
-    </script>
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/myStyle.css">
+
+    <script src="js/scripts.js"></script>
+    <script src="js/CustomHTML.js"></script>
+    <script src="js/ThemeSwitcher.js"></script>
+    <script src="js/highlightjs/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
+    <script src="https://unpkg.com/showdown-katex@latest/dist/showdown-katex.min.js"></script>
+    <link rel="stylesheet" title="light code" href="js/highlightjs/styles/intellij-light.min.css">
+    <link rel="alternate stylesheet" title="dark code" href="js/highlightjs/styles/srcery.min.css" disabled>
 </head>
-<body>
-<div id="header"></div>
+<body onload="loadMarkDown('assets/markdown/SoftwareRasterizer/SoftwareRasterizer.md')">
+<header-nav>
+</header-nav>
+
 <!-- Masthead-->
 <header class="mastheadRas">
     <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
@@ -92,118 +95,20 @@
         </button>
     </div>
 </section>
-<section>
-    <div class="gx-0 mb-0 justify-content-center bg-fourth">
+<section class="projects-section">
+    <div class="gx-0 mb-0 justify-content-center">
         <div class="container px-5 py-2">
             <div class="h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto">
-                        <h3 class="text-center">Explanation</h3>
-                        <p>
-                            The software rasterizer is a 2nd-year Game Developer assignment where each student makes
-                            their rasterizer
-                            using Visual Studio, C++, SDL2, SDL2_image and Perforce. The assignment stated that we
-                            should be able to
-                            render the vehicle (3rd image) using a specular workflow, a diffuse map, a specular map, a
-                            glossy map and a
-                            normal map.
-                        </p>
-                        <p>I added an extra model</p>
+                <div class="d-flex h-100 bg-fourth">
+                    <div class="project-text w-100 my-auto" id="output">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section>
-    <div class="gx-0 mb-0 justify-content-center">
-        <div class="container px-5 py-2">
-            <div class="h-100 project">
-                <div class="d-flex h-100">
-                    <div class="project-text w-100 my-auto">
-                        <h3 class="text-center">Rasterization</h3>
-                        <p>
-                            My rasterization technique was inspired by how I implemented my ray-triangle
-                            intersection in the <a href="SoftwareRayTracer.html">Software Ray Tracer</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="gx-0 mb-0 justify-content-center">
-        <div class="container px-5 py-2">
-            <pre><code class="language-cpp">void Rasterize( V2F v0, V2F v1, V2F v2, bool showDepth, const Texture* pDiffuse, const Texture* pNormal, const Texture* pSpecular, const Texture* pGloss )const
-{
-    if( !CullingAndToRasterSpace( v0, v1, v2, m_Width, m_Height ) )
-    	return;
-
-    float BA[6];
-    float CB[6];
-    float AC[6];
-
-    //convert transformed vertices into plucker coordinates
-    PointsToPlucker( v1.position.xyz, v0.position.xyz, BA );
-    PointsToPlucker( v2.position.xyz, v1.position.xyz, CB );
-    PointsToPlucker( v0.position.xyz, v2.position.xyz, AC );
-
-    //calculate outer X and Y positions
-    int minX = (int) std::floor( std::max( std::min( std::min( v0.position.x, v1.position.x ), v2.position.x ), 0.f ) );
-    int maxX = (int) std::ceil( std::min( std::max( std::max( v0.position.x, v1.position.x ), v2.position.x ), float( m_Width - 1 ) ) ) + 1;
-    int minY = (int) std::floor( std::max( std::min( std::min( v0.position.y, v1.position.y ), v2.position.y ), 0.f ) );
-    int maxY = (int) std::ceil( std::min( std::max( std::max( v0.position.y, v1.position.y ), v2.position.y ), float( m_Height - 1 ) ) ) + 1;
-
-    for( int y = minY; y < maxY; ++y )
-    {
-        for( int x = minX; x < maxX; ++x )
-        {
-            float2 point{ float( x ), float( y ) };
-            float viewPoint[6];
-            RayToPlucker( point, { 0.f, 0.f, -1.f }, viewPoint );
-            
-            //look where the current pixel is compared to the triangle, the outomst is also our barycentric coordinates
-            float w0 = Side( viewPoint, CB );
-            float w1 = Side( viewPoint, AC );
-            float w2 = Side( viewPoint, BA );
-
-            if( w0 >= 0 && w1 >= 0 && w2 >= 0 )
-            {
-                // normalizing the barycentric coordinates
-                float totalW = w0 + w1 + w2;
-                w0 /= totalW;
-                w1 /= totalW;
-                w2 /= totalW;
-                
-                //depth test
-                const float interpolatedZ = 1.f / ( w0 / v0.position.z + w1 / v1.position.z + w2 / v2.position.z );
-                if( interpolatedZ > 1 || interpolatedZ > m_pDeptheBuffer[y * m_Width + x] || interpolatedZ < 0 )
-                    continue;
-                
-                const float interpolatedW = 1.f / ( w0 / v0.position.w + w1 / v1.position.w + w2 / v2.position.w );
-                
-                //propper interpolation using barycentric coordinates
-                V2F i{};
-                i.position = ( v0.position * w0 / v0.position.w + v1.position * w1 / v1.position.w + v2.position * w2 / v2.position.w ) * interpolatedW;
-                i.worldPosition = ( v0.worldPosition * w0 / v0.position.w + v1.worldPosition * w1 / v1.position.w + v2.worldPosition * w2 / v2.position.w ) * interpolatedW;
-                i.normal = ( v0.normal * w0 / v0.position.w + v1.normal * w1 / v1.position.w + v2.normal * w2 / v2.position.w ) * interpolatedW;
-                i.tangent = ( v0.tangent * w0 / v0.position.w + v1.tangent * w1 / v1.position.w + v2.tangent * w2 / v2.position.w ) * interpolatedW;
-                i.color = ( v0.color * w0 / v0.position.w + v1.color * w1 / v1.position.w + v2.color * w2 / v2.position.w ) * interpolatedW;
-                i.uv = ( v0.uv * w0 / v0.position.w + v1.uv * w1 / v1.position.w + v2.uv * w2 / v2.position.w ) * interpolatedW;
-                
-                Normalize( i.normal );
-                Normalize( i.tangent );
-                
-                m_pBackBuffer[y * m_Width + x] = PixelShading( i, pDiffuse, pNormal, pSpecular, pGloss );
-                m_pDeptheBuffer[y * m_Width + x] = interpolatedZ;
-            }
-        }
-    }
-}</code></pre>
-    </div>
-    </div>
-</section>
-
-<div id="footer"></div>
+<footer-nav>
+</footer-nav>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

@@ -6,8 +6,7 @@
 //
 // Scripts
 //
-function loadNavBar()
-{
+window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
     const navbarShrink = function () {
@@ -50,7 +49,4 @@ function loadNavBar()
             }
         });
     });
-}
-window.addEventListener('DOMContentLoaded', event => {
-    loadNavBar();
 });

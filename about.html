@@ -2,34 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Portfolio of Joran Vandenbroucke"/>
     <meta name="author" content="Joran Vandenbroucke"/>
+    <meta name="description" content="Curriculum Vitae of Joran Vandenbroucke"/>
+    <meta name="keywords" content="cv, Curriculum Vitale, game developer, engine programming, graphics programming, AI programming, portfolio, Joran, Vandenbroucke, Joran Vandenbroucke">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="Curriculum Vitae of Joran Vandenbroucke">
+    <meta name="twitter:image" content="https://joranvandenbroucke.github.io/path/to/image.jpg">
+    <meta name="twitter:title" content="Curriculum Vitae of Joran Vandenbroucke">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta property="og:description" content="Joran Vandenbroucke is a Game Developer that mainly focuses on Engine, Graphics and AI Programming. This is his portfolio website.">
+    <meta property="og:image" content="https://joranvandenbroucke.github.io/assets/img/ProfilePicture.png">
+    <meta property="og:title" content="Curriculum Vitae of Joran Vandenbroucke">
+    <meta property="og:url" content="https://joranvandenbroucke.github.io/about.html">
     <title>Joran Vandenbroucke</title>
+    <link rel="canonical" href="https://joranvandenbroucke.github.io/about">
+
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/scroll.css" rel="stylesheet"/>
-    <link href="css/myStyle.css" rel="stylesheet"/>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-    </script>
-    <script>
-        $(function () {
-            $("#header").load("header.html");
-            $("#footer").load("footer.html");
-        });
-    </script>
+
+    <link rel="stylesheet" href="css/scroll.css">
+    <link rel="stylesheet" href="css/myStyle.css">
+
+    <script src="js/scripts.js"></script>
+    <script src="js/CustomHTML.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
+    <script src="https://unpkg.com/showdown-katex@latest/dist/showdown-katex.min.js"></script>
 </head>
-<body>
-<div id="header"></div>
+<body onload="loadMarkDown('assets/markdown/CV/cv.md')">
+<header-nav>
+</header-nav>
 <!-- Masthead-->
 <header class="masthead">
     <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
@@ -50,173 +56,21 @@
     </a>
 </header>
 <!-- About-->
-<section class="text-center about-section" id="about">
-    <div class="container px-5">
-        <div class="gx-0 mb-0">
+<section class="projects-section">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
             <div class="h-100 project">
-                <div class="d-flex h-100 mb-0">
-                    <div class="mb-4 mx-5 project-text w-100 my-auto text-left">
-                        <h2 class="text-center">Profile</h2>
-                        <div class="text-center container px-5">
-                            <img class="rounded-circle w-25 h-25 mb-5" src="assets/img/ProfilePicture.png" alt="..."/>
-                        </div>
-                        <p class="mb-0 text-second">I am a student of Master Game Technologies. For this master, I
-                            research the efficiency of Geometric Algebra in a Ray Tracer.</p>
-                        <p class="mb-0 text-second">I am currently looking for a job that I can start in July or August
-                            2023. I focus on low-level programming, especially graphics programming (Vulkan and OpenGL)
-                            and low-level AI implementations (nav mesh, octree ...).</p>
-                        <div class="container px-5">
-                            <div class="row gx-5 justify-content-center text-start">
-                                <div class="col-8">
-                                    <h2 class="mt-4 text-center">Technical Skills</h2>
-                                    <p class="mb-0 text-second text-center">Software that I am familiar with
-                                        includes:</p>
-                                    <hr/>
-                                    <div class="mx-4">
-                                        <ul class="row">
-                                            <li class="col">Visual Studio</li>
-                                            <li class="col">CLion</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Rider</li>
-                                            <li class="col">RenderDoc</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Nsight Graphics</li>
-                                            <li class="col">NVIDIA FX Composer 2.5</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Unity</li>
-                                            <li class="col">Unreal Engine 4</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Trello</li>
-                                            <li class="col">Jira</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Git/GitHub</li>
-                                            <li class="col">Mercurial</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Perforce</li>
-                                            <li class="col">Jenkins</li>
-                                        </ul>
-                                        <hr/>
-                                        <ul class="row">
-                                            <li class="col">Blender</li>
-                                            <li class="col">3DS MAX</li>
-                                        </ul>
-                                        <ul class="row">
-                                            <li class="col">Substance Painter</li>
-                                            <li class="col">xNormal</li>
-                                        </ul>
-                                    </div>
-                                    <hr/>
-
-                                    <p class="mb-0 text-second text-start">Excellent understanding of <b
-                                            class="text-first">C++</b>,
-                                        <b class="text-first">C#</b>, <b class="text-first">Unreal C++</b>, <b
-                                                class="text-first">Unreal Blueprints</b> and <b class="text-first">Unity
-                                            C#</b>.</p>
-                                    <p class="mb-0 text-second">Experience with <b class="text-first">OpenGL</b>, <b
-                                            class="text-first">Vulkan</b> and <b class="text-first">DirectX11</b>.
-                                    </p>
-                                    <hr/>
-
-                                    <h2 class="text-center">Education</h2>
-                                    <h4>Breda Universety of Applied Sciences (2022)</h4>
-                                    <p class="mb-0 text-second">Master Game Technologies</p>
-                                    <hr/>
-                                    <h4>Howest University of Applied Sciences (2018 &ndash; 2022)</h4>
-                                    <p class="mb-0 text-second">Digital Arts and Entertainment: three-year full-time
-                                        Bachelor
-                                        degree, major game development</p>
-                                    <hr/>
-                                    <h4>Prizma Campus VTI Izegem (2016 &ndash; 2018)</h4>
-                                    <p class="mb-0 text-second">Electricity Electronics</p>
-                                    <hr/>
-                                    <h4>Vrij Technisch Instituut Roeselare - Scholengroep Sint-Michiel (2013 &ndash;
-                                        2016)</h4>
-                                    <p class="mb-0 text-second">Electricity Electronics</p>
-                                    <hr/>
-                                    <h4>SBSO Institute Sterrebos Campus To Star OV4 ASS (GO! SBSO Ter Sterre) (2011 -
-                                        2013)</h4>
-                                    <p class="mb-0 text-second">Modern sciences</p>
-                                    <hr/>
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="text-center">Employment</h2>
-                        <table class="mx-auto text-start">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <p class="mx-2 text-first">Unity Technologies</p>
-                                    <hr class="mx-2"/>
-                                    <p class="mx-2 text-first">Texture Team</p>
-                                    <hr class="mx-2"/>
-                                    <p class="mx-2 text-first">2021-2022</p>
-                                </td>
-                                <td>
-                                    <p class="px-2 text-second">Internship<br/>This was a four-month internship at Unity
-                                        Technologies where I was part of the Texture team who maintained the high lever
-                                        Texture API. This internship started the first week of February 2022 and ended
-                                        the first week of June 2022.</p>
-                                </td>
-                            <tr>
-                                <td>
-                                    <p class="mx-2 text-first">AZ Delta</p>
-                                    <hr class="mx-2"/>
-                                    <p class="mx-2 text-first">Onsite IT support</p>
-                                    <hr class="mx-2"/>
-                                    <p class="mx-2 text-first">2019-2022</p>
-                                </td>
-                                <td>
-                                    <p class="px-2 text-second">This was a student job from the beginning of Julie until
-                                        the end of August at a hospital.<br/>
-                                        If a doctor, nurse, surgent&hellip; has an IT problem and the first line
-                                        helpdesk cannot solve it. We had to go to the person and fix it on the spot.</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="mx-2 text-first">AZ Delta</p>
-                                    <hr class="mx-2"/>
-                                    <p class="mx-2 text-first">Hospital kitchen</p>
-                                    <hr class="mx-2"/>
-                                    <p class="mx-2 text-first">2016-2019</p>
-                                </td>
-                                <td>
-                                    <p class="px-2 text-second">This was a student job at the weekends at a
-                                        hospital.<br/> Here I clean dishes from patients, employees and visitors.</p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <p class="mb-0 text-first">&nbsp;</p>
-                        <h2 class="text-center">Hobbies and interests</h2>
-                        <p class="my-0 text-start text-second">
-                            I like programming. Just the feeling that you get when you hit the build button, and it has
-                            no errors. Even better, you run your program, and it works as intended.
-                            <br/>
-                            Besides programming, I like doing 3D modelling; it is visually pleasing. I also love to play
-                            some games now and then, especially if it is VR, AR or XR. I also like it when it has a
-                            unique input system like a Tobii Eye Tracker, Leap Motion or the Xbox Kinect.
-                            <br/>
-                            Outside the gaming world, I also like to do some sports. I have been bouldering for a year
-                            now. Besides bouldering, you can also find me taking a swim, or you see me on a Sunday
-                            morning running along the road while listening to "Zombies, Run!". The majority of the time,
-                            I have music playing. The genres I listen to can be of all sorts, ranging from classical
-                            music to heavy metal; all genres are welcome.</p>
-                        <div id="ConnectiveDocSignExtentionInstalled" data-extension-version="1.0.4">&nbsp;</div>
-                    </div>
+                <div class="d-flex h-100">
+                    <div class="project-text w-100 my-auto text-center" id="output"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div id="footer"></div>
+
+<footer-nav>
+</footer-nav>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/NavBar.js"></script>
