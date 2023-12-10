@@ -1,11 +1,13 @@
 ---
 title: 'Navigating in Geometric Algebra'
+subTitle: 'A blog post about Navigation Meshes and AI navigation in games, using Geometric Algebra'
 pubDate: !!str 2022-02-12
 description: 'A blog post about Navigation Meshes and AI navigation in games, using Geometric Algebra'
-author: 'Joran Vandenbroucke'
 image:
-  url: 'https://joranvandenbroucke.github.io/assets/img/ProfilePicture.png'
+  url: '/assets/img/Blogs/GART/PlaneRay.bmp'
   alt: ';('
+author: 'Joran Vandenbroucke'
+authorPP: '/assets/img/ProfilePicture.png'
 tags: ["Applied Geometric Algebra", "Geometric Algebra", "AI", "Nav Mesh", "NavMesh", "Navigation Mesh"]
 ---
 

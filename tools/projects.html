@@ -1,14 +1,23 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Software Rasterizer"/>
-    <meta name="author" content="Joran Vandenbroucke"/>
-    <title>Software Rasterizer</title>
-    <link rel="canonical" href="https://joranvandenbroucke.github.io/SoftwareRasterizer">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{Title}</title>
+    <meta name="description" content="{Subtitle}">
+    <meta property="og:title" content="{Title}">
+    <meta property="og:description" content="{Subtitle}">
+    <meta property="og:image" content="{Image}">
+    <meta property="og:url" content="{URL}">
+    <meta name="twitter:title" content="{Title}">
+    <meta name="twitter:description" content="{Subtitle}">
+    <meta name="twitter:image" content="{Image}">
+    <meta name="twitter:url" content="{URL}">
+    <meta name="author" content="{Author}"/>
+    <meta name="keywords" content="{KeyWords}">
+    <link rel="canonical" href="{URL}">
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -17,35 +26,34 @@
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <!-- Core theme CSS (includes Bootstrap)-->
 
-    <script src="js/highlightjs/highlight.min.js"></script>
-    <script src="js/ThemeSwitcher.js"></script>
+    <script src="/js/highlightjs/highlight.min.js"></script>
+    <script src="/js/ThemeSwitcher.js"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="css/scroll.css">
-    <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/myStyle.css">
 
-    <script src="js/scripts.js"></script>
-    <script src="js/CustomHTML.js"></script>
-    <script src="js/ThemeSwitcher.js"></script>
-    <script src="js/highlightjs/highlight.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/CustomHTML.js"></script>
+    <script src="/js/ThemeSwitcher.js"></script>
+    <script src="/js/highlightjs/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.0.3/dist/showdown.min.js"></script>
     <script src="https://unpkg.com/showdown-katex@latest/dist/showdown-katex.min.js"></script>
-    <link rel="stylesheet" title="light code" href="js/highlightjs/styles/intellij-light.min.css">
-    <link rel="alternate stylesheet" title="dark code" href="js/highlightjs/styles/srcery.min.css" disabled>
-</head>
-<body onload="loadMarkDown('assets/markdown/SoftwareRasterizer/SoftwareRasterizer.md')">
+    <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
+    <link rel="stylesheet" title="light code" href="/js/highlightjs/styles/intellij-light.min.css">
+    <link rel="alternate stylesheet" title="dark code" href="/js/highlightjs/styles/srcery.min.css" disabled>
+<body onload="loadMarkDown('{MarkdownDir}')">
 <header-nav>
 </header-nav>
-<!-- Masthead-->
-<header class="mastheadRas">
+<header class="mastheadGANM">
     <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex">
             <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Software Rasterizer</h1>
+                <h1 class="mx-auto my-0 text-uppercase">{Title}</h1>
             </div>
         </div>
     </div>
-    <a class="scrolldown-wrapper" href="#start">
+    <a class="scrolldown-wrapper" href="#about">
         <div class="scrolldown">
             <svg height="40" width="40">
                 <circle class="scrolldown-p1" cx="0" cy="0" r="4"/>
@@ -54,32 +62,18 @@
         </div>
     </a>
 </header>
-<section class="portfolio-section " id="start">
+<section class="portfolio-section bg-fifth" id="Start">
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            {Carousel_Indicators}
         </div>
 
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/img/Software%20Rasterizer/4_BackbufferRender.gif" alt="view 1" class="mx-auto d-block">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/Software%20Rasterizer/3_BackbufferRender.bmp" alt="view 2" class="mx-auto d-block">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/Software%20Rasterizer/2_BackbufferRender.bmp" alt="view 3" class="mx-auto d-block">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/Software%20Rasterizer/1_BackbufferRender.bmp" alt="view 4" class="mx-auto d-block">
-            </div>
+           {Carousel_Inner}
         </div>
 
         <!-- Left and right controls/icons -->
@@ -96,8 +90,7 @@
         <div class="container px-5 py-2">
             <div class="h-100 project">
                 <div class="d-flex h-100 bg-fourth">
-                    <div class="project-text w-100 my-auto" id="output">
-                    </div>
+                    <div class="project-text w-100 my-auto" id="output"></div>
                 </div>
             </div>
         </div>
@@ -105,10 +98,11 @@
 </section>
 <footer-nav>
 </footer-nav>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="js/NavBar.js"></script>
+<script src="/js/NavBar.js"></script>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

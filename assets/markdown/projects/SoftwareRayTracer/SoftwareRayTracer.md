@@ -1,3 +1,22 @@
+---
+title: 'Software Ray Tracer'
+subTitle: 'Software Ray Tracer'
+pubDate: !!str 2022-02-12
+description: 'In this solo project for school, I made a software ray tracer using Visual Studio, C++17, SDL2, and SDL2-Image.'
+image:
+  url: '/assets/img/projects/SoftRayTracer.bmp'
+  alt: ';('
+author: 'Joran Vandenbroucke'
+authorPP: '/assets/img/ProfilePicture.png'
+tags: ["Soft", "software", "say", "tracer", "tracing", "raytracing", "raytracer", "cpp", "c++", "SDL"]
+carouselImages: [
+  "/assets/img/projects/Softawre%20Ray%20Tracer/1_BackbufferRender.bmp",
+  "/assets/img/projects/Softawre%20Ray%20Tracer/2_BackbufferRender.bmp",
+  "/assets/img/projects/Softawre%20Ray%20Tracer/3_BackbufferRender.bmp",
+  "/assets/img/projects/Softawre%20Ray%20Tracer/4_BackbufferRender.bmp",
+  "/assets/img/projects/Softawre%20Ray%20Tracer/5_BackbufferRender.gif",
+]
+---
 ## About
 
 The software ray tracer is a 2nd-year Game Developer assignment where each student makes their ray tracer using Visual Studio, C++, SDL2, SDL2_image and Perforce. The assignment says that there need to be 2 scenes, 1 scene with 3 triangles rotating and having a different cull mode. We also needed to have 3 dielectric spheres, with a roughness of 0, 0.5 and 1 respectively and 3 metallic spheres, with a roughness of 0, 0.5 and 1 respectively. The second scene needed to have the low poly Stanford bunny provided by the teacher. Both scenes needed to have a directional light and at least 2 point lights with real-time direct hard shadows.

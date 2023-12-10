@@ -1,4 +1,22 @@
-## Explanation
+---
+title: 'Software Rasterizer'
+subTitle: 'Software Rasterizer'
+pubDate: !!str 2022-02-12
+description: 'In this solo project for school, I made a software rasterizer using Visual Studio, C++17, SDL2, and SDL2-Image.'
+image:
+  url: '/assets/img/projects/SoftRasterizer.bmp'
+  alt: ';('
+author: 'Joran Vandenbroucke'
+authorPP: '/assets/img/ProfilePicture.png'
+tags: ["Soft", "software", "rasterizer", "rasterization", "cpp", "c++", "SDL"]
+carouselImages: [
+  "/assets/img/projects/Software%20Rasterizer/1_BackbufferRender.bmp",
+  "/assets/img/projects/Software%20Rasterizer/2_BackbufferRender.bmp",
+  "/assets/img/projects/Software%20Rasterizer/3_BackbufferRender.bmp",
+  "/assets/img/projects/Software%20Rasterizer/4_BackbufferRender.gif",
+]
+---
+## About
 
 The software rasterizer is a 2nd-year Game Developer assignment where each student makes their rasterizer using Visual Studio, C++, SDL2, SDL2_image and Perforce. The assignment stated that we should be able to render the vehicle (3rd image) using a specular workflow, a diffuse map, a specular map, a glossy map and a normal map.
 

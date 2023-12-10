@@ -12842,94 +12842,20 @@ body {
     height: auto;
     min-height: 35rem;
     padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/Banner.png"), no-repeat, scroll center;
     background-size: cover;
 }
 
-.mastheadBal {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/Balbino.jpg") no-repeat scroll center;
-    background-size: cover;
+.masthead::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%);
 }
 
-.mastheadNOX {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/NOX.jpg") no-repeat scroll center;
-    background-size: cover;
-}
-
-.mastheadRay {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/SoftRayTracer.bmp") no-repeat scroll center;
-    background-size: cover;
-}
-
-.mastheadRas {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/SoftRasterizer.bmp") no-repeat scroll center;
-    background-size: cover;
-}
-
-.mastheadAIp {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/AIProgramming.png") no-repeat scroll center;
-    background-size: cover;
-}
-
-.mastheadSpl {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/Splintered.png") no-repeat scroll center;
-    background-size: cover;
-}
-
-.mastheadCoL {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/CoL.jpg") no-repeat scroll center;
-    background-size: cover;
-}
-
-.mastheadGART,
-.mastheadGANM {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 35rem;
-    padding: 15rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 95%, var(--fifth-color) 100%), url("../assets/img/Balbino.jpg") no-repeat scroll center;
-    background-size: cover;
-}
-
-.masthead h1, .masthead .h1,
-.mastheadRas h1, .mastheadRas .h1,
-.mastheadRay h1, .mastheadRay .h1 {
+.masthead h1, .masthead .h1 {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -12938,45 +12864,11 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    position: relative;
 }
 
-.mastheadBal h1, .mastheadBal .h1,
-.mastheadNOX h1, .mastheadNOX .h1,
-.mastheadAIp h1, .mastheadAIp .h1,
-.mastheadSpl h1, .mastheadSpl .h1,
-.mastheadCoL h1, .mastheadCoL .h1 {
-    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    letter-spacing: 0.8rem;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1.0) 0%, rgba(255, 255, 255, 0.1) 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.mastheadGART h1, .mastheadGART .h1,
-.mastheadGANM h1, .mastheadGANM .h1 {
-    font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-    letter-spacing: 0.8rem;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1.0) 0%, rgba(255, 255, 255, 0.1) 33%, rgba(255, 255, 255, 1.0) 34%, rgba(255, 255, 255, 0.1) 63%, rgba(255, 255, 255, 1.0) 64%, rgba(255, 255, 255, 0.1) 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.masthead h2, .masthead .h2,
-.mastheadBal h2, .mastheadBal .h2,
-.mastheadNOX h2, .mastheadNOX .h2,
-.mastheadRay h2, .mastheadRay .h2,
-.mastheadRas h2, .mastheadRas .h2,
-.mastheadAIp h2, .mastheadAIp .h2,
-.mastheadSpl h2, .mastheadSpl .h2,
-.mastheadCoL h2, .mastheadCoL .h2,
-.mastheadGART h2, .mastheadGART .h2,
-.mastheadGANM h2, .mastheadGANM .h2 {
+.masthead h2, .masthead .h2 {
+    position: relative;
     max-width: 20rem;
     font-size: 1rem;
     color: var(--fourth-color);
@@ -13099,10 +12991,9 @@ body {
 
 .signup-section {
     padding: 10rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/Sponza_signup.png") no-repeat scroll center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("/assets/img/Sponza_signup.png") no-repeat scroll center;
     background-size: cover;
 }
-
 .signup-section .form-signup input {
     box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
     padding: 1.25rem 2rem;
@@ -13169,4 +13060,13 @@ img[src$="#avatar"] {
     margin: 0 auto;
     border-radius: 50%;
     max-width: 50%;
+}
+
+img[alt=Brain] {
+    width: 25% !important;
+    height: 25% !important;
+}
+
+img[alt=NodeExcample] {
+    width: 50% !important;
 }
