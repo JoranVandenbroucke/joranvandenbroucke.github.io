@@ -4,7 +4,7 @@ subTitle: 'A blog post about Geometric Algebra and Ray Tracing'
 pubDate: !!str 2022-11-21
 description: 'This a blog that explores the world of geometric algebra using ray tracing'
 image:
-  url: '/assets/img/Blogs/GART/PlaneRay.bmp'
+  url: '/assets/img/blogs/GART/PlaneRay.bmp'
   alt: ';('
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'

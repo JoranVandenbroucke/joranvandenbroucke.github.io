@@ -4,7 +4,7 @@ subTitle: 'A blog post about Navigation Meshes and AI navigation in games, using
 pubDate: !!str 2022-02-12
 description: 'A blog post about Navigation Meshes and AI navigation in games, using Geometric Algebra'
 image:
-  url: '/assets/img/Blogs/GART/PlaneRay.bmp'
+  url: '/assets/img/blogs/GART/PlaneRay.bmp'
   alt: ';('
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'
