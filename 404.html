@@ -23,17 +23,38 @@
 
 
     <script>
-        fetch(githubRepoURL, { method: 'HEAD' })
-  .then(response => {
-    if (response.ok) {
-      window.location.href = githubRepoURL;
-    } else {
-      console.log(`GitHub repository ${githubRepoURL} not found.`);
-    }
-  })
-  .catch(error => {
-    console.error('Error checking GitHub repository:', error);
-  });
+        function loadGitHubRepoFromUrl() {
+            // Get the URL and remove query parameters
+            let url = window.location.href.split('?')[0];
+
+            // Get the last part of the URL
+            const page = url.split('/').pop();
+
+            // Check if the page name is not empty
+            if (page.trim() === '') {
+                console.log('Invalid page name.');
+                return;
+            }
+
+            // Construct the GitHub repository URL
+            const githubRepoUrl = `https://github.com/JoranVandenbroucke/${page}`;
+
+            // Check if the repository exists
+            fetch(githubRepoUrl)
+                .then(response => {
+                    if (response.ok) {
+                        console.log(`Repository ${page} exists. Loading...`);
+                        window.location.href = githubRepoUrl; // Redirect to the GitHub repository
+                    } else {
+                        console.log(`Repository ${page} not found.`);
+                    }
+                })
+                .catch(error => console.error('Error checking repository:', error));
+        }
+
+        // Call the function when the page loads
+        loadGitHubRepoFromUrl();
+
     </script>
 </head>
 <body>

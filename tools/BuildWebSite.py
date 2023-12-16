@@ -52,18 +52,18 @@ def extract_document_data(file_content, file):
         return None
 
 
-def generate_html_page(document):
+def generate_html_page(document, fileName):
     # read template file
     template = ""
-    markdown_url = ""
+    markdown_url = 'https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main'
     if "blogs" in document['FileName']:
         with open('tools/blogs.html', 'r') as template_file:
             template = template_file.read()
-        markdown_url = '/assets/markdown/' + re.sub(r'blogs/(.+)(\d+)\.html', r'blogs/\1/\1\2.md', document['FileName'])
+        markdown_url += '/assets/markdown/' + fileName
     elif "projects" in document['FileName']:
         with open('tools/projects.html', 'r') as template_file:
             template = template_file.read()
-        markdown_url = '/assets/markdown/' + re.sub(r'projects/(.+)(\d*)\.html', r'projects/\1/\1\2.md', document['FileName'])
+        markdown_url += '/assets/markdown/' + fileName
         carousel_indicators = generate_carousel_indicators(document['CarouselImages'])
         carousel_inner = generate_carousel_inner(document['CarouselImages'])
         template = template.replace(f'{{{"Carousel_Indicators"}}}', carousel_indicators)
@@ -85,7 +85,7 @@ def generate_html_page(document):
     template = template.replace(f'{{{"Author"}}}', document['Author'])
     template = template.replace(f'{{{"KeyWords"}}}', keyword_combinations)
 
-    template = template.replace(f'{{{"MarkdownDir"}}}', 'https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main' + markdown_url)
+    template = template.replace(f'{{{"MarkdownDir"}}}', markdown_url)
 
     # write the generated HTML to a new file
     output_filename = document['FileName'].replace('.html', '/index.html')
@@ -110,4 +110,4 @@ for filename in documents:
     with open(os.path.join('assets/markdown', filename), 'r') as document_file:
         document_data = extract_document_data(document_file.read(), filename)
         if document_data:
-            generate_html_page(document_data)
+            generate_html_page(document_data, filename)
