@@ -6,11 +6,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to get blog information from a markdown file
     function GetFileInfo(markdown, file) {
-        let firstSeparatorIndex = markdown.indexOf('---\r\n');
+        let sepperator = '---';
+        if (fileContent.includes('\r\n')) {
+            sepperator += '\r\n';
+        } else if (fileContent.includes('\n'))
+        {
+            sepperator += '\n';
+        }
+        let firstSeparatorIndex = markdown.indexOf(sepperator);
         let header = '';
         if (firstSeparatorIndex !== -1) {
             markdown = markdown.slice(firstSeparatorIndex + 4, markdown.length).trim();
-            let secondSeparatorIndex = markdown.indexOf('---\r\n');
+            let secondSeparatorIndex = markdown.indexOf(sepperator);
             if (secondSeparatorIndex !== -1) {
                 header = markdown.slice(0, secondSeparatorIndex).trim();
             }

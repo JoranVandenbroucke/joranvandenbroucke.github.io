@@ -62,13 +62,20 @@ function processMarkdown(markdown) {
 }
 
 function extractHeaderAndContent(markdown) {
-    const firstSeparatorIndex = markdown.indexOf('---\r\n');
+    let sepperator = '---';
+    if (fileContent.includes('\r\n')) {
+        sepperator += '\r\n';
+    } else if (fileContent.includes('\n'))
+    {
+        sepperator += '\n';
+    }
+    let firstSeparatorIndex = markdown.indexOf(sepperator);
     let header = '';
     let content = markdown;
 
     if (firstSeparatorIndex !== -1) {
         markdown = markdown.slice(firstSeparatorIndex + 4, markdown.length).trim();
-        const secondSeparatorIndex = markdown.indexOf('---\r\n');
+        const secondSeparatorIndex = markdown.indexOf(sepperator);
 
         if (secondSeparatorIndex !== -1) {
             header = markdown.slice(0, secondSeparatorIndex).trim();
