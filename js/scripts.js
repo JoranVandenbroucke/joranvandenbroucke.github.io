@@ -63,9 +63,9 @@ function processMarkdown(markdown) {
 
 function extractHeaderAndContent(markdown) {
     let sepperator = '---';
-    if (fileContent.includes('\r\n')) {
+    if (markdown.includes('\r\n')) {
         sepperator += '\r\n';
-    } else if (fileContent.includes('\n'))
+    } else if (markdown.includes('\n'))
     {
         sepperator += '\n';
     }

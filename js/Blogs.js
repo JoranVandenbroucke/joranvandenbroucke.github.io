@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to get blog information from a markdown file
     function GetFileInfo(markdown, file) {
         let sepperator = '---';
-        if (fileContent.includes('\r\n')) {
+        if (markdown.includes('\r\n')) {
             sepperator += '\r\n';
-        } else if (fileContent.includes('\n'))
+        } else if (markdown.includes('\n'))
         {
             sepperator += '\n';
         }
