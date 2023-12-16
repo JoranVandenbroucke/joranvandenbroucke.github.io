@@ -84,7 +84,8 @@ def generate_html_page(document):
     template = template.replace(f'{{{"URL"}}}', canonical)
     template = template.replace(f'{{{"Author"}}}', document['Author'])
     template = template.replace(f'{{{"KeyWords"}}}', keyword_combinations)
-    template = template.replace(f'{{{"MarkdownDir"}}}', markdown_url)
+
+    template = template.replace(f'{{{"MarkdownDir"}}}', 'https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main' + markdown_url)
 
     # write the generated HTML to a new file
     output_filename = document['FileName'].replace('.html', '/index.html')

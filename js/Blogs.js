@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         blogs = [];
         blogFiles.forEach(file => {
             const xhr = new XMLHttpRequest();
-            const direction = `assets/markdown/${file}`;
+            const direction = `https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main/assets/markdown/${file}`;
 
             xhr.open('GET', direction, true);
             xhr.onreadystatechange = function () {

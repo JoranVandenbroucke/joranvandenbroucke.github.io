@@ -20,6 +20,21 @@
 
     <script src="/js/scripts.js"></script>
     <script src="/js/CustomHTML.js"></script>
+
+
+    <script>
+        fetch(githubRepoURL, { method: 'HEAD' })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = githubRepoURL;
+    } else {
+      console.log(`GitHub repository ${githubRepoURL} not found.`);
+    }
+  })
+  .catch(error => {
+    console.error('Error checking GitHub repository:', error);
+  });
+    </script>
 </head>
 <body>
 <header-nav>

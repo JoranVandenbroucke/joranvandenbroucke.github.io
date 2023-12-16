@@ -16,7 +16,27 @@ function createMarkdownConverter() {
         tables: true,
         strikethrough: true,
         extensions: [showdownKatex({
-            // ... (your Katex options)
+            "displayMode": true,
+            "leqno": false,
+            "fleqn": true,
+            "throwOnError": false,
+            "errorColor": "#ff0000",
+            "strict": "error",
+            "output": "html",
+            "trust": false,
+            delimiters: [{left: "$$", right: "$$", display: true}, {
+                left: "\\(",
+                right: "\\)",
+                display: false
+            }, {left: "\\begin{equation}", right: "\\end{equation}", display: true}, {
+                left: "\\begin{align}",
+                right: "\\end{align}",
+                display: true
+            }, {left: "\\begin{alignat}", right: "\\end{alignat}", display: true}, {
+                left: "\\begin{gather}",
+                right: "\\end{gather}",
+                display: true
+            }, {left: "\\begin{CD}", right: "\\end{CD}", display: true}, {left: "\\[", right: "\\]", display: true}]
         })]
     });
 }
