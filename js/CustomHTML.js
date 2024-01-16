@@ -1,25 +1,24 @@
 class HTMLBaseElement extends HTMLElement {
     constructor(...args) {
-        const self = super(...args)
-        self.parsed = false // guard to make it easy to do certain stuff only once
-        self.parentNodes = []
-        return self
+        super(...args);
+        this.parsed = false; // guard to make it easy to do certain stuff only once
+        this.parentNodes = [];
     }
 
     setup() {
         // collect the parentNodes
         let el = this;
         while (el.parentNode) {
-            el = el.parentNode
-            this.parentNodes.push(el)
+            el = el.parentNode;
+            this.parentNodes.push(el);
         }
-        if ([this, ...this.parentNodes].some(el => el.nextSibling) || document.readyState !== 'loading') {
+        if (this.nextSibling || this.parentNodes.some(el => el.nextSibling) || document.readyState !== 'loading') {
             this.childrenAvailableCallback();
         } else {
             this.mutationObserver = new MutationObserver(() => {
-                if ([this, ...this.parentNodes].some(el => el.nextSibling) || document.readyState !== 'loading') {
-                    this.childrenAvailableCallback()
-                    this.mutationObserver.disconnect()
+                if (this.nextSibling || this.parentNodes.some(el => el.nextSibling) || document.readyState !== 'loading') {
+                    this.childrenAvailableCallback();
+                    this.mutationObserver.disconnect();
                 }
             });
 
@@ -30,54 +29,58 @@ class HTMLBaseElement extends HTMLElement {
 
 class HeaderNav extends HTMLBaseElement {
     constructor(...args) {
-        return super(...args)
+        super(...args);
     }
 
     connectedCallback() {
-        super.setup()
+        this.setup();
     }
 
     childrenAvailableCallback() {
-        this.parsed = true
+        this.parsed = true;
 
         const newHTML = `
-            
-<!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">Joran J. C. Vandenbroucke</a>
-        <button class="navbar-toggler navbar-toggler-right text-second" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                <div class="container px-4 px-lg-5">
+                    <a class="navbar-brand" href="/">Joran J. C. Vandenbroucke</a>
+                    <button class="navbar-toggler navbar-toggler-right text-second" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        Menu
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#portfolio">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         `;
-        const newElement = document.createRange().createContextualFragment(newHTML);
-        this.replaceWith(newElement);
+        try {
+            const newElement = document.createRange().createContextualFragment(newHTML);
+            this.replaceWith(newElement);
+        } catch (error) {
+            console.error('Failed to create new element:', error);
+        }
     }
 }
 
+
 class FooterNav extends HTMLBaseElement {
     constructor(...args) {
-        return super(...args)
+        super(...args);
     }
 
     connectedCallback() {
-        super.setup()
+        this.setup();
     }
 
     childrenAvailableCallback() {
-        this.parsed = true
+        this.parsed = true;
 
         const newHTML = `
             <!-- Contact-->
@@ -127,23 +130,27 @@ class FooterNav extends HTMLBaseElement {
                 <div class="container px-5">Copyright &copy; Joran Vandenbroucke 2022</div>
             </footer>
         `;
+        try {
+            const newElement = document.createRange().createContextualFragment(newHTML);
+            this.replaceWith(newElement);
+        } catch (error) {
+            console.error('Failed to create new element:', error);
+        }
 
-        const newElement = document.createRange().createContextualFragment(newHTML);
-        this.replaceWith(newElement);
     }
 }
 
 class FeaturedItem extends HTMLBaseElement {
     constructor(...args) {
-        return super(...args)
+        super(...args);
     }
 
     connectedCallback() {
-        super.setup()
+        this.setup();
     }
 
     childrenAvailableCallback() {
-        this.parsed = true
+        this.parsed = true;
         const link = this.getAttribute("link");
         const image = this.getAttribute("image");
         const title = this.getAttribute("title");
@@ -168,22 +175,26 @@ class FeaturedItem extends HTMLBaseElement {
                         </div>
                     </div>
 `;
+        try {
+            this.replaceWith(newElement);
+        } catch (error) {
+            console.error('Failed to create new element:', error);
+        }
 
-        this.replaceWith(newElement);
     }
 }
 
 class LeftItem extends HTMLBaseElement {
     constructor(...args) {
-        return super(...args)
+        super(...args);
     }
 
     connectedCallback() {
-        super.setup()
+        this.setup();
     }
 
     childrenAvailableCallback() {
-        this.parsed = true
+        this.parsed = true;
         const link = this.getAttribute("link");
         const image = this.getAttribute("image");
         const title = this.getAttribute("title");
@@ -211,23 +222,25 @@ class LeftItem extends HTMLBaseElement {
         </div>
     </div>
 `;
-
-        this.replaceWith(newElement);
-
+        try {
+            this.replaceWith(newElement);
+        } catch (error) {
+            console.error('Failed to create new element:', error);
+        }
     }
 }
 
 class RightItem extends HTMLBaseElement {
     constructor(...args) {
-        return super(...args)
+        super(...args);
     }
 
     connectedCallback() {
-        super.setup()
+        this.setup();
     }
 
     childrenAvailableCallback() {
-        this.parsed = true
+        this.parsed = true;
         const link = this.getAttribute("link");
         const image = this.getAttribute("image");
         const title = this.getAttribute("title");
@@ -255,7 +268,12 @@ class RightItem extends HTMLBaseElement {
         </div>
     </div>
 `;
-        this.replaceWith(newElement);
+        try {
+            this.replaceWith(newElement);
+        } catch (error) {
+            console.error('Failed to create new element:', error);
+        }
+
     }
 }
 

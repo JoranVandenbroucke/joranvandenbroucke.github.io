@@ -23,7 +23,7 @@
 
 
     <script>
-        function loadGitHubRepoFromUrl() {
+        async function loadGitHubRepoFromUrl() {
             // Get the URL and remove query parameters
             let url = window.location.href.split('?')[0];
 
@@ -39,17 +39,31 @@
             // Construct the GitHub repository URL
             const githubRepoUrl = `https://github.com/JoranVandenbroucke/${page}`;
 
+            try {
+                const response = await fetch(url);
+                if (response.status === 200) {
+                    console.log(`Repository JoranVandenbroucke/${page} exists.`);
+                    window.location.href = githubRepoUrl; // Redirect to the GitHub repository
+                } else if (response.status === 404) {
+                    console.log(`Repository JoranVandenbroucke/${page} does not exist.`);
+                } else {
+                    console.error(`Error checking repository existence: ${response.statusText}`);
+                    window.location.href = githubRepoUrl; // Redirect to the GitHub repository
+                }
+            } catch (error) {
+                console.error(`Error checking repository existence: ${error.message}`);
+            }
             // Check if the repository exists
-            fetch(githubRepoUrl)
-                .then(response => {
-                    if (response.ok) {
-                        console.log(`Repository ${page} exists. Loading...`);
-                        window.location.href = githubRepoUrl; // Redirect to the GitHub repository
-                    } else {
-                        console.log(`Repository ${page} not found.`);
-                    }
-                })
-                .catch(error => console.error('Error checking repository:', error));
+            // fetch(githubRepoUrl)
+            //     .then(response => {
+            //         if (response.ok) {
+            //             console.log(`Repository ${page} exists. Loading...`);
+            //             window.location.href = githubRepoUrl; // Redirect to the GitHub repository
+            //         } else {
+            //             console.log(`Repository ${page} not found.`);
+            //         }
+            //     })
+            //     .catch(error => console.error('Error checking repository:', error));
         }
 
         // Call the function when the page loads

@@ -1,28 +1,24 @@
-let projects = [];
-let blogs = [];
 document.addEventListener('DOMContentLoaded', function () {
     const projectsContainer = document.getElementById('projects-container');
     const blogsContainer = document.getElementById('blogs-container');
 
-    // Function to get blog information from a markdown file
-    function GetFileInfo(markdown, file) {
-        let sepperator = '---';
+// Parses the markdown and file info to return an object with blog info
+    const getFileInfo = (markdown, file) => {
+        let separator = '---';
         if (markdown.includes('\r\n')) {
-            sepperator += '\r\n';
-        } else if (markdown.includes('\n'))
-        {
-            sepperator += '\n';
+            separator += '\r\n';
+        } else if (markdown.includes('\n')) {
+            separator += '\n';
         }
-        let firstSeparatorIndex = markdown.indexOf(sepperator);
+        let firstSeparatorIndex = markdown.indexOf(separator);
         let header = '';
         if (firstSeparatorIndex !== -1) {
-            markdown = markdown.slice(firstSeparatorIndex + 4, markdown.length).trim();
-            let secondSeparatorIndex = markdown.indexOf(sepperator);
+            markdown = markdown.slice(firstSeparatorIndex + separator.length, markdown.length).trim();
+            let secondSeparatorIndex = markdown.indexOf(separator);
             if (secondSeparatorIndex !== -1) {
                 header = markdown.slice(0, secondSeparatorIndex).trim();
             }
         }
-
         let headerData = {};
         let readTimeMinutes;
         if (header !== null && header !== "") {
@@ -33,6 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 readTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
             } catch (error) {
                 console.error('Error parsing YAML:', error);
+                // Return a default object if the header can't be parsed
+                return {
+                    title: '',
+                    subTitle: '',
+                    description: '',
+                    image: {url: '', alt: ''},
+                    author: '',
+                    authorPP: '',
+                    pubdate: '',
+                    tags: [],
+                    readTime: 0,
+                    fileName: ''
+                };
             }
         }
         return {
@@ -47,9 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
             readTime: readTimeMinutes || 0,
             fileName: file.replace(/\s/g, '').replace(/^(\w+)\/.+\/(\w+)\.md$/g, '$1/$2') || ''
         };
-    }
+    };
 
-    // Function to create and append a blog item
     function appendItem(fileData, index) {
         let item;
         if (index === 0) {
@@ -59,20 +67,16 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             item = document.createElement('left-item');
         }
-
         item.setAttribute('link', fileData.fileName);
         item.setAttribute('image', fileData.image.url);
         item.setAttribute('title', fileData.title);
         item.innerHTML = fileData.description;
-
         if (fileData.fileName.includes('blogs'))
             blogsContainer.appendChild(item);
         else
             projectsContainer.appendChild(item)
     }
 
-
-    // Function to iterate over blog files and append them
     function iterateBlogFiles() {
         const blogFiles = [
             "projects/Balbino/Balbino.md",
@@ -84,33 +88,29 @@ document.addEventListener('DOMContentLoaded', function () {
             "blogs/GART/gart1.md",
             "blogs/GANM/ganm1.md"
         ];
-        projects = [];
-        blogs = [];
-        blogFiles.forEach(file => {
+        const promises = blogFiles.map(file => new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             const direction = `https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main/assets/markdown/${file}`;
-
             xhr.open('GET', direction, true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     const markdown = xhr.responseText;
-                    const blogInfo = GetFileInfo(markdown, file);
-                    if (file.includes('blogs'))
-                        blogs.push(blogInfo);
-                    else
-                        projects.push(blogInfo);
-
-                    if ((projects.length + blogs.length) === blogFiles.length) {
-                        projects.forEach(appendItem);
-                        blogs.forEach(appendItem);
-                    }
+                    const blogInfo = getFileInfo(markdown, file);
+                    resolve(blogInfo);
+                } else if (xhr.readyState === 4) {
+                    reject(xhr.status);
                 }
             };
-
             xhr.send();
-        });
+        }));
+        Promise.all(promises)
+            .then(blogInfos => {
+                blogInfos.forEach(appendItem);
+            })
+            .catch(error => {
+                console.error(`Failed to fetch file: ${error}`);
+            });
     }
 
-    // Get the blog information and append blogs
     iterateBlogFiles();
 });
