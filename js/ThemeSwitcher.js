@@ -3,18 +3,24 @@ hljs.highlightAll();
 
 // Function for changing theme
 function applyTheme(theme) {
-    const activeTheme = theme.matches ? "dark code" : "light code";
-    const inactiveTheme = theme.matches ? "light code" : "dark code";
+    let activeTheme = theme.matches ? 'dark code' : 'light code';
+    let inactiveTheme = theme.matches ? 'light code' : 'dark code';
 
-    document.querySelector(`link[title="${activeTheme}"]`).removeAttribute("disabled");
-    document.querySelector(`link[title="${inactiveTheme}"]`).setAttribute("disabled", "disabled");
+    let activeLink = document.querySelector(`link[title="${activeTheme}"]`);
+    let inactiveLink = document.querySelector(`link[title="${inactiveTheme}"]`);
+
+    // Check if the query results are not null before manipulating the elements
+    if (activeLink !== null) {
+        activeLink.removeAttribute('disabled');
+    }
+    if (inactiveLink !== null) {
+        inactiveLink.setAttribute('disabled', 'disabled');
+    }
 }
 
-const theme = window.matchMedia("(prefers-color-scheme: dark)");
-theme.addEventListener('change', applyTheme);
-applyTheme(theme);
 
-document.addEventListener("DOMContentLoaded", function () {
-    hljs.debugMode();
-    hljs.highlightAll();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+    applyTheme(e);
 });
+
+applyTheme(window.matchMedia('(prefers-color-scheme: dark)'));

@@ -8,7 +8,8 @@ def generate_carousel_indicators(images):
     indicators_html = ""
     for i in range(len(images)):
         active_class = 'active' if i == 0 else ''
-        indicators_html += f'<button type="button" data-bs-target="#demo" data-bs-slide-to="{i}" class="{active_class}"></button>\n'
+        indicators_html += (f'<button type="button" data-bs-target="#demo" data-bs-slide-to="{i}" '
+                            f'class="{active_class}"></button>\n')
     return indicators_html
 
 
@@ -52,18 +53,18 @@ def extract_document_data(file_content, file):
         return None
 
 
-def generate_html_page(document, fileName):
+def generate_html_page(document, html_file_name):
     # read template file
     template = ""
     markdown_url = 'https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main'
     if "blogs" in document['FileName']:
         with open('tools/blogs.html', 'r') as template_file:
             template = template_file.read()
-        markdown_url += '/assets/markdown/' + fileName
+        markdown_url += '/assets/markdown/' + html_file_name
     elif "projects" in document['FileName']:
         with open('tools/projects.html', 'r') as template_file:
             template = template_file.read()
-        markdown_url += '/assets/markdown/' + fileName
+        markdown_url += '/assets/markdown/' + html_file_name
         carousel_indicators = generate_carousel_indicators(document['CarouselImages'])
         carousel_inner = generate_carousel_inner(document['CarouselImages'])
         template = template.replace(f'{{{"Carousel_Indicators"}}}', carousel_indicators)
