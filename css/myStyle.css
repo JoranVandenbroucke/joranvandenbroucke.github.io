@@ -12,11 +12,11 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --first-color: #F699FF;
-        --second-color: #7C5CCA;
-        --third-color: #333282;
-        --fourth-color: #0C1848;
-        --fifth-color: #00081f;
+        --first-color: #ffffff;
+        --second-color: #827f8c;
+        --third-color: #bf5179;
+        --fourth-color: #1d1a27;
+        --fifth-color: #13101a;
     }
 }
 
@@ -12792,15 +12792,11 @@ body {
         }
 
         #mainNav .nav-link:hover {
-            color: var(--second-color);
+            color: var(--third-color);
         }
 
         #mainNav .nav-link:active {
-            color: var(--second-color);
-        }
-
-        #mainNav.navbar-shrink {
-            background-color: var(--second-color);
+            color: var(--third-color);
         }
 
         #mainNav.navbar-shrink .navbar-brand {
@@ -12819,10 +12815,10 @@ body {
             color: var(--third-color);
         }
 
-        #mainNav.navbar-shrink .nav-link.active {
-            color: var(--first-color);
-            border-bottom: 0.25rem solid var(--fourth-color);
-        }
+    /*    #mainNav.navbar-shrink .nav-link.active {*/
+    /*        color: var(--first-color);*/
+    /*        border-bottom: 0.25rem solid var(--fourth-color);*/
+    /*    }*/
     }
 }
 
