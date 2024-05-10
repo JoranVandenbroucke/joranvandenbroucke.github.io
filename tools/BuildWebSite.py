@@ -1,4 +1,5 @@
 import os
+import sys
 import re
 import yaml
 import math
@@ -97,7 +98,9 @@ def generate_html_page(document, html_file_name):
 
 
 # list of documents
-documents = ["blogs/GANM/ganm1.md", "blogs/GART/gart1.md",
+documents = ["blogs/GANM/ganm1.md",
+             "blogs/GART/gart1.md",
+             "blogs/LCM/LCM.md",
              "projects/SoftwareRasterizer/SoftwareRasterizer.md",
              "projects/SoftwareRayTracer/SoftwareRayTracer.md",
              "projects/AIProgramming/AIProgramming.md",
@@ -108,7 +111,12 @@ documents = ["blogs/GANM/ganm1.md", "blogs/GART/gart1.md",
 
 # iterate through each document file
 for filename in documents:
-    with open(os.path.join('assets/markdown', filename), 'r') as document_file:
-        document_data = extract_document_data(document_file.read(), filename)
-        if document_data:
-            generate_html_page(document_data, filename)
+    try:
+        with open(os.path.join('assets/markdown', filename), 'r') as document_file:
+            document_data = extract_document_data(document_file.read(), filename)
+            if document_data:
+                generate_html_page(document_data, filename)
+    except IOError as e:
+        print(f"I/O error({e.errno}): {e.strerror}")
+    except:
+        print (f"Unexpected error:{sys.exc_info()[0]}")

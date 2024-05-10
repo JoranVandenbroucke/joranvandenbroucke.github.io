@@ -1,5 +1,146 @@
 ﻿@charset "UTF-8";
 
+html {
+    font-size: 100%;
+}
+select, textarea, input, button {
+    font: inherit;
+}
+textarea,
+input {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
+
+textarea,
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]) {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  border: 0.1em solid;
+  padding: 0 0.2em;
+}
+
+textarea:focus,
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"]):focus {
+    outline: 0.15em solid #00f;
+    box-shadow: 0 0 0.2em #00f;
+}
+textarea[readonly],
+ input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[readonly] {
+     border-color: rgba(0, 0, 0, 0.42);
+     border-left: none;
+     border-top: none;
+     border-right: none;
+ }
+textarea[required],
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[required] {
+    border-left-width: 0.3em;
+}
+textarea[aria-invalid="true"],
+textarea[aria-invalid="spelling"],
+textarea[aria-invalid="grammar"],
+input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[aria-invalid] {
+    background: linear-gradient(135deg, rgba(255,0,0,1) 0, rgba(255,0,0,1) .4em, rgba(255,255,255,1) .4em);
+}
+*[dir="rtl"] textarea[aria-invalid="true"],
+*[dir="rtl"] textarea[aria-invalid="spelling"],
+*[dir="rtl"] textarea[aria-invalid="grammar"],
+*[dir="rtl"] input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[aria-invalid] {
+    background: linear-gradient(225deg, rgba(255,0,0,1) 0, rgba(255,0,0,1) .4em, rgba(255,255,255,1) .4em);
+}
+
+*[dir="rtl"] textarea[required],
+*[dir="rtl"] input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[required] {
+    border-left-width: 0.1em;
+    border-right-width: 0.3em;
+}
+select {
+    font: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+    /*  from Filament  */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    /*  match my text boxen styles  */
+    border: 0.1em solid;
+    padding: 0 0.2em;
+}
+
+select:not([multiple]) {
+    /*  mine again  */
+    padding-right: 1.2em;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 0.25em) 0.35em;
+    background-size: 0.85em auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* Filament: Hide arrow icon in IE browsers */
+select::-ms-expand {
+    display: none;
+}
+select:focus {
+    outline: 0.15em solid #00f;
+    box-shadow: 0 0 0.2em #00f;
+}
+select[required] {
+    border-left-width: 0.3em;
+}select[aria-invalid] {
+     background: linear-gradient(
+             135deg,
+             rgba(255, 0, 0, 1) 0,
+             rgba(255, 0, 0, 1) 0.4em,
+             rgba(255, 255, 255, 0) 0.4em
+     );
+ }
+
+select[aria-invalid]:not([multiple]) {
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, calc(100% - 0.25em) 0.35em;
+    background-size: 0.85em auto;
+    background-image: linear-gradient(
+            135deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+}
+*[dir="rtl"] select:not([multiple]) {
+    padding-right: 0.2em;
+    padding-left: 1.2em;
+    background-position: 0.25em 0.35em;
+}
+
+*[dir="rtl"] select[required] {
+    border-left-width: 0.1em;
+    border-right-width: 0.3em;
+}
+
+*[dir="rtl"] select[aria-invalid] {
+    background: linear-gradient(
+            225deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    );
+}
+
+*[dir="rtl"] select[aria-invalid]:not([multiple]) {
+    background-size: auto, 0.85em auto;
+    background: linear-gradient(
+            225deg,
+            rgba(255, 0, 0, 1) 0,
+            rgba(255, 0, 0, 1) 0.4em,
+            rgba(255, 255, 255, 0) 0.4em
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23000'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0 0, 0.25em 0.35em;
+}
 @media (prefers-color-scheme: light) {
     :root {
         --first-color: #001f11;
@@ -63,8 +204,6 @@
     --bs-danger: #a16468;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
-    --bs-black: #000;
-    --bs-white: #fff;
     --bs-primary-rgb: 100, 161, 157;
     --bs-secondary-rgb: 116, 100, 161;
     --bs-success-rgb: 103, 194, 156;
@@ -75,8 +214,6 @@
     --bs-dark-rgb: 33, 37, 41;
     --bs-black-rgb: 0, 0, 0;
     --bs-white-rgb: 255, 255, 255;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-black-rgb: 0, 0, 0;
     --bs-body-color-rgb: 33, 37, 41;
     --bs-body-bg-rgb: 255, 255, 255;
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -102,6 +239,8 @@
     --bs-link-hover-color: #50817e;
     --bs-code-color: #d63384;
     --bs-highlight-bg: #faf4e0;
+
+    font-size: 100%;
 }
 
 *,
@@ -4956,7 +5095,7 @@ textarea.form-control-lg {
     }
 
     .card-group > .card {
-        flex: 1 0 0%;
+        flex: 1 0 0;
         margin-bottom: 0;
     }
 
@@ -6409,7 +6548,6 @@ textarea.form-control-lg {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    text-align: left;
     text-align: start;
     text-decoration: none;
     text-shadow: none;
@@ -6526,7 +6664,6 @@ textarea.form-control-lg {
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
-    text-align: left;
     text-align: start;
     text-decoration: none;
     text-shadow: none;
@@ -7609,8 +7746,8 @@ textarea.form-control-lg {
 
 @keyframes placeholder-wave {
     100% {
-        -webkit-mask-position: -200% 0%;
-        mask-position: -200% 0%;
+        -webkit-mask-position: -200% 0;
+        mask-position: -200% 0;
     }
 }
 

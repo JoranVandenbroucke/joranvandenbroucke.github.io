@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
             "projects/SoftwareRasterizer/SoftwareRasterizer.md",
             "projects/AIProgramming/AIProgramming.md",
             "blogs/GART/gart1.md",
-            "blogs/GANM/ganm1.md"
+            "blogs/GANM/ganm1.md",
+            "blogs/LCM/LCM.md"
         ];
         const promises = blogFiles.map(file => new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();

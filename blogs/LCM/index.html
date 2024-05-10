@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What is Local Clearance Minimum?</title>
+    <meta name="description" content="This blog explains how navigation meshes are typically generated, and what some downsides are. After which a new alternative is explained which has the potential to treat one navigation mesh as many different once.">
+    <meta property="og:title" content="What is Local Clearance Minimum?">
+    <meta property="og:description" content="This blog explains how navigation meshes are typically generated, and what some downsides are. After which a new alternative is explained which has the potential to treat one navigation mesh as many different once.">
+    <meta property="og:image" content="/assets/img/blogs/LCM/LCM.png">
+    <meta property="og:url" content="https://joranvandenbroucke.github.io/blogs/LCM">
+    <meta name="twitter:title" content="What is Local Clearance Minimum?">
+    <meta name="twitter:description" content="This blog explains how navigation meshes are typically generated, and what some downsides are. After which a new alternative is explained which has the potential to treat one navigation mesh as many different once.">
+    <meta name="twitter:image" content="/assets/img/blogs/LCM/LCM.png">
+    <meta name="twitter:url" content="https://joranvandenbroucke.github.io/blogs/LCM">
+    <meta name="author" content="Joran Vandenbroucke"/>
+    <meta name="keywords" content="LCM, Local Clearance Minimum, Navmesh, Navigation Mesh, Joran, Vandenbroucke, What, is, Local">
+    <link rel="canonical" href="https://joranvandenbroucke.github.io/blogs/LCM">
+
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <!-- Core theme CSS (includes Bootstrap)-->
+
+    <script src="/js/highlightjs/highlight.min.js"></script>
+    <script src="/js/ThemeSwitcher.js"></script>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/myStyle.css">
+
+    <script src="/js/scripts.js"></script>
+    <script src="/js/CustomHTML.js"></script>
+    <script src="/js/ThemeSwitcher.js"></script>
+    <script src="/js/highlightjs/highlight.min.js"></script>
+    <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" title="light code" href="/js/highlightjs/styles/intellij-light.min.css">
+    <link rel="alternate stylesheet" title="dark code" href="/js/highlightjs/styles/srcery.min.css" disabled>
+<body onload="loadMarkDown('https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main/assets/markdown/blogs/LCM/LCM.md')">
+<header-nav>
+</header-nav>
+<header class="masthead" style="background-image: url(/assets/img/blogs/LCM/LCM.png)">
+    <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">What is Local Clearance Minimum?</h1>
+                <h2 class="mx-auto mt-2 mb-5 text-fourth">LCM, a potential new way to look at navmesh generation.</h2>
+            </div>
+        </div>
+    </div>
+    <a class="scrolldown-wrapper" href="#about">
+        <div class="scrolldown">
+            <svg height="40" width="40">
+                <circle class="scrolldown-p1" cx="0" cy="0" r="4"/>
+                <circle class="scrolldown-p2" cx="0" cy="0" r="4"/>
+            </svg>
+        </div>
+    </a>
+</header>
+<section class="projects-section">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-5 py-2">
+            <div class="h-100 project">
+                <div class="d-flex h-100 bg-fourth">
+                    <div class="project-text w-100 my-auto" id="output"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer-nav>
+</footer-nav>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/NavBar.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
