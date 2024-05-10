@@ -4,7 +4,7 @@ subTitle: 'LCM, a potential new way to look at navmesh generation.'
 pubDate: !!str 2024-08-28
 description: 'This blog explains how navigation meshes are typically generated, and what some downsides are. After which a new alternative is explained which has the potential to treat one navigation mesh as many different once.'
 image:
-  url: '/assets/img/blogs/LCM/LCM.png'
+  url: '/assets/img/blogs/LCM/LCM_Banner.png'
   alt: ';('
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'
@@ -54,6 +54,8 @@ LCT is based on Fully Dynamic Constrained Delaunay Triangulations by Kallmann et
 As the name suggests, this uses Delaunay Triangulations to generate the navigation mesh.
 It was so fast and efficient that it can add, move, or remove obstacles in real time.
 LCT then also adds the concept of clearance, the minimum edge to edge distance, to this.
+![Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)](/assets/img/blogs/LCM/LCM_exactMethods.png "Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)")
+<sup>**Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)**</sup>
 
 Now previous methods could be looked at as "exact" methods.
 Generally speaking, exact methods have it more difficult with overlapping geometry, and each layer needs to be processed separately.
