@@ -23,52 +23,28 @@
 
 
     <script>
-        async function loadGitHubRepoFromUrl() {
-            // Get the URL and remove query parameters
-            let url = window.location.href.split('?')[0];
+        // Redirects github pages for repos that have moved to another org.
+        (function () {
 
-            // Get the last part of the URL
-            const page = url.split('/').pop();
+            'use strict';
 
-            // Check if the page name is not empty
-            if (page.trim() === '') {
-                console.log('Invalid page name.');
-                return;
-            }
+            // Mapping from repo name to the org it moved to.
+            const movedRepos = {
+                'balbino': 'Balbino',
+                'recast': 'recastnavigation',
+                'recastnavigation': 'recastnavigation',
+            };
 
-            // Construct the GitHub repository URL
-            const githubRepoUrl = `https://github.com/JoranVandenbroucke/${page}`;
-
-            try {
-                const response = await fetch(url);
-                if (response.status === 200) {
-                    console.log(`Repository JoranVandenbroucke/${page} exists.`);
-                    window.location.href = githubRepoUrl; // Redirect to the GitHub repository
-                } else if (response.status === 404) {
-                    console.log(`Repository JoranVandenbroucke/${page} does not exist.`);
-                } else {
-                    console.error(`Error checking repository existence: ${response.statusText}`);
-                    window.location.href = githubRepoUrl; // Redirect to the GitHub repository
+            const repoRegex = new RegExp('^/([^/]+)(/|$)');
+            const match = repoRegex.exec(location.pathname);
+            if (match) {
+                const newOrg = movedRepos[match[1].toLowerCase()];
+                if (newOrg) {
+                    location.host = "https://github.com/JoranVandenbroucke/" + newOrg
                 }
-            } catch (error) {
-                console.error(`Error checking repository existence: ${error.message}`);
             }
-            // Check if the repository exists
-            // fetch(githubRepoUrl)
-            //     .then(response => {
-            //         if (response.ok) {
-            //             console.log(`Repository ${page} exists. Loading...`);
-            //             window.location.href = githubRepoUrl; // Redirect to the GitHub repository
-            //         } else {
-            //             console.log(`Repository ${page} not found.`);
-            //         }
-            //     })
-            //     .catch(error => console.error('Error checking repository:', error));
-        }
 
-        // Call the function when the page loads
-        loadGitHubRepoFromUrl();
-
+        }());
     </script>
 </head>
 <body>
