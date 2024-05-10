@@ -66,17 +66,17 @@ Voxel methods do not need any layer separation, but can miss things like corrido
 One of the voxel methods is Recast [4].
 Recast is an open source project which has also found its way into Unreal Engine 5.
 This project is based on Volumetric cell-and-portal generation [5] by Haumont et al.
-Recast first voxelizes the scene,desides what is walkable and what is not.
+Recast first voxelizes the scene, decides what is walkable and what is not.
 Then it keeps everything that is walkable and makes a distance map out of it.
-A distance value of one means, there is one cell between me and the closest edge cell, a value of two means two cells are between be and the closest edge cell.
-The distance map goes trough a watershed and assigns a region ID to each cell.
+A distance value of one means, there is one cell between me and the closest-edge cell, a value of two means two cells are between be and the closest-edge cell.
+The distance map goes through a watershed and assigns a region ID to each cell.
 The map with region IDs gets traces and converted into a mesh.
 
 Another Voxel methode is NEOGEN: Near optimal generator of navigation meshes for 3D multi-layered environments [6] by Oliva and Pelechano.
 NEOGEN tries to create a navmesh with as few convex regions as possible.
-A GPU voxelization identefies and extracts different walkable layers.
-A fragment shader creats a 2D floor plan of each layer.
-Finaly, convex decomposition of each layer is created and linked together to create the final navmesh.
+A GPU voxelization identifies and extracts different walkable layers.
+A fragment shader creates a 2D floor plan of each layer.
+Finally, convex decomposition of each layer is created and linked together to create the final navmesh.
 
 ### <center><u>Part 3: How does Local Clearance Minimum come into play?</u></center>
 
