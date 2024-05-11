@@ -75,7 +75,7 @@ function processHeader(header, markdown) {
         const headerData = jsyaml.load(header);
         const readTimeMinutes = calculateReadTime(markdown);
 
-        if (headerData.image.url.toLowerCase().includes("blogs")) {
+        if (headerData.image.url.includes("blogs")) {
             return createHeaderHTML(headerData, readTimeMinutes);
         }
     } catch (e) {
