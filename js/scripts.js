@@ -75,7 +75,7 @@ function processHeader(header) {
         const headerData = jsyaml.load(header);
         const readTimeMinutes = calculateReadTime(headerData);
 
-        if (headerData.image.url.includes("Blogs")) {
+        if (headerData.image.url.toLowerCase().includes("blogs")) {
             return createHeaderHTML(headerData, readTimeMinutes);
         }
     } catch (e) {
@@ -137,6 +137,4 @@ function processContent(content) {
         .replace(/<h1/g, '<h1 class="text-center text-lg-center"')
         .replace(/<h2/g, '<h2 class="text-center text-lg-center"')
         .replace(/<h3/g, '<h3 class="text-center text-lg-center"')
-        .replace(/<p\b/g, '<div class="container px-5 py-4 "> <p class="text-second"')
-        .replace(/<\/p>/g, '</p></div>');
 }

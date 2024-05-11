@@ -41,8 +41,8 @@ class HeaderNav extends HTMLBaseElement {
 
         const newHTML = `
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-                <div class="container px-4 px-lg-5">
+            <nav class="navbar navbar-expand fixed-top" id="mainNav">
+                <div class="container px-4 px-5">
                     <a class="navbar-brand" href="/">Joran J. C. Vandenbroucke</a>
                     <button class="navbar-toggler navbar-toggler-right text-second" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -68,7 +68,6 @@ class HeaderNav extends HTMLBaseElement {
         }
     }
 }
-
 
 class FooterNav extends HTMLBaseElement {
     constructor(...args) {
@@ -163,13 +162,13 @@ class FeaturedItem extends HTMLBaseElement {
         const newElement = document.createElement(type);
         newElement.href = link;
         newElement.style.textDecoration = 'none';
-        newElement.classList.add("row", "gx-0", "mb-4", "mb-lg-5", "align-items-center");
+        newElement.classList.add("row", "gx-0", "mb-4", "mb-5", "align-items-center");
         newElement.innerHTML = `
-                    <div class="col-xl-8 col-lg-7">
-                        <img alt="..." class="img-fluid mb-3 mb-lg-0" src="${image}" />
+                    <div class="col-xl-8 col-7">
+                        <img alt="..." class="img-fluid mb-3 mb-0" src="${image}" />
                     </div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
+                    <div class="col-xl-4 col-5">
+                        <div class="featured-text text-center text-left">
                             <h4>${title}</h4>
                             <p class="mb-2">${description}</p>
                         </div>
@@ -208,13 +207,13 @@ class LeftItem extends HTMLBaseElement {
         const newElement = document.createElement(type);
         newElement.href = link;
         newElement.style.textDecoration = 'none';
-        newElement.classList.add('row', 'gx-0', 'justify-content-center', 'bg-fourth');
+        newElement.classList.add('row', 'gx-0', 'justify-content-center', 'bg-second');
         newElement.innerHTML = `
-    <div class="col-lg-6"><img alt="..." class="img-fluid" src="${image}"/></div>
-    <div class="col-lg-6 order-lg-first">
+    <div class="col-6"><img alt="..." class="img-fluid" src="${image}"/></div>
+    <div class="col-6 order-first">
         <div class="text-center h-100 project">
             <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-right">
+                <div class="project-text w-100 my-auto text-center text-right">
                     <h4>${title}</h4>
                     <p class="mb-0">${description}</p>
                 </div>
@@ -254,13 +253,13 @@ class RightItem extends HTMLBaseElement {
         const newElement = document.createElement(type);
         newElement.href = link;
         newElement.style.textDecoration = 'none';
-        newElement.classList.add('row', 'gx-0', 'justify-content-center', 'bg-fourth');
+        newElement.classList.add('row', 'gx-0', 'justify-content-center', 'bg-second');
         newElement.innerHTML = `
-    <div class="col-lg-6"><img alt="..." class="img-fluid" src="${image}"/></div>
-    <div class="col-lg-6">
+    <div class="col-6"><img alt="..." class="img-fluid" src="${image}"/></div>
+    <div class="col-6">
         <div class="text-center h-100 project">
             <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
+                <div class="project-text w-100 my-auto text-center text-left">
                     <h4>${title}</h4>
                     <p class="mb-0">${description}</p>
                 </div>
