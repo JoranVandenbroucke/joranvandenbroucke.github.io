@@ -1,7 +1,7 @@
 // Function for calculating read time
 function calculateReadTime(markdown) {
     const wordsPerMinute = 200; // Adjust this value based on your reading speed estimation
-    const wordCount = markdown.description.trim().split(/\s+/).length;
+    const wordCount = markdown.trim().split(/\s+/).length;
     return Math.ceil(wordCount / wordsPerMinute);
 }
 function loadMarkDown(direction) {
