@@ -1,7 +1,7 @@
 // Function for calculating read time
-function calculateReadTime(headerData) {
+function calculateReadTime(markdown) {
     const wordsPerMinute = 200; // Adjust this value based on your reading speed estimation
-    const wordCount = headerData.description.trim().split(/\s+/).length;
+    const wordCount = markdown.description.trim().split(/\s+/).length;
     return Math.ceil(wordCount / wordsPerMinute);
 }
 function loadMarkDown(direction) {
@@ -32,7 +32,7 @@ function processMarkdown(markdown) {
     const { header, content } = extractHeaderAndContent(markdown);
 
     if (header !== null && header !== "") {
-        headerHTML = processHeader(header);
+        headerHTML = processHeader(header, content);
     }
 
     if (content.startsWith("http")) {
@@ -70,10 +70,10 @@ function extractHeaderAndContent(markdown) {
     return { header, content };
 }
 
-function processHeader(header) {
+function processHeader(header, markdown) {
     try {
         const headerData = jsyaml.load(header);
-        const readTimeMinutes = calculateReadTime(headerData);
+        const readTimeMinutes = calculateReadTime(markdown);
 
         if (headerData.image.url.toLowerCase().includes("blogs")) {
             return createHeaderHTML(headerData, readTimeMinutes);
