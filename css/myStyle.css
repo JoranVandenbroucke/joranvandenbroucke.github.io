@@ -13295,16 +13295,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
 
-    .masthead h2, .masthead .h2,
-    .mastheadBal h2, .mastheadBal .h2,
-    .mastheadNOX h2, .mastheadNOX .h2,
-    .mastheadRay h2, .mastheadRay .h2,
-    .mastheadRas h2, .mastheadRas .h2,
-    .mastheadAIp h2, .mastheadAIp .h2,
-    .mastheadSpl h2, .mastheadSpl .h2,
-    .mastheadCoL h2, .mastheadCoL .h2,
-    .mastheadGART h2, .mastheadGART .h2,
-    .mastheadGANM h2, .mastheadGANM .h2 {
+    .masthead h2, .masthead .h2 {
         max-width: 20rem;
         font-size: 1rem;
         color: var(--text-color-2);
@@ -13312,61 +13303,25 @@ body {
 }
 
 @media (min-width: 768px) {
-    .masthead h1, .masthead .h1,
-    .mastheadBal h1, .mastheadBal .h1,
-    .mastheadNOX h1, .mastheadNOX .h1,
-    .mastheadRay h1, .mastheadRay .h1,
-    .mastheadRas h1, .mastheadRas .h1,
-    .mastheadAIp h1, .mastheadAIp .h1,
-    .mastheadSpl h1, .mastheadSpl .h1,
-    .mastheadCoL h1, .mastheadCoL .h1,
-    .mastheadGART h1, .mastheadGART .h1,
-    .mastheadGANM h1, .mastheadGANM .h1 {
+    .masthead h1, .masthead .h1 {
         font-size: 4rem;
         line-height: 4rem;
     }
 }
 
 @media (min-width: 992px) {
-    .masthead, .masthead,
-    .mastheadBal, .mastheadBal,
-    .mastheadNOX, .mastheadNOX,
-    .mastheadRay, .mastheadRay,
-    .mastheadRas, .mastheadRas,
-    .mastheadAIp, .mastheadAIp,
-    .mastheadSpl, .mastheadSpl,
-    .mastheadCoL, .mastheadCoL,
-    .mastheadGART, .mastheadGART,
-    .mastheadGANM, .mastheadGANM {
+    .masthead, .masthead {
         height: 100vh;
         padding: 0;
     }
 
-    .masthead h1, .masthead .h1,
-    .mastheadBal h1, .mastheadBal .h1,
-    .mastheadNOX h1, .mastheadNOX .h1,
-    .mastheadRay h1, .mastheadRay .h1,
-    .mastheadRas h1, .mastheadRas .h1,
-    .mastheadAIp h1, .mastheadAIp .h1,
-    .mastheadSpl h1, .mastheadSpl .h1,
-    .mastheadCoL h1, .mastheadCoL .h1,
-    .mastheadGART h1, .mastheadGART .h1,
-    .mastheadGANM h1, .mastheadGANM .h1 {
+    .masthead h1, .masthead .h1 {
         font-size: 6.5rem;
         line-height: 6.5rem;
         letter-spacing: 0.8rem;
     }
 
-    .masthead h2, .masthead .h2,
-    .mastheadBal h2, .mastheadBal .h2,
-    .mastheadNOX h2, .mastheadNOX .h2,
-    .mastheadRay h2, .mastheadRay .h2,
-    .mastheadRas h2, .mastheadRas .h2,
-    .mastheadAIp h2, .mastheadAIp .h2,
-    .mastheadSpl h2, .mastheadSpl .h2,
-    .mastheadCoL h2, .mastheadCoL .h2,
-    .mastheadGART h2, .mastheadGART .h2,
-    .mastheadGANM h2, .mastheadGANM .h2 {
+    .masthead h2, .masthead .h2 {
         max-width: 30rem;
         font-size: 1.25rem;
     }
