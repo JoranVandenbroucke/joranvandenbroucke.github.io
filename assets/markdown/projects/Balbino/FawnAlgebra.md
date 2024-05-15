@@ -4,7 +4,7 @@ subTitle: 'An open source C++ math library which implements other mathematical c
 pubDate: !!str 2022-02-12
 description: 'Fawn Algebra is a C++23 math library tries to avoid vectorcall and linear algebra as many libraries already exist with an implementation for them. This library focuses more on thins like easing unctions, deterministic random, statistics and more. The Fawn Libraries are the foundation of Balbino.'
 image:
-  url: '/assets/projects/Balbino/FawnAlgebra.jpeg'
+  url: '/assets/img/projects/Balbino/FawnAlgebra.jpeg'
   alt: ';('
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'
