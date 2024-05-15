@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function iterateBlogFiles() {
         const blogFiles = [
             "projects/Balbino/Balbino.md",
+            "projects/Balbino/FawnAlgebra.md",
             "projects/CoL/CoL.md",
             "projects/NOX/NOX.md",
             "projects/SoftwareRayTracer/SoftwareRayTracer.md",
