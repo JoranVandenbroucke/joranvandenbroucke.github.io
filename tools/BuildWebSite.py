@@ -106,7 +106,8 @@ documents = ["blogs/GANM/ganm1.md",
              "projects/AIProgramming/AIProgramming.md",
              "projects/NOX/NOX.md",
              "projects/CoL/CoL.md",
-             "projects/Balbino/Balbino.md"
+             "projects/Balbino/Balbino.md",
+             "projects/Balbino/FawnAlgebra.md"
              ]
 
 # iterate through each document file
