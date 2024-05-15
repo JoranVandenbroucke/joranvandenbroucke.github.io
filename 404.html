@@ -31,8 +31,16 @@
             // Mapping from repo name to the org it moved to.
             const movedRepos = {
                 'balbino': 'Balbino',
+                'math': 'FawnAlgebra',
+                'algebra': 'FawnAlgebra',
+                'fawnalgebra': 'FawnAlgebra',
+                'fawn%20algebra': 'FawnAlgebra',
+                'fawn+algebra': 'FawnAlgebra',
                 'recast': 'recastnavigation',
                 'recastnavigation': 'recastnavigation',
+                'recast%20navigation': 'recastnavigation',
+                'recast+navigation': 'recastnavigation',
+                'detour': 'recastnavigation',
             };
 
             const repoRegex = new RegExp('^/([^/]+)(/|$)');
