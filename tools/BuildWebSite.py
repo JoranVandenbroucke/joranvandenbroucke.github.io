@@ -48,7 +48,7 @@ def extract_document_data(file_content, file):
             'Tags': header_data['tags'],
             'CarouselImages': carousel_images,
             'ReadTime': read_time_minutes,
-            'FileName': re.sub(r'^(\w+)/.+/(\w+)\.md$', r'\1/\2.html', re.sub(r'\s', '', file))
+            'FileName': re.sub(r'^(\w+)/(\w+/)?(\w+)\.md$', r'\1/\3.html', re.sub(r'\s', '', file))
         }
     else:
         return None
@@ -57,15 +57,15 @@ def extract_document_data(file_content, file):
 def generate_html_page(document, html_file_name):
     # read template file
     template = ""
-    markdown_url = 'https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main'
+    markdown_url = ''
     if "blogs" in document['FileName']:
         with open('tools/blogs.html', 'r') as template_file:
             template = template_file.read()
-        markdown_url += '/assets/markdown/' + html_file_name
+        markdown_url = '/assets/markdown/' + html_file_name
     elif "projects" in document['FileName']:
         with open('tools/projects.html', 'r') as template_file:
             template = template_file.read()
-        markdown_url += '/assets/markdown/' + html_file_name
+        markdown_url = '/assets/markdown/' + html_file_name
         carousel_indicators = generate_carousel_indicators(document['CarouselImages'])
         carousel_inner = generate_carousel_inner(document['CarouselImages'])
         template = template.replace(f'{{{"Carousel_Indicators"}}}', carousel_indicators)
@@ -101,11 +101,11 @@ def generate_html_page(document, html_file_name):
 documents = ["blogs/GANM/ganm1.md",
              "blogs/GART/gart1.md",
              "blogs/LCM/LCM.md",
-             "projects/SoftwareRasterizer/SoftwareRasterizer.md",
-             "projects/SoftwareRayTracer/SoftwareRayTracer.md",
-             "projects/AIProgramming/AIProgramming.md",
-             "projects/NOX/NOX.md",
-             "projects/CoL/CoL.md",
+             "projects/SoftwareRasterizer.md",
+             "projects/SoftwareRayTracer.md",
+             "projects/AIProgramming.md",
+             "projects/NOX.md",
+             "projects/CoL.md",
              "projects/Balbino/Balbino.md",
              "projects/Balbino/FawnAlgebra.md"
              ]

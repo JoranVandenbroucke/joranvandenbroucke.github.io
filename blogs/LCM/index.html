@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>What is Local Clearance Minimum?</title>
-    <meta name="description" content="This series of blog posts delves into the concept of Local Clearance Minimum (LCM) in the context of NavMesh generation. It discusses various methods of NavMesh creation, the challenges posed by different agent sizes, and how LCMs offer a solution to optimize navigation meshes.">
-    <meta property="og:title" content="What is Local Clearance Minimum?">
-    <meta property="og:description" content="This series of blog posts delves into the concept of Local Clearance Minimum (LCM) in the context of NavMesh generation. It discusses various methods of NavMesh creation, the challenges posed by different agent sizes, and how LCMs offer a solution to optimize navigation meshes.">
+    <title>What is the Local Clearance Minimum?</title>
+    <meta name="description" content="This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.">
+    <meta property="og:title" content="What is the Local Clearance Minimum?">
+    <meta property="og:description" content="This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.">
     <meta property="og:image" content="/assets/img/blogs/LCM/LCM_Banner.png">
     <meta property="og:url" content="https://joranvandenbroucke.github.io/blogs/LCM">
-    <meta name="twitter:title" content="What is Local Clearance Minimum?">
-    <meta name="twitter:description" content="This series of blog posts delves into the concept of Local Clearance Minimum (LCM) in the context of NavMesh generation. It discusses various methods of NavMesh creation, the challenges posed by different agent sizes, and how LCMs offer a solution to optimize navigation meshes.">
+    <meta name="twitter:title" content="What is the Local Clearance Minimum?">
+    <meta name="twitter:description" content="This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.">
     <meta name="twitter:image" content="/assets/img/blogs/LCM/LCM_Banner.png">
     <meta name="twitter:url" content="https://joranvandenbroucke.github.io/blogs/LCM">
     <meta name="author" content="Joran Vandenbroucke"/>
-    <meta name="keywords" content="LCM, Local Clearance Minimum, Navmesh, Navigation Mesh, NavMesh Generation, Pathfinding, Joran, Vandenbroucke, What, is, Local">
+    <meta name="keywords" content="LCM, Local Clearance Minimum, Navmesh, Navigation Mesh, Navmesh Generation, Pathfinding, Joran, Vandenbroucke, What, is, the">
     <link rel="canonical" href="https://joranvandenbroucke.github.io/blogs/LCM">
 
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
@@ -26,17 +26,12 @@
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <!-- Core theme CSS (includes Bootstrap)-->
 
-    <script src="/js/highlightjs/highlight.min.js"></script>
-    <script src="/js/ThemeSwitcher.js"></script>
 
     <!-- Core theme CSS (includes Bootstrap)-->
+    <script src="/js/highlightjs/highlight.min.js"></script>
     <link rel="stylesheet" href="/css/scroll.css">
     <link rel="stylesheet" href="/css/myStyle.css">
 
-    <script src="/js/scripts.js"></script>
-    <script src="/js/CustomHTML.js"></script>
-    <script src="/js/ThemeSwitcher.js"></script>
-    <script src="/js/highlightjs/highlight.min.js"></script>
     <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
@@ -46,16 +41,18 @@
 
     <link rel="stylesheet" title="light code" href="/js/highlightjs/styles/intellij-light.min.css">
     <link rel="alternate stylesheet" title="dark code" href="/js/highlightjs/styles/srcery.min.css" disabled>
+
+    <script src="/js/scripts.js"></script>
 </head>
-<body onload="loadMarkDown('https://raw.githubusercontent.com/JoranVandenbroucke/joranvandenbroucke.github.io/main/assets/markdown/blogs/LCM/LCM.md')">
+<body onload="loadMarkDown('/assets/markdown/blogs/LCM/LCM.md')">
 <header-nav>
 </header-nav>
 <header class="masthead" style="background-image: url(/assets/img/blogs/LCM/LCM_Banner.png)">
     <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex">
             <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">What is Local Clearance Minimum?</h1>
-                <h2 class="mx-auto mt-2 mb-5 text-second">Exploring the Concept of Local Clearance Minimum in NavMesh Generation</h2>
+                <h1 class="mx-auto my-0 text-uppercase">What is the Local Clearance Minimum?</h1>
+                <h2 class="mx-auto mt-2 mb-5 text-second">Exploring the Concept of Local Clearance Minimum in Navmesh Generation</h2>
             </div>
         </div>
     </div>
