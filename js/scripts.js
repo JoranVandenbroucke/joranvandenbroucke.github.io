@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
         const promises = blogFiles.map(file => new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
-            const direction = `./assets/markdown/${file}`;
+            const direction = `../assets/markdown/${file}`;
             xhr.open('GET', direction, true);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
