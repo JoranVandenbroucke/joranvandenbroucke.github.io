@@ -1,14 +1,14 @@
 ---
-Title: What is the Local Clearance Minimum?
-Subtitle: Exploring the Concept of Local Clearance Minimum in Navmesh Generation
-PubDate: May 13, 2024
-Description: This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.
-Image:
-  - URL: '/assets/img/blogs/LCM/LCM_Banner.png'
-  - Alt: ';('
-Author: Joran Vandenbroucke
-AuthorPP: '/assets/img/ProfilePicture.png'
-Tags: ["LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "Navmesh Generation", "Pathfinding"]
+title: 'What is the Local Clearance Minimum?'
+subTitle: 'Exploring the Concept of Local Clearance Minimum in Navmesh Generation'
+pubDate: May 13, 2024
+description: 'This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.'
+image:
+  url: '/assets/img/blogs/LCM/LCM_Banner.png'
+  alt: ';('
+author: 'Joran Vandenbroucke'
+authorPP: '/assets/img/ProfilePicture.png'
+tags: ["LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "Navmesh Generation", "Pathfinding"]
 ---
 
 # Navigation Meshes
