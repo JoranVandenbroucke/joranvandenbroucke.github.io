@@ -1,137 +1,150 @@
 ---
-title: 'What is Local Clearance Minimum?'
-subTitle: 'Exploring the Concept of Local Clearance Minimum in NavMesh Generation'
-pubDate: !!str 2024-05-11
-description: 'This series of blog posts delves into the concept of Local Clearance Minimum (LCM) in the context of NavMesh generation. It discusses various methods of NavMesh creation, the challenges posed by different agent sizes, and how LCMs offer a solution to optimize navigation meshes.'
-image:
-  url: '/assets/img/blogs/LCM/LCM_Banner.png'
-  alt: ';('
-author: 'Joran Vandenbroucke'
-authorPP: '/assets/img/ProfilePicture.png'
-tags: [ "LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "NavMesh Generation", "Pathfinding" ]
+Title: What is the Local Clearance Minimum?
+Subtitle: Exploring the Concept of Local Clearance Minimum in Navmesh Generation
+PubDate: May 13, 2024
+Description: This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.
+Image:
+  - URL: '/assets/img/blogs/LCM/LCM_Banner.png'
+  - Alt: ';('
+Author: Joran Vandenbroucke
+AuthorPP: '/assets/img/ProfilePicture.png'
+Tags: ["LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "Navmesh Generation", "Pathfinding"]
 ---
+
 # Navigation Meshes
+## Part 1: What is the Local Clearance Minimum
+Welcome to our deep dive into the world of Navigation Meshes, or Navmeshes for short.
+Get ready for an exciting journey!
+In this series, we are not just scratching the surface; we are exploring every nook and cranny of this fascinating topic, and we invite you to join us in this exploration.
 
-## Chapter 1: What is Local Clearance Minimum
+Our first stop introduces us to Navmeshes and the Local Clearance Minimum (LCM), which reshapes our thinking about virtual spaces and their characters.
+As we venture forward, Part 2 looks at Recast and its role in the Navmesh generation process.
+We'll explore how to add LCMs into the pipeline using Recast, a popular open-source library that has also been adopted in Unreal Engine.
+We will run tests and analyse the results.
+The statistics will show the strengths and weaknesses of the new algorithm.
+Our exploration does not end there.
 
-This series of blog posts explains about NavMeshes.
-The blogs introduce you to a new concept called `Local Clearance Minimum` (LCM).
-After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation.
-The series explores an exact navmesh generation method, which calculates the medial axis to detect LCMs and create a NavMesh with them.
-Finally, the last blog looks into how this affects the way navigation works and shows the pros and cons of it.
+The narrative continues in Part 3, where we create a Navmesh generation method from scratch.
+The new generator uses the medial axis to detect LCMs.
+The medial axis is a mathematical concept representing a shape's skeleton.
+In the context of Navmesh generation, it's used to identify the tightest spots in the environment where LCMs are needed.
+This approach can be a modern, reliable, fast alternative for frameworks like Recast.
 
-The chapter outline is as follows:
-1. What is Local Clearance Minimum
-2. LCM in Recast (Work in progress)
-3. LCM, a custom solution from the ground up (Work in progress)
-4. Navigating using the LCM (Work in progress)
+Our journey culminates in Navigation City.
+In Part 4, we will use the generated LCMs to do pathfinding.
+This will be different from standard methods as we will have to take LCMs into account.
 
-### Part 1. What is a NavMesh?
+### Navigating the Blogs
 
-For a game character to walk around in the environment, they need to know what is walkable and what is not.
-A data structure to solve this problem is called a Navigation Mesh (NavMesh).
-One could say that a navmesh is the floor plan or a representation of free space for a given environment.
-The NavMesh ensures that characters do not walk through obstacles or clip into walls.
+Here is what you can expect in each Part:
+1. What is the Local Clearance Minimum? - A deep dive into the concept that can change the game.
+2. LCM in Recast (Work in progress) - Implementing LCMs within the Recast framework.
+3. LCM: A Custom Solution from the Ground Up (Work in progress) - Building a Navmesh generator around the LCM concept.
+4. Navigating Using the LCM (Work in progress) - The practical implications of pathfinding using LCMs.
 
-Snook gave one of the first definitions of a NavMesh [[1]](#1).
-He defined NavMesh as a coarse geometry that covers the open, walkable surface area [[1]](#1).
-Although Snook was one of the first to define the concept of the NavMesh, he didn't have a method to automatically generate them.
+### Part 1, Chapter 1: Decoding the Navmesh
 
-A NavMesh exists out of a set of regions and a connection graph. The regions are sometimes also referred to as cells and
-the connections as portals, which then results in a set of cells with a portal graph.
+Imagine you are a character in a game.
+You look around and see a world filled with possibilities—and obstacles.
+How do you know where to step?
+Enter the Navmesh, the unsung hero guiding your every move.
+It's the floor plan of walkable spaces, ensuring you never bump into a wall or phase through it.
 
-### Part 2: How is a NavMesh created?
-There are a lot of navmesh generation methods, so let us highlight some of them.
+In the early days, Snook penned down one of the pioneering definitions of a Navmesh.
+He defined a Navmesh as coarse geometry covering the open, walkable surface area [\[6\]](#6).
+But back then, creating a Navmesh was more art than science—there was no magic button to bring it to life.
+A Navmesh exists out of a set of regions and a connection graph.
+Together, they are the cell-and-portal graph that guides characters through the virtual world.
 
-Rabin described one of the earliest methods to generate a navmesh.
-Rabin wrote in AI Game Programming Wisdom, a method that could automatically generate a navigation mesh [[2]](#2).
-Rabin's method uses Hertel Mehlhorn to triangulate the mesh.
-Because Hertel Mehlhorn doesn't minimize the number of convex pieces, Rebin added some more steps to reduce the number of regions.
+### Part 1, Chapter 2: The Craft of Navmesh Creation
 
-Kallmann created Dynamic and Robust Local Clearance Triangulation [[3]](#3), also known as Local Clearance Triangulation (LCT).
-LCT is based on Fully Dynamic Constrained Delaunay Triangulations by Kallmann et al.
-As the name suggests, this uses Delaunay Triangulations to generate the navigation mesh.
-It was so fast and efficient that it could add, move, or remove obstacles in real-time.
-LCT then also adds the concept of clearance, the minimum edge-to-edge distance, to this.
-![Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)](/assets/img/blogs/LCM/LCM_exactMethods.png "Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)")
-<sup>**Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)**</sup>
+Navmesh Generators can figure out the environment and sketch a floorplan of your world.
+Let me introduce you to some of them.
 
-Now previous methods could be looked at as "exact" methods.
-Generally speaking, exact methods have it more difficult with overlapping geometry, and each layer needs to be processed separately.
-The next set of methods can be looked at as "voxel" methods.
-They voxelize the entire scene and get an understanding of the scene through voxels.
-Voxel methods do not need any layer separation but can miss things like corridors if the voxel size is too small.
+Rabin—in a chapter of "AI Game Programming Wisdom"—introduced a method to conjure up a Navmesh from thin air [\[5\]](#5).
+His method, documented within its pages, uses the Hertel Mehlhorn triangulation algorithm [\[5\]](#5).
+Yet, this approach needed to optimise the number of convex regions.
+This prompted Rabin to append more steps to polish the outcome.
 
-One of the voxel methods is Recast [[4]](#4).
-Recast is an open-source project which has also found its way into Unreal Engine 5.
-This project is based on Volumetric cell-and-portal generation [[5]](#5) by Haumont et al.
-Recast first voxelizes the scene and decides what is walkable and what is not.
-Then it keeps everything that is walkable and makes a distance map out of it.
-A distance value of one means, there is one cell between me and the closest-edge cell, and a value of two means two cells are between me and the closest-edge cell.
-The distance map goes through a watershed and assigns a region ID to each cell.
-The map with region IDs gets traces and converted into a mesh.
+Then there's Kallmann with the Dynamic and Robust Local Clearance Triangulation (LCT) [\[2\]](#2).
+This work was based on Fully Dynamic Constrained Delaunay Triangulations (CDT) by Kallmann et al.
+By combining CDT with the concept of clearance—the minimum edge-to-edge distance—Kallmann made LCT fully dynamic and adaptable to real-time changes.
 
-Another Voxel methode is NEOGEN: Near optimal generator of navigation meshes for 3D multi-layered environments [[6]](#6) by Oliva and Pelechano.
-NEOGEN tries to create a navmesh with as few convex regions as possible.
-A GPU voxelization identifies and extracts different walkable layers.
-A fragment shader creates a 2D-floor plan of each layer.
-Finally, a convex decomposition of each layer is created and linked together to create the final navmesh.
+![A tale of two scenes: The classic Romeo and Juliet (Left) and their LCT rendition (Right)](/assets/img/blogs/LCM/LCM_exactMethods.png)
 
-### Part 3: How does Local Clearance Minimum come into play?
+<sub id='F1'>Figure 1: Romeo and Juliet (Left), Romeo and Juliet according to LCT (Right)</sub>
 
-Oké, now we know some NavMesh generators and have a rough knowledge of how they work.
-So, what is the problem?
-Well, the problem comes when we want to have agents of different sizes.
-Before we generate a navigation mesh, we generally shrink the walkable environment with the radius of the agent and use that as input.
-The centre point of that agent can then be put against the border or the NavMesh without worrying that the Agent will clip through walls.
-This shrinking of the environment also automatically removes parts of the environment that are smaller than the agent radius.
-![A room with an agent in int (left), A room with the agent against the wall (right)](/assets/img/blogs/LCM/NavMeshOffset.png "A room with an agent in int (left), A room with the agent against the wall (right)")
-<sup>**This figure shows how the offset helps with navigation and avoiding wall clipping.**</sup>
+While these "exact" methods were accurate, they struggled with overlapping geometries.
+If your geometry has overlapping parts, you must feed the generator layer per layer.
+That's where 'voxel' methods come in.
+They treat the scene as a 3D pixel puzzle, simplifying the complex without skipping a beat.
+Voxel methods are algorithms that break down the environment into small, uniform 'voxels' or 3D pixels.
+These can then be used to create a simplified representation of the environment for the Navmesh generation.
 
-Because of this, we need multiple navigation meshes when we have agents with different radii.
-For games with small environments, this is not a big problem.
-But for games that have large open-world maps, this means having multiple representations of the same environment.
-So essentially, duplicate memory.
+Recast [\[7\]](#7), an open-source voxel method, has even made a cameo in Unreal Engine.
+It is based on the Volumetric cell-and-portal generation crafted by Haumont et al. [\[1\]](#1).
+It starts by voxelizing the scene and removing the voxel if it is not walkable.
+Recast creates a distance map with all the walkable cells using a watershed algorithm to assign region IDs later.
+Those IDs are then traced and transformed into a navigable mesh.
 
-What if we can merge all NavMeshes into one?
-Here is where the Local Clearance Minimum comes into play.
-The Local Clearance Minimum (LCM) is a point or sequence of points on the medial axis where the distance to obstacles is locally the smallest.
-In practical terms, if an area shrinks and then grows, the LCM is where the space is smallest.
-An LCM could be in the doorway or an alleyway connecting two main streets.
+And let's not forget NEOGEN, the creation of Oliva and Pelechano [\[4\]](#4).
+NEOGEN's goal?
+To craft a Navmesh with the fewest convex regions possible.
+A GPU-powered wizard separates layers in the scene, sketches a 2D floor plan, and performs a convex decomposition to link them all together.
 
-Instead of splitting up the environment into convex regions, we draw lines on LCMs and that becomes our region borders.
-This way, during pathfinding, we just need to check if the agent fits through each LCM.
-Using LCMs will get rid of the offset for each agent, but we can add it back during navigating as we often modify the path to make it look more natural anyway.
+### Part 1, Chapter 3: The Role of Local Clearance Minimum in the World of Navmeshes
 
-There are two places a medial axis can be found, one is on a saddle point, and the other is on a saddle segment.
-As shown in the image below, the saddle point is a point in a graph where, in one direction is the lowest point, while in the orthogonal direction, it is the highest point on the graph.
-The centre part represents a distance map. The centre pixel has a higher value than its neighbours on the x-axis, but it is the smallest pixel when looking at the y-axis.
-The same thing is true for the rightmost part of the image. The only difference here is that three neighbouring pixels can be considered as the saddle point; therefore, we call them a saddle segment.
-![Saddle point explanation](/assets/img/blogs/LCM/SaddlePointSegment.png "A saddle graph with saddle point as centre point (left), distance map representation of saddle graph (centre), distance map of a saddle segment (right)")
-<sup>**A saddle graph with saddle point as centre point (left), distance map representation of saddle graph (centre), distance map of a saddle segment (right)**</sup>
+Now that we've journeyed through the labyrinth of Navmesh generators, it's time to tackle a pressing issue.
+Picture this: a bustling virtual city with agents of all shapes and sizes, each with their own paths to tread.
+The challenge arises when these agents differ in size.
+Typically, we'd shrink the walkable terrain by the agent's radius before crafting a Navmesh, ensuring our digital citizens don't awkwardly clip through walls, see [Figure 2](#F2).
 
+![A room with a navmesh (left) and agent placed at the edge of the Navmesh to show how wall clipping gets avoided (right)](/assets/img/blogs/LCM/NavMeshOffset.png)
 
-One way to get the LCMs from an environment is to calculate the medial axis of the environment. [[7]](#7)
-Then you traverse the medial axis until a saddle point or saddle segment is found.
-On that point, you connect the two close boundary points, and you have a region border.
-Rinse and repeat until you go over the entire medial axis.
+<sub id='F2'>Figure 2: This figure shows how the offset helps navigate and avoids wall clipping.</sub>
 
-In the next blog post, we will be exploring another method of generating a navmesh using LCMs.
-We will be using Recast [[8]](#8), a popular open-source library for NavMesh generation.
+But what happens when we have diverse characters, each with unique dimensions?
+
+We're tasked with creating many Navmeshes, one for each agent size.
+This isn't just a headache for developers—it's a memory hog, especially in big, lively, open-world games.
+
+Introducing the hero of our story: the Local Clearance Minimum (LCM).
+The LCM is a point or sequence of points on the medial axis where the distance to obstacles is the smallest locally.
+Imagine the LCM as a city planner for our virtual world.
+It identifies the tightest spots in the environment—the doorways and hallways where space is minimal.
+By drawing lines on these LCMs, we define our region borders, transforming a complex web of individual paths into a unified Navmesh.
+
+This approach means that we verify if an agent can squeeze through each LCM during pathfinding.
+While we remove the offsets for each agent in the Navmesh, we need to reintroduce them during navigation while we smooth the paths and add a touch of realism.
+
+But where do we find these LCMs?
+They can be easily found in the environment's medial axis when the medial axis value is locally smallest.
+[Figure 3](#F3) shows we can approximate the medial axis with a distance map.
+![The medial axis and distance map of the same environment]( /assets/img/blogs/LCM/LCM_medialDistance.png)
+
+<sub id=”F3”>Figure 3: The medial axis (left) and distance map (right) of the same environment</sub>
+
+The LCM is a saddle point or a saddle segment on a distance map.
+A saddle point is like the centre point on a pringle: the lowest point in one direction and the highest in another.
+So, a saddle segment is a series of such points, forming a path of saddle points.
+
+![Navigating the saddle points](/assets/img/blogs/LCM/SaddlePointSegment.png)
+
+<sub>Figure 4: A saddle graph with saddle point as centre point (left), distance map representation of saddle graph (centre), distance map of a saddle segment (right)</sub>
+
+To harness the power of LCMs, we calculate the medial axis and traverse it until we hit a saddle point or segment.
+At these critical junctures, we connect the dots—literally—linking boundary points to form our region's borders.
+It's a discovery process, tracing the skeletal framework of our virtual world.
+
+Stay tuned for our next instalment, where we'll explore another method of generating a Navmesh using LCMs.
+We'll dive into Recast [1], a renowned open-source library Navmesh generation.
 
 ### Bibliography
-<a id="1">[1]</a> Greg Snook. 2000. Simplified 3D Movement and Pathfinding Using Navigation Meshes. In Game Programming Gems, Mark DeLoura (ed.). Charles River Media, 288304.
 
-<a id="2">[2]</a> Steve Rabin. 2002. Building a near-optimal navigation mesh. In AI Game Programming Wisdom. Charles River Media, Inc., USA.
-
-<a id="3">[3]</a> Marcelo Kallmann. 2014. Dynamic and Robust Local Clearance Triangulations. ACM Trans. Graph. 33, 5 (September 2014). https://doi.org/10.1145/2580947
-
-<a id="4">[4]</a> 2023. Recast & Detour. Retrieved March 6, 2023 from https://github.com/recastnavigation/recastnavigation
-
-<a id="5">[5]</a> D. Haumont, O. Debeir, and F. Sillion. 2003. Volumetric cell-and-portal generation. Computer Graphics Forum 22, 3 (2003), 303312. https://doi.org/10.1111/1467-8659.00677
-
-<a id="6">[6]</a> R. Oliva and N. Pelechano. 2013. NEOGEN: Near optimal generator of navigation meshes for 3D multi-layered environments. Computers & Graphics 37, 5 (August 2013), 403412. https://doi.org/10.1016/j.cag.2013.03.004
-
-<a id="7">[7]</a> Wouter van Toll, Atlas F. Cook IV, and Roland Geraerts. 2011. Navigation Meshes for Realistic Multi-Layered Environments. (September 2011).
-
-<a id="8">[8]</a> 2023. Recast & Detour. Retrieved March 6, 2023 from https://github.com/recastnavigation/recastnavigation
+<p id='1'>[1] D. Haumont, O. Debeir, and F. Sillion. 2003. Volumetric cell-and-portal generation. Computer Graphics Forum 22, 3 (2003), 303–312. [https://doi.org/10.1111/1467-8659.00677](https://doi.org/10.1111/1467-8659.00677)</p>
+<p id='2'>[2] M. Kallmann. 2010. Dynamic and robust Local Clearance Triangulations. ACM Transactions on Graphics (TOG) 29, 4 (2010), 1-10. [https://doi.org/10.1145/1778765.1778768](https://doi.org/10.1145/1778765.1778768)</p>
+<p id='3'>[3] J. O'Rourke. 1998. Computational geometry in C. Cambridge University Press.</p>
+<p id='4'>[4] P. Oliva and N. Pelechano. 2013. NEOGEN: Near optimal generator of navigation meshes for 3D multi-layered environments. Computers & Graphics 37, 5 (2013), 403-412. [https://doi.org/10.1016/j.cag.2013.04.006](https://doi.org/10.1016/j.cag.2013.04.006)</p>
+<p id='5'>[5] S. Rabin. 2002. AI Game Programming Wisdom. Charles River Media (2002), 171-185.</p>
+<p id='6'>[6] G. Snook. 2000. Simplified 3D movement and pathfinding using navigation meshes. Game Programming Gems 1 (2000), 288-304.</p>
+<p id='7'>[7] 2023. Recast & Detour. Retrieved March 6, 2023 from https://github.com/recastnavigation/recastnavigation</p>
