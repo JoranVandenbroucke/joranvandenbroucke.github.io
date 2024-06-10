@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ];
 
         const promises = blogFiles.map(file => {
-            const direction = `./assets/markdown/${file}`;
+            const direction = `/assets/markdown/${file}`;
             return fetch(direction)
                 .then(response => {
                     if (!response.ok) {
