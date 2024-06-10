@@ -245,30 +245,32 @@ document.addEventListener('DOMContentLoaded', function () {
             "projects/SoftwareRasterizer.md",
             "projects/AIProgramming.md",
             "blogs/LCM/LCM.md"
-            // "blogs/GART/gart1.md",
-            // "blogs/GANM/ganm1.md"
         ];
-        const promises = blogFiles.map(file => new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
+
+        const promises = blogFiles.map(file => {
             const direction = `../assets/markdown/${file}`;
-            xhr.open('GET', direction, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    const markdown = xhr.responseText;
-                    const blogInfo = getFileInfo(markdown, file);
-                    resolve(blogInfo);
-                } else if (xhr.readyState === 4) {
-                    reject(xhr.status);
-                }
-            };
-            xhr.send();
-        }));
+            return fetch(direction)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch file: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    return getFileInfo(markdown, file);
+                })
+                .catch(error => {
+                    console.error(error);
+                    throw error;
+                });
+        });
+
         Promise.all(promises)
             .then(blogInfos => {
                 blogInfos.forEach(appendItem);
             })
             .catch(error => {
-                console.error(`Failed to fetch file: ${error}`);
+                console.error(`Failed to fetch files: ${error}`);
             });
     }
 
