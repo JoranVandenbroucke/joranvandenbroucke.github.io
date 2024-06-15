@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Display Python version
-        run: py ./tools/BuildWebSite.py
+        run: python ./tools/BuildWebSite.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
