@@ -408,7 +408,7 @@ class FooterNav extends HTMLBaseElement {
 
         const newHTML = `
             <!-- Contact-->
-            <section class="signup-section" id="contact">
+            <section class="contact-section" id="contact">
                 <div class="container px-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-4 mb-0">

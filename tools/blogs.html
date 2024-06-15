@@ -77,6 +77,49 @@
         </div>
     </div>
 </section>
+<section class="signup-section" id="signup">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                <h2 class="text-white mb-5">You can mail me some feedback</h2>
+                <form id="EmailForm" onsubmit="sendEmail(event)">
+                    <div class="input-group-newsletter">
+                        <!-- Name input-->
+                        <input class="form-control" type="text" name="name" placeholder="Enter your name..." aria-label="Enter your name..." required>
+                        <!-- Email address input-->
+                        <input class="form-control" type="email" name="emailAddress" placeholder="Enter email address..." aria-label="Enter email address..." required>
+                        <!-- Subject input-->
+                        <input class="form-control" type="text" name="subject" placeholder="Enter a subject..." aria-label="Enter a subject..." required>
+                        <!-- Message input-->
+                        <textarea class="form-control" name="message" placeholder="Enter your message..." aria-label="Enter your message..." required></textarea>
+                        <!-- Page URL (hidden) -->
+                        <input type="hidden" name="pageURL" id="pageURL">
+                        <button class="btn btn-primary" type="submit" value="Submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Set the value of the hidden field to the current page URL
+    document.getElementById('pageURL').value = window.location.href;
+    function sendEmail(event) {
+        event.preventDefault();
+
+        const form = document.getElementById('EmailForm');
+        const name = form.name.value;
+        const emailAddress = form.emailAddress.value;
+        const subject = form.subject.value;
+        const message = form.message.value;
+        const pageURL = form.pageURL.value;
+        const body = "Name: " + name + "\nEmail: " + emailAddress + "\nPage URL: " + pageURL + "\n-- Please don't remove the text above. --\n\nMessage:\n\n" + message;
+        window.location.href = "mailto:joran.vandenbroucke@hotmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+</script>
+
 <footer-nav>
 </footer-nav>
 
