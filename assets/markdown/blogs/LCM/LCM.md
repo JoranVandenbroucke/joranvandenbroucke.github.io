@@ -1,7 +1,7 @@
 ---
 title: 'What is the Local Clearance Minimum?'
 subTitle: 'Exploring the Concept of Local Clearance Minimum in Navmesh Generation'
-pubDate: May 13, 2024
+pubDate: !!str 2024-06-10
 description: 'This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.'
 image:
   url: '/assets/img/blogs/LCM/LCM_Banner.png'
@@ -15,7 +15,7 @@ tags: [ "LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "Navmesh
 
 ## Part 1: What is the Local Clearance Minimum
 
-Welcome to our deep dive into the world of Navigation Meshes, or Navmeshes for short.
+Welcome to the world of Navigation Meshes, or Navmeshes for short.
 Get ready for an exciting journey!
 In this series, we are not just scratching the surface; we are exploring every nook and cranny of this fascinating
 topic, and we invite you to join us in this exploration.
@@ -109,7 +109,7 @@ The challenge arises when these agents differ in size.
 Typically, we'd shrink the walkable terrain by the agent's radius before crafting a Navmesh, ensuring our digital
 citizens don't awkwardly clip through walls, see [Figure 2](#F2).
 
-![A room with a navmesh (left) and agent placed at the edge of the Navmesh to show how wall clipping gets avoided (right)](/assets/img/blogs/LCM/NavMeshOffset.png)
+![A room with a navmesh (left) and agent placed at the edge of the Navmesh to show how wall clipping gets avoided (right)](/assets/img/blogs/LCM/LCM_Offset.png)
 
 <sub id='F2'>Figure 2: This figure shows how the offset helps navigate and avoids wall clipping.</sub>
 
@@ -121,7 +121,7 @@ This isn't just a headache for developers?it's a memory hog, especially in big, 
 Introducing the hero of our story: the Local Clearance Minimum (LCM).
 The LCM is a point or sequence of points on the medial axis where the distance to obstacles is the smallest locally.
 Imagine the LCM as a city planner for our virtual world.
-It identifies the tightest spots in the environment?the doorways and hallways where space is minimal.
+It identifies the tightest spots in the environment, the doorways and hallways, where space is minimal.
 By drawing lines on these LCMs, we define our region borders, transforming a complex web of individual paths into a
 unified Navmesh.
 
@@ -132,15 +132,16 @@ the paths and add a touch of realism.
 But where do we find these LCMs?
 They can be easily found in the environment's medial axis when the medial axis value is locally smallest.
 [Figure 3](#F3) shows we can approximate the medial axis with a distance map.
+
 ![The medial axis and distance map of the same environment]( /assets/img/blogs/LCM/LCM_medialDistance.png)
 
 <sub id=?F3?>Figure 3: The medial axis (left) and distance map (right) of the same environment</sub>
 
 The LCM is a saddle point or a saddle segment on a distance map.
-A saddle point is like the centre point on a pringle: the lowest point in one direction and the highest in another.
+A saddle point is like the centre point on a pringles: the lowest point in one direction and the highest in another.
 So, a saddle segment is a series of such points, forming a path of saddle points.
 
-![Navigating the saddle points](/assets/img/blogs/LCM/SaddlePointSegment.png)
+![Navigating the saddle points](/assets/img/blogs/LCM/LCM_SaddlePointSegment.png)
 
 <sub>Figure 4: A saddle graph with saddle point as centre point (left), distance map representation of saddle graph (
 centre), distance map of a saddle segment (right)</sub>
