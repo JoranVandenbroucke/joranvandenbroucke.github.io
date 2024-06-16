@@ -67,7 +67,7 @@ Together, they are the cell-and-portal graph that guides characters through the 
 Navmesh Generators can figure out the environment and sketch a floorplan of your world.
 Let me introduce you to some of them.
 
-Rabin, in a chapter of "AI Game Programming Wisdom"?introduced a method to conjure up a Navmesh from thin
+Rabin, in a chapter of "AI Game Programming Wisdom", introduced a method to conjure up a Navmesh from thin
 air [\[5\]](#5).
 His method, documented within its pages, uses the Hertel Mehlhorn triangulation algorithm [\[5\]](#5).
 Yet, this approach needed to optimise the number of convex regions.
@@ -135,7 +135,7 @@ They can be easily found in the environment's medial axis when the medial axis v
 
 ![The medial axis and distance map of the same environment]( /assets/img/blogs/LCM/LCM_medialDistance.png)
 
-<sub id=?F3?>Figure 3: The medial axis (left) and distance map (right) of the same environment</sub>
+<sub id='F3'>Figure 3: The medial axis (left) and distance map (right) of the same environment</sub>
 
 The LCM is a saddle point or a saddle segment on a distance map.
 A saddle point is like the centre point on a pringles: the lowest point in one direction and the highest in another.
@@ -143,7 +143,7 @@ So, a saddle segment is a series of such points, forming a path of saddle points
 
 ![Navigating the saddle points](/assets/img/blogs/LCM/LCM_SaddlePointSegment.png)
 
-<sub>Figure 4: A saddle graph with saddle point as centre point (left), distance map representation of saddle graph (
+<sub id='F4'>Figure 4: A saddle graph with saddle point as centre point (left), distance map representation of saddle graph (
 centre), distance map of a saddle segment (right)</sub>
 
 To harness the power of LCMs, we calculate the medial axis and traverse it until we hit a saddle point or segment.
