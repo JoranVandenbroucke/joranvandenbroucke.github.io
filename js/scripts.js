@@ -87,10 +87,10 @@ function processHeader(header, markdown) {
 
 function createHeaderHTML(headerData, readTimeMinutes) {
     return `
-        <div class="my-0 py-0">
+        <div class="my-0 py-sm-0 py-lg-0">
             <h1>${headerData.title}</h1>
             <p>Description: ${headerData.description}</p>
-            <img style="width: 15%;border-radius: 50%;margin-right:10px;" src="${headerData.authorPP}" alt="Author's profile picture" />
+            <img class="img-fluid" src="${headerData.authorPP}" alt="Author's profile picture"/>
             <p style="margin-right:10px;"><b>Author:</b> ${headerData.author}</p>
             <p style="display:inline-block;margin-right:10px;"><b>Published on:</b> ${headerData.pubDate}</p>
             <p style="display:inline-block;margin-right:10px;"><b>Read Time (Minutes):</b> ${readTimeMinutes}</p>
@@ -137,6 +137,7 @@ function processContent(content) {
         .replace(/<h1/g, '<h1 class="text-center text-lg-center"')
         .replace(/<h2/g, '<h2 class="text-center text-lg-center"')
         .replace(/<h3/g, '<h3 class="text-center text-lg-center"')
+        .replace(/<img/g, '<img class="img-fluid"')
 }
 
 // Function for changing theme
@@ -367,7 +368,7 @@ class HeaderNav extends HTMLBaseElement {
         const newHTML = `
             <!-- Navigation-->
             <nav class="navbar navbar-expand fixed-top" id="mainNav">
-                <div class="container px-4 px-5">
+                <div class="container px-sm-4 px-lg-4 px-sm-5 px-lg-5">
                     <a class="navbar-brand" href="/">Joran J. C. Vandenbroucke</a>
                     <button class="navbar-toggler navbar-toggler-right text-second" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
@@ -409,10 +410,10 @@ class FooterNav extends HTMLBaseElement {
         const newHTML = `
             <!-- Contact-->
             <section class="contact-section" id="contact">
-                <div class="container px-5">
+                <div class="container px-sm-5 px-lg-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-4 mb-0">
-                            <div class="card py-4 h-100">
+                            <div class="card py-sm-4 py-lg-4 h-100">
                                 <div class="card-body text-center">
                                     <i class="fab fa-github text-first mb-2"></i>
                                     <h4 class="text-uppercase m-0">GitHub</h4>
@@ -423,7 +424,7 @@ class FooterNav extends HTMLBaseElement {
                             </div>
                         </div>
                         <div class="col-4 mb-0">
-                            <div class="card py-4 h-100">
+                            <div class="card py-sm-4 py-lg-4 h-100">
                                 <div class="card-body text-center">
                                     <i class="fas fa-envelope text-first mb-2"></i>
                                     <h4 class="text-uppercase m-0">Email</h4>
@@ -435,7 +436,7 @@ class FooterNav extends HTMLBaseElement {
                             </div>
                         </div>
                         <div class="col-4 mb-0">
-                            <div class="card py-4 h-100">
+                            <div class="card py-sm-4 py-lg-4 h-100">
                                 <div class="card-body text-center">
                                     <i class="fab fa-linkedin text-first mb-2"></i>
                                     <h4 class="text-uppercase m-0">LinkedIn</h4>
@@ -451,7 +452,7 @@ class FooterNav extends HTMLBaseElement {
 
             <!-- Footer-->
             <footer class="footer small text-center">
-                <div class="container px-5">Copyright &copy; Joran Vandenbroucke 2022</div>
+                <div class="container px-sm-5 px-lg-5">Copyright &copy; Joran Vandenbroucke 2022</div>
             </footer>
         `;
         try {

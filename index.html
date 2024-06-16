@@ -20,20 +20,18 @@
     <meta property="og:url" content="https://joranvandenbroucke.github.io/">
     <title>Joran Vandenbroucke</title>
     <link rel="canonical" href="https://joranvandenbroucke.github.io/">
-
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
+
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+
     <!-- Google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <!-- Core theme CSS (includes Bootstrap)-->
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <script src="/js/highlightjs/highlight.min.js"></script>
-    <link rel="stylesheet" href="/css/scroll.css">
-    <link rel="stylesheet" href="/css/myStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <script src="https://unpkg.com/js-yaml@latest/dist/js-yaml.min.js"></script>
 
@@ -42,6 +40,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 
+    <!-- Local Files -->
+    <script src="/js/highlightjs/highlight.min.js"></script>
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/scroll.css">
     <link rel="stylesheet" title="light code" href="/js/highlightjs/styles/intellij-light.min.css">
     <link rel="alternate stylesheet" title="dark code" href="/js/highlightjs/styles/srcery.min.css" disabled>
 
@@ -52,7 +54,7 @@
 </header-nav>
 <!-- Masthead-->
 <header class="masthead" style="background-image: url('/assets/img/Banner.png')">
-    <div class="container px-5 d-flex h-100 align-items-center justify-content-center">
+    <div class="container px-sm-5 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex">
             <div class="text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Joran Vandenbroucke</h1>
@@ -72,7 +74,7 @@
 </header>
 <!-- About-->
 <section class="about-section text-center" id="about">
-    <div class="container px-4 px-lg-5">
+    <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8">
                 <h2 class="mb-4">Who am I?</h2>
@@ -98,7 +100,7 @@
         </div>
         <img alt="..." class="rounded-circle w-25 h-25 mb-5" src="/assets/img/ProfilePicture.png"/>
         <br/>
-        <a class="btn btn-primary mx-5 mb-3" href="about.html">Read more (Curriculum Vitae)</a>
+        <a class="btn btn-primary mx-sm-5 mx-lg-5 mb-3" href="about.html">Read more (Curriculum Vitae)</a>
     </div>
 </section>
 <!-- Portfolio -->
@@ -133,18 +135,18 @@
         <!-- Projects -->
         <div aria-labelledby="projects-tab" class="tab-pane fade show active" id="projects-tab-pane" role="tabpanel"
              tabindex="0">
-            <div class="container px-4 px-lg-5" id="projects-container"></div>
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5" id="projects-container"></div>
         </div>
         <!-- blogs -->
         <div aria-labelledby="blogs-tab" class="tab-pane fade" id="blogs-tab-pane" role="tabpanel" tabindex="0">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
                 <div class="justify-content-center" id="blogs-container"></div>
             </div>
         </div>
         <!-- Competitions -->
         <div aria-labelledby="competitions-tab" class="tab-pane fade" id="competitions-tab-pane" role="tabpanel"
              tabindex="0">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
                 <featured-item link="" image="/assets/img/competitions/vlaamse programeerwedstrijd 2019.jpg"
                                title="Flemish Programming Contest 2019">
                     In this contest, we had to be in a team of three. You got five problems, and you had to solve them
@@ -162,7 +164,7 @@
         </div>
         <!-- Jobs -->
         <div aria-labelledby="jobs-tab" class="tab-pane fade" id="jobs-tab-pane" role="tabpanel" tabindex="0">
-            <div class="container px-4 px-lg-5">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
                 <featured-item image="https://cdn.sanity.io/images/fuvbjjlp/production/24a55dfbef02a7776fdf4416f0ab38a367ca1596-500x169.png"
                                title="Internship Unity Technologies">
                     I had an internship at Unity Technologies back in Q1 and Q2 of 2022. I was part of the texture API
@@ -174,12 +176,11 @@
 </section>
 <footer-nav>
 </footer-nav>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Core theme JS-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <!-- * *                               SB Forms JS                               * *-->
 <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
