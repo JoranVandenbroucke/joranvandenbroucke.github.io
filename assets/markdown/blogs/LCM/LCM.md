@@ -51,14 +51,14 @@ Here is what you can expect in each Part:
 ### Part 1, Chapter 1: Decoding the Navmesh
 
 Imagine you are a character in a game.
-You look around and see a world filled with possibilities?and obstacles.
+You look around and see a world filled with possibilities and obstacles.
 How do you know where to step?
 Enter the Navmesh, the unsung hero guiding your every move.
 It's the floor plan of walkable spaces, ensuring you never bump into a wall or phase through it.
 
 In the early days, Snook penned down one of the pioneering definitions of a Navmesh.
 He defined a Navmesh as coarse geometry covering the open, walkable surface area [\[6\]](#6).
-But back then, creating a Navmesh was more art than science?there was no magic button to bring it to life.
+But back then, creating a Navmesh was more art than science, there was no magic button to bring it to life.
 A Navmesh exists out of a set of regions and a connection graph.
 Together, they are the cell-and-portal graph that guides characters through the virtual world.
 
@@ -67,7 +67,7 @@ Together, they are the cell-and-portal graph that guides characters through the 
 Navmesh Generators can figure out the environment and sketch a floorplan of your world.
 Let me introduce you to some of them.
 
-Rabin?in a chapter of "AI Game Programming Wisdom"?introduced a method to conjure up a Navmesh from thin
+Rabin, in a chapter of "AI Game Programming Wisdom"?introduced a method to conjure up a Navmesh from thin
 air [\[5\]](#5).
 His method, documented within its pages, uses the Hertel Mehlhorn triangulation algorithm [\[5\]](#5).
 Yet, this approach needed to optimise the number of convex regions.
@@ -75,7 +75,7 @@ This prompted Rabin to append more steps to polish the outcome.
 
 Then there's Kallmann with the Dynamic and Robust Local Clearance Triangulation (LCT) [\[2\]](#2).
 This work was based on Fully Dynamic Constrained Delaunay Triangulations (CDT) by Kallmann et al.
-By combining CDT with the concept of clearance?the minimum edge-to-edge distance?Kallmann made LCT fully dynamic and
+By combining CDT with the concept of clearance, the minimum edge-to-edge distance, Kallmann made LCT fully dynamic and
 adaptable to real-time changes.
 
 ![A tale of two scenes: The classic Romeo and Juliet (Left) and their LCT rendition (Right)](/assets/img/blogs/LCM/LCM_exactMethods.png)
@@ -116,7 +116,7 @@ citizens don't awkwardly clip through walls, see [Figure 2](#F2).
 But what happens when we have diverse characters, each with unique dimensions?
 
 We're tasked with creating many Navmeshes, one for each agent size.
-This isn't just a headache for developers?it's a memory hog, especially in big, lively, open-world games.
+This isn't just a headache for developers, it's a memory hog, especially in big, lively, open-world games.
 
 Introducing the hero of our story: the Local Clearance Minimum (LCM).
 The LCM is a point or sequence of points on the medial axis where the distance to obstacles is the smallest locally.
@@ -147,7 +147,7 @@ So, a saddle segment is a series of such points, forming a path of saddle points
 centre), distance map of a saddle segment (right)</sub>
 
 To harness the power of LCMs, we calculate the medial axis and traverse it until we hit a saddle point or segment.
-At these critical junctures, we connect the dots?literally?linking boundary points to form our region's borders.
+At these critical junctures, we connect the dots, literally, linking boundary points to form our region's borders.
 It's a discovery process, tracing the skeletal framework of our virtual world.
 
 Stay tuned for our next instalment, where we'll explore another method of generating a Navmesh using LCMs.
@@ -155,7 +155,7 @@ We'll dive into Recast [1], a renowned open-source library Navmesh generation.
 
 ### Bibliography
 
-<p id='1'>[1] D. Haumont, O. Debeir, and F. Sillion. 2003. Volumetric cell-and-portal generation. Computer Graphics Forum 22, 3 (2003), 303?312. [https://doi.org/10.1111/1467-8659.00677](https://doi.org/10.1111/1467-8659.00677)</p>
+<p id='1'>[1] D. Haumont, O. Debeir, and F. Sillion. 2003. Volumetric cell-and-portal generation. Computer Graphics Forum 22, 3 (2003), 303-312. [https://doi.org/10.1111/1467-8659.00677](https://doi.org/10.1111/1467-8659.00677)</p>
 <p id='2'>[2] M. Kallmann. 2010. Dynamic and robust Local Clearance Triangulations. ACM Transactions on Graphics (TOG) 29, 4 (2010), 1-10. [https://doi.org/10.1145/1778765.1778768](https://doi.org/10.1145/1778765.1778768)</p>
 <p id='3'>[3] J. O'Rourke. 1998. Computational geometry in C. Cambridge University Press.</p>
 <p id='4'>[4] P. Oliva and N. Pelechano. 2013. NEOGEN: Near optimal generator of navigation meshes for 3D multi-layered environments. Computers & Graphics 37, 5 (2013), 403-412. [https://doi.org/10.1016/j.cag.2013.04.006](https://doi.org/10.1016/j.cag.2013.04.006)</p>
