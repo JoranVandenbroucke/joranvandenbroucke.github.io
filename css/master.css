@@ -51,7 +51,7 @@ h2, .h2 {
     color: var(--text-color-1)
 }
 
-code {
+code:not(pre > code) {
     color: var(--text-color-1);
     background-color: var(--bacground-color-2);
 }
@@ -743,16 +743,6 @@ a:hover > p {
 
 a:hover {
     color: var(--accent-color-2);
-}
-
-pre code {
-    color: inherit;
-    border: 1px solid var(--bacground-color-2);
-}
-
-code {
-    color: var(--text-color-1);
-    background-color: var(--bacground-color-2);
 }
 
 kbd {

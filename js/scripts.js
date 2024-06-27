@@ -5,61 +5,24 @@ function calculateReadTime(markdown) {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-function loadMarkDown(direction) {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('GET', direction, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                processMarkdown(xhr.responseText);
-            } else {
-                console.error(`Failed to load file: ${xhr.status}`);
-            }
-        }
-    };
-    xhr.send();
-
-}
-
 function createMarkdownConverter() {
     return new showdown.Converter({tables: true, strikethrough: true})
 }
 
-function processMarkdown(markdown) {
-    let headerHTML = "";
-    let contentHTML = "";
-
-    const {header, content} = extractHeaderAndContent(markdown);
-
-    if (header !== null && header !== "") {
-        headerHTML = processHeader(header, content);
-    }
-
-    if (content.startsWith("http")) {
-        loadMarkDown(content);
-    } else {
-        contentHTML = processContent(content);
-        document.getElementById("output").innerHTML = headerHTML + contentHTML;
-    }
-
-    hljs.highlightAll();
-}
-
 function extractHeaderAndContent(markdown) {
-    let sepperator = '---';
+    let separator = '---';
     if (markdown.includes('\r\n')) {
-        sepperator += '\r\n';
+        separator += '\r\n';
     } else if (markdown.includes('\n')) {
-        sepperator += '\n';
+        separator += '\n';
     }
-    let firstSeparatorIndex = markdown.indexOf(sepperator);
+    let firstSeparatorIndex = markdown.indexOf(separator);
     let header = '';
     let content = markdown;
 
-    if (firstSeparatorIndex !== -1) {
+    if (firstSeparatorIndex < 6) {
         markdown = markdown.slice(firstSeparatorIndex + 4, markdown.length).trim();
-        const secondSeparatorIndex = markdown.indexOf(sepperator);
+        const secondSeparatorIndex = markdown.indexOf(separator);
 
         if (secondSeparatorIndex !== -1) {
             header = markdown.slice(0, secondSeparatorIndex).trim();
@@ -68,6 +31,19 @@ function extractHeaderAndContent(markdown) {
     }
 
     return {header, content};
+}
+
+function createHeaderHTML(headerData, readTimeMinutes) {
+    return `
+        <div class="my-0 py-sm-0 py-lg-0">
+            <h1>${headerData.title}</h1>
+            <p>Description: ${headerData.description}</p>
+            <img class="img-fluid" src="${headerData.authorPP}" alt="Author's profile picture"/>
+            <p style="margin-right:10px;"><b>Author:</b> ${headerData.author}</p>
+            <p style="display:inline-block;margin-right:10px;"><b>Published on:</b> ${headerData.pubDate}</p>
+            <p style="display:inline-block;margin-right:10px;"><b>Read Time (Minutes):</b> ${readTimeMinutes}</p>
+            <p><b>Tags:</b> ${headerData.tags.join(', ')}</p>
+        </div>`;
 }
 
 function processHeader(header, markdown) {
@@ -85,19 +61,6 @@ function processHeader(header, markdown) {
     return "";
 }
 
-function createHeaderHTML(headerData, readTimeMinutes) {
-    return `
-        <div class="my-0 py-sm-0 py-lg-0">
-            <h1>${headerData.title}</h1>
-            <p>Description: ${headerData.description}</p>
-            <img class="img-fluid" src="${headerData.authorPP}" alt="Author's profile picture"/>
-            <p style="margin-right:10px;"><b>Author:</b> ${headerData.author}</p>
-            <p style="display:inline-block;margin-right:10px;"><b>Published on:</b> ${headerData.pubDate}</p>
-            <p style="display:inline-block;margin-right:10px;"><b>Read Time (Minutes):</b> ${readTimeMinutes}</p>
-            <p><b>Tags:</b> ${headerData.tags.join(', ')}</p>
-        </div>`;
-}
-
 function processContent(content) {
     let newHtml = createMarkdownConverter().makeHtml(content);
 
@@ -105,8 +68,7 @@ function processContent(content) {
     let tempDiv = document.createElement('div');
     tempDiv.innerHTML = newHtml;
 
-    renderMathInElement(tempDiv,
-        {
+    renderMathInElement(tempDiv, {
             "displayMode": true,
             "leqno": false,
             "fleqn": false,
@@ -140,7 +102,143 @@ function processContent(content) {
         .replace(/<img/g, '<img class="img-fluid"')
 }
 
-// Function for changing theme
+function processMarkdown(markdown) {
+    let headerHTML = "";
+    let contentHTML = "";
+
+    const {header, content} = extractHeaderAndContent(markdown);
+
+    if (header !== null && header !== "") {
+        headerHTML = processHeader(header, content);
+    }
+
+    if (content.startsWith("http")) {
+        loadMarkDown(content);
+    } else {
+        contentHTML = processContent(content);
+        document.getElementById("output").innerHTML = headerHTML + contentHTML;
+    }
+
+    hljs.highlightAll();
+}
+
+function loadMarkDown(direction) {
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', direction, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                processMarkdown(xhr.responseText);
+            } else {
+                console.error(`Failed to load file: ${xhr.status}`);
+            }
+        }
+    };
+    xhr.send();
+
+}
+
+const getFileInfo = (markdown, file) => {
+    const {header, content} = extractHeaderAndContent(markdown);
+    let headerData = {};
+    let readTimeMinutes;
+    if (header !== null && header !== "") {
+        try {
+            headerData = jsyaml.load(header);
+            readTimeMinutes = calculateReadTime(content); // Adjust this value based on your reading speed estimation
+        } catch (error) {
+            console.error('Error parsing YAML:', error);
+            // Return a default object if the header can't be parsed
+            return {
+                title: '',
+                subTitle: '',
+                description: '',
+                image: {url: '', alt: ''},
+                author: '',
+                authorPP: '',
+                pubdate: '',
+                tags: [],
+                readTime: 0,
+                fileName: ''
+            };
+        }
+    }
+    return {
+        title: headerData.title || '',
+        subTitle: headerData.subTitle || '',
+        description: headerData.description, // Assuming the entire content is the description for simplicity
+        image: {url: headerData.image.url || '', alt: headerData.image.alt || ''},
+        author: headerData.author || '',
+        authorPP: headerData.authorPP || '',
+        pubdate: headerData.pubdate || '',
+        tags: headerData.tags || [],
+        readTime: readTimeMinutes || 0,
+        fileName: file.replace(/\s/g, '').replace(/^(\w+)\/(\w+\/)?(\w+)\.md$/g, '$1/$3') || ''
+    };
+};
+
+function appendItem(fileData, index) {
+    let item;
+    if (index === 0) {
+        item = document.createElement('featured-item');
+    } else if (index % 2 === 0) {
+        item = document.createElement('right-item');
+    } else {
+        item = document.createElement('left-item');
+    }
+    item.setAttribute('link', fileData.fileName);
+    item.setAttribute('image', fileData.image.url);
+    item.setAttribute('title', fileData.title);
+    item.innerHTML = fileData.description;
+
+
+    if (fileData.fileName.includes('blogs'))
+        document.getElementById('blogs-container').appendChild(item);
+    else
+        document.getElementById('projects-container').appendChild(item);
+}
+
+function iterateBlogFiles() {
+    const blogFiles = [
+        "projects/CodeToSVG.md",
+        "projects/Balbino/FawnAlgebra.md",
+        "projects/Balbino/Balbino.md",
+        "projects/CoL.md",
+        "projects/NOX.md",
+        "projects/SoftwareRayTracer.md",
+        "projects/SoftwareRasterizer.md",
+        "projects/AIProgramming.md",
+        "blogs/LCM/LCM.md"
+    ];
+
+    const promises = blogFiles.map(file => {
+        const direction = `/assets/markdown/${file}`;
+        return fetch(direction)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch file: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(markdown => {
+                return getFileInfo(markdown, file);
+            })
+            .catch(error => {
+                console.error(error);
+                throw error;
+            });
+    });
+
+    Promise.all(promises)
+        .then(blogInfos => {
+            blogInfos.forEach(appendItem);
+        })
+        .catch(error => {
+            console.error(`Failed to fetch files: ${error}`);
+        });
+}
+
 function applyTheme(theme) {
     let activeTheme = theme.matches ? 'dark code' : 'light code';
     let inactiveTheme = theme.matches ? 'light code' : 'dark code';
@@ -158,125 +256,6 @@ function applyTheme(theme) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const projectsContainer = document.getElementById('projects-container');
-    const blogsContainer = document.getElementById('blogs-container');
-
-// Parses the markdown and file info to return an object with blog info
-    const getFileInfo = (markdown, file) => {
-        let separator = '---';
-        if (markdown.includes('\r\n')) {
-            separator += '\r\n';
-        } else if (markdown.includes('\n')) {
-            separator += '\n';
-        }
-        let firstSeparatorIndex = markdown.indexOf(separator);
-        let header = '';
-        if (firstSeparatorIndex !== -1) {
-            markdown = markdown.slice(firstSeparatorIndex + separator.length, markdown.length).trim();
-            let secondSeparatorIndex = markdown.indexOf(separator);
-            if (secondSeparatorIndex !== -1) {
-                header = markdown.slice(0, secondSeparatorIndex).trim();
-            }
-        }
-        let headerData = {};
-        let readTimeMinutes;
-        if (header !== null && header !== "") {
-            try {
-                headerData = jsyaml.load(header);
-                const wordsPerMinute = 200; // Adjust this value based on your reading speed estimation
-                const wordCount = markdown.trim().split(/\s+/).length;
-                readTimeMinutes = Math.ceil(wordCount / wordsPerMinute);
-            } catch (error) {
-                console.error('Error parsing YAML:', error);
-                // Return a default object if the header can't be parsed
-                return {
-                    title: '',
-                    subTitle: '',
-                    description: '',
-                    image: {url: '', alt: ''},
-                    author: '',
-                    authorPP: '',
-                    pubdate: '',
-                    tags: [],
-                    readTime: 0,
-                    fileName: ''
-                };
-            }
-        }
-        return {
-            title: headerData.title || '',
-            subTitle: headerData.subTitle || '',
-            description: headerData.description, // Assuming the entire content is the description for simplicity
-            image: {url: headerData.image.url || '', alt: headerData.image.alt || ''},
-            author: headerData.author || '',
-            authorPP: headerData.authorPP || '',
-            pubdate: headerData.pubdate || '',
-            tags: headerData.tags || [],
-            readTime: readTimeMinutes || 0,
-            fileName: file.replace(/\s/g, '').replace(/^(\w+)\/(\w+\/)?(\w+)\.md$/g, '$1/$3') || ''
-        };
-    };
-
-    function appendItem(fileData, index) {
-        let item;
-        if (index === 0) {
-            item = document.createElement('featured-item');
-        } else if (index % 2 === 0) {
-            item = document.createElement('right-item');
-        } else {
-            item = document.createElement('left-item');
-        }
-        item.setAttribute('link', fileData.fileName);
-        item.setAttribute('image', fileData.image.url);
-        item.setAttribute('title', fileData.title);
-        item.innerHTML = fileData.description;
-        if (fileData.fileName.includes('blogs'))
-            blogsContainer.appendChild(item);
-        else
-            projectsContainer.appendChild(item)
-    }
-
-    function iterateBlogFiles() {
-        const blogFiles = [
-            "projects/Balbino/Balbino.md",
-            "projects/Balbino/FawnAlgebra.md",
-            "projects/CoL.md",
-            "projects/NOX.md",
-            "projects/SoftwareRayTracer.md",
-            "projects/SoftwareRasterizer.md",
-            "projects/AIProgramming.md",
-            "blogs/LCM/LCM.md"
-        ];
-
-        const promises = blogFiles.map(file => {
-            const direction = `/assets/markdown/${file}`;
-            return fetch(direction)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch file: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(markdown => {
-                    return getFileInfo(markdown, file);
-                })
-                .catch(error => {
-                    console.error(error);
-                    throw error;
-                });
-        });
-
-        Promise.all(promises)
-            .then(blogInfos => {
-                blogInfos.forEach(appendItem);
-            })
-            .catch(error => {
-                console.error(`Failed to fetch files: ${error}`);
-            });
-    }
-
-    iterateBlogFiles();
-
     // Navbar shrink function
     const navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
