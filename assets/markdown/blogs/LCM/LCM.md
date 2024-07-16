@@ -1,14 +1,14 @@
 ---
-title: 'What is the Local Clearance Minimum?'
-subTitle: 'Exploring the Concept of Local Clearance Minimum in Navmesh Generation'
-pubDate: !!str 2024-06-10
-description: 'This series of blog posts is about Navmeshes. The blogs introduce you to Local Clearance Minimum (LCM). After this, the blogs look into how to implement the idea of Recast and discuss the pros and cons of the implementation. The series explores an exact Navmesh generation method, which calculates the medial axis to detect LCMs and create a Navmesh with them. Finally, the last blog discusses how this affects navigation and shows its pros and cons.'
+title: 'Navigation Meshes: Part 2 - LCM in Recast'
+subTitle: 'Integrating Local Clearance Minimums into Recast for Enhanced Navmesh Generation'
+pubDate: !!str 2024-07-16
+description: 'In this blog, we explore how to integrate Local Clearance Minimums into the Recast framework, analyze its implementation, and discuss the strengths and weaknesses of the new algorithm.'
 image:
   url: '/assets/img/blogs/LCM/LCM_Banner.png'
-  alt: ';('
+  alt: 'Medial axis and distance map visualization'
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'
-tags: [ "LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "Navmesh Generation", "Pathfinding" ]
+tags: [ 'Local Clearance Minimum', 'LCM', 'Navmesh', 'Recast', 'Game Development', 'Pathfinding' ]
 ---
 
 # Navigation Meshes
@@ -43,8 +43,8 @@ This will be different from standard methods as we will have to take LCMs into a
 
 Here is what you can expect in each Part:
 
-1. What is the Local Clearance Minimum? - A deep dive into the concept that can change the game.
-2. LCM in Recast (Work in progress) - Implementing LCMs within the Recast framework.
+1. What is the Local Clearance Minimum (LCM)? - A deep dive into the concept that can change the game.
+2. [LCM in Recast](../LCM_Recast) - Implementing LCMs within the Recast framework.
 3. LCM: A Custom Solution from the Ground Up (Work in progress) - Building a Navmesh generator around the LCM concept.
 4. Navigating Using the LCM (Work in progress) - The practical implications of pathfinding using LCMs.
 

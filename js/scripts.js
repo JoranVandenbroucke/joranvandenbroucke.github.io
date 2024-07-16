@@ -198,21 +198,8 @@ function appendItem(fileData, index) {
     else
         document.getElementById('projects-container').appendChild(item);
 }
-
-function iterateBlogFiles() {
-    const blogFiles = [
-        "projects/CodeToSVG.md",
-        "projects/Balbino/FawnAlgebra.md",
-        "projects/Balbino/Balbino.md",
-        "projects/CoL.md",
-        "projects/NOX.md",
-        "projects/SoftwareRayTracer.md",
-        "projects/SoftwareRasterizer.md",
-        "projects/AIProgramming.md",
-        "blogs/LCM/LCM.md"
-    ];
-
-    const promises = blogFiles.map(file => {
+function processFiles(files){
+    let promises = files.map(file => {
         const direction = `/assets/markdown/${file}`;
         return fetch(direction)
             .then(response => {
@@ -237,6 +224,25 @@ function iterateBlogFiles() {
         .catch(error => {
             console.error(`Failed to fetch files: ${error}`);
         });
+}
+function iterateMarkdownFiles() {
+    const projectFiles = [
+        "projects/CodeToSVG.md",
+        "projects/Balbino/FawnAlgebra.md",
+        "projects/Balbino/Balbino.md",
+        "projects/CoL.md",
+        "projects/NOX.md",
+        "projects/SoftwareRayTracer.md",
+        "projects/SoftwareRasterizer.md",
+        "projects/AIProgramming.md",
+    ];
+
+    const blogFiles = [
+        "blogs/LCM/LCM.md",
+        "blogs/LCM/LCM_Recast.md"
+    ];
+    processFiles(projectFiles);
+    processFiles(blogFiles);
 }
 
 function applyTheme(theme) {
@@ -468,10 +474,14 @@ class FeaturedItem extends HTMLBaseElement {
         newElement.href = link;
         newElement.style.textDecoration = 'none';
         newElement.classList.add("row", "gx-0", "mb-4", "mb-5", "align-items-center");
-        newElement.innerHTML = `
+        if (image !== "") {
+            newElement.innerHTML = `
                     <div class="col-xl-8 col-7">
                         <img alt="..." class="img-fluid mb-3 mb-0" src="${image}" />
-                    </div>
+                    </div>`;
+        }
+        if (description !== "") {
+            newElement.innerHTML += `
                     <div class="col-xl-4 col-5">
                         <div class="featured-text text-center text-left">
                             <h4>${title}</h4>
@@ -479,6 +489,7 @@ class FeaturedItem extends HTMLBaseElement {
                         </div>
                     </div>
 `;
+        }
         try {
             this.replaceWith(newElement);
         } catch (error) {

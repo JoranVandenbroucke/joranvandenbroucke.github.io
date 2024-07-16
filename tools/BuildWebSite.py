@@ -101,6 +101,7 @@ def generate_html_page(document, html_file_name):
 documents = ["blogs/GANM/ganm1.md",
              "blogs/GART/gart1.md",
              "blogs/LCM/LCM.md",
+             "blogs/LCM/LCM_Recast.md",
              "projects/SoftwareRasterizer.md",
              "projects/CodeToSVG.md",
              "projects/SoftwareRayTracer.md",
