@@ -37,8 +37,8 @@ function createHeaderHTML(headerData, readTimeMinutes) {
     return `
         <div class="my-0 py-sm-0 py-lg-0">
             <h1>${headerData.title}</h1>
-            <p>Description: ${headerData.description}</p>
-            <img class="img-fluid" src="${headerData.authorPP}" alt="Author's profile picture"/>
+            <p style="margin-right:10px;"><b>Description:</b> ${headerData.description}</p>
+            <img class="img-thumbnail rounded-circle mb-5" src="${headerData.authorPP}" alt="Author's profile picture"/>
             <p style="margin-right:10px;"><b>Author:</b> ${headerData.author}</p>
             <p style="display:inline-block;margin-right:10px;"><b>Published on:</b> ${headerData.pubDate}</p>
             <p style="display:inline-block;margin-right:10px;"><b>Read Time (Minutes):</b> ${readTimeMinutes}</p>
@@ -99,7 +99,9 @@ function processContent(content) {
         .replace(/<h1/g, '<h1 class="text-center text-lg-center"')
         .replace(/<h2/g, '<h2 class="text-center text-lg-center"')
         .replace(/<h3/g, '<h3 class="text-center text-lg-center"')
-        .replace(/<img/g, '<img class="img-fluid"')
+        .replace(/<img/g, '<img class="img-fluid mx-auto d-block"')
+        .replace(/<table/g, '<div class="table-responsive-sm table-responsive-xl"><table class="table table-bordered"')
+        .replace(/<\/table>/g, '<\/table><\/div>"')
 }
 
 function processMarkdown(markdown) {

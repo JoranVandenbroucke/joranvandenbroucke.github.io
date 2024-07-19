@@ -150,7 +150,7 @@ To harness the power of LCMs, we calculate the medial axis and traverse it until
 At these critical junctures, we connect the dots, literally, linking boundary points to form our region's borders.
 It's a discovery process, tracing the skeletal framework of our virtual world.
 
-Stay tuned for our next instalment, where we'll explore another method of generating a Navmesh using LCMs.
+In our next instalment ([LCM in Recast](../LCM_Recast)), where we'll explore a method of generating a Navmesh using LCMs.
 We'll dive into Recast [1], a renowned open-source library Navmesh generation.
 
 ### Bibliography
