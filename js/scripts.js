@@ -101,7 +101,7 @@ function processContent(content) {
         .replace(/<h3/g, '<h3 class="text-center text-lg-center"')
         .replace(/<img/g, '<img class="img-fluid mx-auto d-block"')
         .replace(/<table/g, '<div class="table-responsive-sm table-responsive-xl"><table class="table table-bordered"')
-        .replace(/<\/table>/g, '<\/table><\/div>"')
+        .replace(/<\/table>/g, '<\/table><\/div>')
 }
 
 function processMarkdown(markdown) {

@@ -770,6 +770,7 @@ td,
 th {
     border-color: var(--accent-color-1);
 }
+
 .btn {
     padding: 1.25rem 2rem;
     border: 0;
@@ -974,6 +975,7 @@ th {
         background-color: transparent;
         transition: background-color 0.3s ease-in-out;
     }
+
     #mainNav .navbar-brand {
         color: var(--bacground-color-1);
     }
@@ -1240,4 +1242,9 @@ img[alt=Brain] {
 
 img[alt=NodeExcample] {
     width: 50% !important;
+}
+
+table {
+    --bs-table-color: var(--text-color-1) !important;
+    color: var(--bs-table-color) !important;
 }
