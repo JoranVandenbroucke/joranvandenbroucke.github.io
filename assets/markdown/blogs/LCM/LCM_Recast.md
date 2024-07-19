@@ -5,8 +5,8 @@ pubDate: !!str 2024-07-16
 description: 'This series of blog posts is about Navmeshes.
 This blog looks at how we can implement it into Recast.'
 image:
-url: '/assets/img/blogs/LCM/LCM_Banner2.png'
-alt: ';('
+  url: '/assets/img/blogs/LCM/LCM_Banner2.png'
+  alt: ';('
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'
 tags: [ "LCM", "Local Clearance Minimum", "Navmesh", "Navigation Mesh", "Navmesh Generation", "Pathfinding", "Recast", "Detour", "Recast & Detour" ]
