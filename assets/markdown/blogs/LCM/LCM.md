@@ -1,11 +1,11 @@
 ---
-title: 'Navigation Meshes: Part 2 - LCM in Recast'
-subTitle: 'Integrating Local Clearance Minimums into Recast for Enhanced Navmesh Generation'
-pubDate: !!str 2024-07-16
-description: 'In this blog, we explore how to integrate Local Clearance Minimums into the Recast framework, analyze its implementation, and discuss the strengths and weaknesses of the new algorithm.'
+title: 'What is the Local Clearance Minimum (LCM)?'
+subTitle: 'A deep dive into the concept that can change the game.'
+pubDate: !!str 2024-06-10
+description: 'This blog explains a new consept (local clearance minimum) for navigation meshes. When applied properly, this can reduce the amount of needed Navmeshes and increase NPC design possibilities.'
 image:
   url: '/assets/img/blogs/LCM/LCM_Banner.png'
-  alt: 'Medial axis and distance map visualization'
+  alt: ';('
 author: 'Joran Vandenbroucke'
 authorPP: '/assets/img/ProfilePicture.png'
 tags: [ 'Local Clearance Minimum', 'LCM', 'Navmesh', 'Recast', 'Game Development', 'Pathfinding' ]

@@ -1,7 +1,7 @@
 ---
 title: 'Local Clearance Minimum in Recast'
-subTitle: 'Exploring Local Clearance Minimum in Recast'
-pubDate: !!str 2024-06-10
+subTitle: 'Implementing LCMs within the Recast framework'
+pubDate: !!str 2024-07-16
 description: 'This series of blog posts is about Navmeshes.
 The blogs looks at how we can implement it into Recast.'
 image:
