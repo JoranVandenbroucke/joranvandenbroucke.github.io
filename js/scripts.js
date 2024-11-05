@@ -200,7 +200,8 @@ function appendItem(fileData, index) {
     else
         document.getElementById('projects-container').appendChild(item);
 }
-function processFiles(files){
+
+function processFiles(files) {
     let promises = files.map(file => {
         const direction = `/assets/markdown/${file}`;
         return fetch(direction)
@@ -227,6 +228,7 @@ function processFiles(files){
             console.error(`Failed to fetch files: ${error}`);
         });
 }
+
 function iterateMarkdownFiles() {
     const projectFiles = [
         "projects/CodeToSVG.md",
@@ -263,9 +265,10 @@ function applyTheme(theme) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', event => {
+
     // Navbar shrink function
-    const navbarShrink = function () {
+    var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -281,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Shrink the navbar
     navbarShrink();
 
-    // Shrink the navbar when the page is scrolled
+    // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
     // Activate Bootstrap scrollspy on the main nav element
@@ -291,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
             target: '#mainNav',
             rootMargin: '0px 0px -40%',
         });
-    }
+    };
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -305,7 +308,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
 });
+
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
     applyTheme(e);
@@ -354,13 +359,11 @@ class HeaderNav extends HTMLBaseElement {
 
         const newHTML = `
             <!-- Navigation-->
-            <nav class="navbar navbar-expand fixed-top" id="mainNav">
-                <div class="container px-sm-4 px-lg-4 px-sm-5 px-lg-5">
-                    <a class="navbar-brand" href="/">Joran J. C. Vandenbroucke</a>
-                    <button class="navbar-toggler navbar-toggler-right text-second" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        Menu
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="/">Joran J. C. Vandenbroucke</a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
                         <i class="fas fa-bars"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -428,7 +431,7 @@ class FooterNav extends HTMLBaseElement {
                                     <i class="fab fa-linkedin text-first mb-2"></i>
                                     <h4 class="text-uppercase m-0">LinkedIn</h4>
                                     <hr class="my-4 mx-auto"/>
-                                    <div class="small"><a href="https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/">https://www.linkedin.com/in/joran-vandenbroucke-1350a3222/</a>
+                                    <div class="small"><a href="https://www.linkedin.com/in/joran-vandenbroucke/">https://www.linkedin.com/in/joran-vandenbroucke/</a>
                                     </div>
                                 </div>
                             </div>
@@ -487,7 +490,7 @@ class FeaturedItem extends HTMLBaseElement {
                     <div class="col-xl-4 col-5">
                         <div class="featured-text text-center text-left">
                             <h4>${title}</h4>
-                            <p class="mb-2">${description}</p>
+                            <p class="description mb-2">${description}</p>
                         </div>
                     </div>
 `;
@@ -533,7 +536,7 @@ class LeftItem extends HTMLBaseElement {
             <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-right">
                     <h4>${title}</h4>
-                    <p class="mb-0">${description}</p>
+                    <p class="description mb-0">${description}</p>
                 </div>
             </div>
         </div>
@@ -579,7 +582,7 @@ class RightItem extends HTMLBaseElement {
             <div class="d-flex h-100">
                 <div class="project-text w-100 my-auto text-center text-left">
                     <h4>${title}</h4>
-                    <p class="mb-0">${description}</p>
+                    <p class="description mb-0">${description}</p>
                 </div>
             </div>
         </div>
