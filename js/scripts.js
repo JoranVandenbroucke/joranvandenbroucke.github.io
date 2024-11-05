@@ -231,9 +231,9 @@ function processFiles(files) {
 
 function iterateMarkdownFiles() {
     const projectFiles = [
-        "projects/CodeToSVG.md",
-        "projects/Balbino/FawnAlgebra.md",
         "projects/Balbino/Balbino.md",
+        "projects/Balbino/FawnAlgebra.md",
+        "projects/CodeToSVG.md",
         "projects/CoL.md",
         "projects/NOX.md",
         "projects/SoftwareRayTracer.md",
