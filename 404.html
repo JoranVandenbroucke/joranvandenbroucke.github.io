@@ -45,46 +45,55 @@
         return;
     }
 
-    // Mapping from repo name to the org it moved to.
-    const movedRepos = {
-        'balbino': 'Balbino',
-        'math': 'FawnAlgebra',
-        'algebra': 'FawnAlgebra',
-        'git': '',
-        'git%20hub': '',
-        'git+hub': '',
-        'github': '',
-        'recast': 'recastnavigation',
-        'recastnavigation': 'recastnavigation',
-        'recast%20navigation': 'recastnavigation',
-        'recast+navigation': 'recastnavigation',
-        'detour': 'recastnavigation',
-        'fawnmemory': 'FawnMemory',
-        'fawn%20memory': 'FawnMemory',
-        'fawn+memory': 'FawnMemory',
-        'fawnvision': 'FawnVision',
-        'fawn%20vision': 'FawnVision',
-        'fawn+vision': 'FawnVision',
-        'fawnlagelbra': 'FawnlAgebra',
-        'fawn%20algebra': 'FawnlAgebra',
-        'fawn+algebra': 'FawnlAgebra',
-        'deerfont': 'DeerFont',
-        'deer%20font': 'DeerFont',
-        'deer+font': 'DeerFont',
-        'codetosvg': 'CodeToSVG',
-        'code%20to%20svg': 'CodeToSVG',
-        'code+to+svg': 'CodeToSVG',
-    };
+    // Mapping from repo name to the correct GitHub page
+const movedRepos = {
+    'balbino': 'Balbino',
+    'balbino%20': 'Balbino',
+    'balbino+': 'Balbino',
+    'fawnalgebra': 'FawnAlgebra',
+    'fawn%20algebra': 'FawnAlgebra',
+    'fawn+algebra': 'FawnAlgebra',
+    'recast': 'recastnavigation',
+    'recast%20': 'recastnavigation',
+    'recast+': 'recastnavigation',
+    'detour': 'recastnavigation',
+    'detour%20': 'recastnavigation',
+    'detour+': 'recastnavigation',
+    'fawnmemory': 'FawnMemory',
+    'fawn%20memory': 'FawnMemory',
+    'fawn+memory': 'FawnMemory',
+    'fawnvision': 'FawnVision',
+    'fawn%20vision': 'FawnVision',
+    'fawn+vision': 'FawnVision',
+    'deerfont': 'DeerFont',
+    'deer%20font': 'DeerFont',
+    'deer+font': 'DeerFont',
+    'codetosvg': 'CodeToSVG',
+    'code%20to%20svg': 'CodeToSVG',
+    'code+to+svg': 'CodeToSVG'
+};
 
-    const repoRegex = new RegExp('^/([^/]+)(/|$)');
-    const match = repoRegex.exec(location.pathname);
-    if (match) {
-        const newOrg = movedRepos[match[1].toLowerCase()];
-        if (newOrg) {
-            location.href = 'https://github.com/JoranVandenbroucke/' + newOrg;
+
+    // Regex to match the repo or keywords in the path
+    const pathParts = location.pathname.split('/');
+    const match = pathParts.filter(Boolean); // Filter out empty parts
+
+    if (match.length > 0) {
+        const lastPart = match[match.length - 1].toLowerCase();
+        const previousPart = match.length > 1 ? match[match.length - 2].toLowerCase() : '';
+
+        // Redirect if a keyword like 'git', 'github', etc., is found and handle accordingly
+        if (['git', 'github', 'git+hub', 'git%20hub'].includes(lastPart)) {
+            if (previousPart && movedRepos[previousPart]) {
+                location.href = 'https://github.com/JoranVandenbroucke/' + movedRepos[previousPart];
+            } else {
+                location.href = 'https://github.com/JoranVandenbroucke';
+            }
+        } else if (movedRepos[lastPart]) {
+            // Redirect if the last part is a known repo name
+            location.href = 'https://github.com/JoranVandenbroucke/' + movedRepos[lastPart];
         }
     }
-
 }());
     </script>
 </head>
