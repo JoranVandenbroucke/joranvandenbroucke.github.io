@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import card, cards %}
+{% block head %}
+<noscript><style>.tab-content > .tab-pane { display: block; opacity: 1; }</style></noscript>
+{% endblock %}
+{% block body %}
+<header class="masthead" style="background-image: url('/assets/img/Banner.png')">
+    <div class="container px-sm-5 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Joran Vandenbroucke</h1>
+                <h2 class="mx-auto mt-2 mb-5">Welcome to my Portfolio.<br><br>I am a C++ Engineer who mainly
+                    focuses on Game Engine, Game AI, and Graphics Programming</h2>
+            </div>
+        </div>
+    </div>
+    <a class="scrolldown-wrapper" href="#about" aria-label="Scroll down">
+        <div class="scrolldown">
+            <svg height="40" width="40">
+                <circle class="scrolldown-p1" cx="0" cy="0" r="4"/>
+                <circle class="scrolldown-p2" cx="0" cy="0" r="4"/>
+            </svg>
+        </div>
+    </a>
+</header>
+<!-- About-->
+<section class="about-section text-center" id="about">
+    <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Who am I?</h2>
+                <p class="">
+                    I am a recent Master graduate.<br/>
+                    My Master Thesis is about size extraction in Navigation Mesh Generation.
+                    The size extractions allows for a single navmesh to be generated but used by many agents with
+                    different radii.
+                </p>
+                <div class="row">
+                    <div class="col">
+                        {{ icon('file-code') }}
+                        <p>C/C++; C#; GLSL; HLSL</p>
+                    </div>
+                    <div class="col">
+                        {{ icon('cogs') }}
+                        <p>CMake; CLion; Visual Studio; Nsight; RenderDoc; VTune</p>
+                    </div>
+                    <div class="col">
+                        {{ icon('project-diagram') }}
+                        <p>Vulkan; OpenGL; DX11</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ icon('book') }}
+                        <p> SDL2/3; Catch2; ImGui; GLM; GLI; mikktspace; ASSIMP </p>
+                    </div>
+                    <div class="col">
+                        {{ icon('code-branch') }}
+                        <p>VCS: Git; Perforce; Mercurial</p>
+                    </div>
+                    <div class="col">
+                        {{ icon('tasks') }}
+                        <p>Trello; Jira</p>
+                    </div>
+                    <div class="col">
+                        {{ icon('gamepad') }}
+                        <p>Unity; Unreal Engine</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <img alt="{{ site.name }}" class="img-thumbnail rounded-circle mb-5" src="/assets/img/ProfilePicture.png">
+        <br/>
+        <a class="btn btn-primary mx-sm-5 mx-lg-5 mb-3" href="about.html">Read more (Curriculum Vitae)</a>
+    </div>
+</section>
+<section id="portfolio" class="projects-section">
+    <ul class="nav nav-tabs justify-content-center" role="tablist">
+        {% for id, label in [('projects', 'Projects'), ('blogs', 'Blogs'), ('thesis', 'Research Papers'), ('competitions', 'Competitions'), ('jobs', 'Jobs')] %}
+        <li class="nav-item w-auto" role="presentation">
+            <button aria-controls="{{ id }}-tab-pane" aria-selected="{{ 'true' if loop.first else 'false' }}" class="nav-link{{ ' active' if loop.first }}"
+                    data-tab="{{ id }}-tab-pane" id="{{ id }}-tab" role="tab" type="button">{{ label }}</button>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div aria-labelledby="projects-tab" class="tab-pane fade show active" id="projects-tab-pane" role="tabpanel" tabindex="0">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5" id="projects-container">
+                {{ cards(projects) }}
+            </div>
+        </div>
+        <div aria-labelledby="blogs-tab" class="tab-pane fade" id="blogs-tab-pane" role="tabpanel" tabindex="0">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+                <div class="justify-content-center" id="blogs-container">
+                    {{ cards(blogs) }}
+                </div>
+            </div>
+        </div>
+        <div aria-labelledby="thesis-tab" class="tab-pane fade" id="thesis-tab-pane" role="tabpanel" tabindex="0">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+                {% call card('featured', 'Master Thesis: Minimum Distance Encoding for Recast Navmesh', link='https://www.researchgate.net/publication/381583509_Minimum_Distance_Encoding_for_Recast_Navmesh') %}
+                <b>Abstract:</b> A navigation mesh (or Navmesh) is a data structure that allows characters to plan and traverse paths through 2D and 3D environments. Most Navmesh generators create a separate Navmesh for each fixed agent radius by subtracting that radius from the traversable space. Methods that generate a unified Navmesh are currently too limited to be used in a standard game development workflow. In this thesis, we work towards letting a state-of-the-art Navmesh (Recast) support arbitrary agent radii. For this, we have defined a new concept, Local Clearance Minimum (LCM), a specific line segment that allows us to unify all Navmeshes into one. We show how to extract all LCMs of an environment in Recast using a new watershed implementation. We show that the performance of this new watershed algorithm is on par with Recast’s built-in watershed algorithm. We also show that the algorithm can extract most LCMs accurately, but there are some limitations due to the current (voxel-based) Recast pipeline. Because these issues can be resolved in future work, we argue that LCMs are a promising practical concept for enabling any-radius pathfinding on a single Navmesh.
+                {% endcall %}
+            </div>
+        </div>
+        <div aria-labelledby="competitions-tab" class="tab-pane fade" id="competitions-tab-pane" role="tabpanel" tabindex="0">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+                {% call card('featured', 'Flemish Programming Contest 2019', '/assets/img/competitions/vlaamse programeerwedstrijd 2019.jpg') %}
+                In this contest, we had to be in a team of three. You got five problems, and you had to solve them
+                using programming. The twist is that only one screen, keyboard and mouse were allowed. Only one
+                person could do the programming. The other two had to figure out how to solve the problem and tell
+                the typing programmer what to do.
+                {% endcall %}
+                {% call card('left', 'Robocontest at VIVES', '/assets/img/competitions/RobotContest.png') %}
+                The goal was to follow a white line with a small autonomous car via one or more optical
+                sensor(s).<br><br>Because of some mechanical problems, we had to rewrite the entire program one
+                minute before the start of the competition.
+                {% endcall %}
+            </div>
+        </div>
+        <div aria-labelledby="jobs-tab" class="tab-pane fade" id="jobs-tab-pane" role="tabpanel" tabindex="0">
+            <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+                {% call card('featured', 'Remedy Entertainment Oyj', '/assets/img/jobs/REMEDY-R_and_WORDMARK_Black_RGB.png', 'Remedy logo') %}
+                Game Tech AI Programmer<br>April 2025 - now
+                {% endcall %}
+                {% call card('left', 'Unity Software Inc.', 'https://cdn.sanity.io/images/fuvbjjlp/production/24a55dfbef02a7776fdf4416f0ab38a367ca1596-500x169.png', 'Unity Technologies') %}
+                Graphics Engineer Intern (Texture Team)<br>2022 Q1 - Q2
+                {% endcall %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

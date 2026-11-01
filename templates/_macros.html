@@ -1,0 +1,62 @@
+{% macro masthead(image, title, target='#Start', subtitle='', subtitle_class='') %}
+<header class="masthead" style="background-image: url('{{ image }}')">
+    <div class="container px-sm-5 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">{{ title }}</h1>
+                {% if subtitle %}
+                <h2 class="mx-auto mt-2 mb-5 {{ subtitle_class }}">{{ subtitle }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <a class="scrolldown-wrapper" href="{{ target }}" aria-label="Scroll down">
+        <div class="scrolldown">
+            <svg height="40" width="40">
+                <circle class="scrolldown-p1" cx="0" cy="0" r="4"/>
+                <circle class="scrolldown-p2" cx="0" cy="0" r="4"/>
+            </svg>
+        </div>
+    </a>
+</header>
+{% endmacro %}
+
+{# One portfolio card. layout is 'featured', 'left' or 'right'; the body comes from {% call %}. #}
+{% macro card(layout, title, image='', alt='', link='') %}
+{% set tag = 'a' if link else 'div' %}
+{% set body = caller() %}
+{% if layout == 'featured' %}
+<{{ tag }}{% if link %} href="{{ link }}"{% endif %} class="row gx-0 mb-4 mb-5 align-items-center card-item" style="text-decoration: none;">
+    {% if image %}
+    <div class="col-xl-8 col-7 card-image"><img alt="{{ alt or title }}" src="{{ image }}" loading="lazy"></div>
+    {% endif %}
+    <div class="{{ 'col-xl-4 col-5' if image else 'col-12' }} card-text-side">
+        <div class="featured-text text-center text-left">
+            <h4>{{ title }}</h4>
+            <p class="description mb-2">{{ body }}</p>
+        </div>
+    </div>
+</{{ tag }}>
+{% else %}
+<{{ tag }}{% if link %} href="{{ link }}"{% endif %} class="row gx-0 justify-content-center bg-second card-item" style="text-decoration: none;">
+    <div class="col-6 card-image"><img alt="{{ alt or title }}" src="{{ image }}" loading="lazy"></div>
+    <div class="col-6 card-text-side{{ ' order-first' if layout == 'left' }}">
+        <div class="text-center h-100 project">
+            <div class="d-flex h-100">
+                <div class="project-text w-100 my-auto text-center {{ 'text-right' if layout == 'left' else 'text-left' }}">
+                    <h4>{{ title }}</h4>
+                    <p class="description mb-0">{{ body }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</{{ tag }}>
+{% endif %}
+{% endmacro %}
+
+{# Cards generated from content/: featured first, then alternating sides. #}
+{% macro cards(pages) %}
+{% for page in pages %}
+{% call card('featured' if loop.first else ('left' if loop.index0 % 2 else 'right'), page.title, page.image.url, page.image.alt, page.url) %}{{ page.description | safe }}{% endcall %}
+{% endfor %}
+{% endmacro %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import masthead %}
+{% set share_image = page.image.url %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.subTitle }}{% endblock %}
+{% block head %}
+{% include '_math.html' %}
+{% endblock %}
+{% block body %}
+{{ masthead(page.image.url, page.title) }}
+{% if page.carouselImages %}
+<section class="portfolio-section bg-first" id="Start">
+    <div id="demo" class="carousel slide">
+        <div class="carousel-indicators">
+            {% for image in page.carouselImages %}
+            <button type="button" aria-label="Slide {{ loop.index }}"{% if loop.first %} class="active"{% endif %}></button>
+            {% endfor %}
+        </div>
+        <div class="carousel-inner">
+            {% for image in page.carouselImages %}
+            <div class="carousel-item{{ ' active' if loop.first }}">
+                <img src="{{ image }}" alt="{{ page.title }} view {{ loop.index }}" class="mx-auto d-block"{% if not loop.first %} loading="lazy"{% endif %}>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" aria-label="Previous slide">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" aria-label="Next slide">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+{% endif %}
+<section class="projects-section"{% if not page.carouselImages %} id="Start"{% endif %}>
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-sm-5 px-lg-5 py-sm-2 py-lg-2">
+            <div class="h-100 project">
+                <div class="d-flex h-100 bg-second">
+                    <div class="project-text w-100 my-auto" id="output">{{ page.html }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

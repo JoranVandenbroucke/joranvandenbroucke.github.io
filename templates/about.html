@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import masthead %}
+{% block title %}Curriculum Vitae of {{ site.name }}{% endblock %}
+{% block head %}
+<style>
+        h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            margin: 5px 0;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+{{ masthead('/assets/img/projects/Balbino.jpg', site.name, subtitle='Curriculum Vitae') }}
+<section class="projects-section" id="Start">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-sm-5 px-lg-5 py-sm-2 py-lg-2">
+            <div class="h-100 project">
+                <div class="d-flex h-100 bg-second">
+                    <div class="project-text w-100 my-auto">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="/assets/img/ProfilePicture.png" alt="{{ site.name }}" class="img-thumbnail rounded-circle"/>
+                                    <div class="section">
+                                        <h2>About Me</h2>
+                                        <p>I am a Game Tech AI Programmer at Remedy Entertainment Oyj, with a Master in
+                                            Game Technology from Breda University of Applied Sciences.
+                                            My research focused on merging Navmeshes from different agent radii into
+                                            one.
+                                            I specialize in Game AI, shaders, and graphics API integration.</p>
+                                    </div>
+                                    <div class="section">
+                                        <h2>Languages</h2>
+                                        <p>Dutch (native)</p>
+                                        <p>English (fluent)</p>
+                                        <p>French (intermediate)</p>
+                                    </div>
+                                    <div class="section">
+                                        <h2>Skills</h2>
+                                        <p>C/C++, C#, GLSL/HLSL, CMake, Vulkan, OpenGL</p>
+                                        <p>CLion, Visual Studio, P4V, Mercurial, Git, Jira, Trello, Unreal Engine,
+                                            Unity</p>
+                                    </div>
+                                    <div class="section">
+                                        <h2>Contact</h2>
+                                        <p><b>Address:</b> Beversesteenweg 421, 8800 Roeselare, West Flanders, Belgium
+                                        </p>
+                                        <p><b>Phone:</b> +32 (0) 483-45-29-52</p>
+                                        <p><b>Email:</b> joran.vandenbroucke@hotmail.com</p>
+                                        <p><b>LinkedIn:</b> /joran-vandenbroucke</p>
+                                        <p><b>GitHub:</b> /joranvandenbroucke</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="section">
+                                        <h2>Experience</h2>
+                                        <p><strong>Game Tech AI Programmer</strong><br>
+                                            Remedy Entertainment Oyj<br>
+                                            April 2025 - now</p>
+                                        <p><strong>Graphics Engineer Intern</strong><br>
+                                            Unity Software Inc., Gent, Belgium<br>
+                                            Feb 2022 - May 2022<br>
+                                            Part of the Texture Team.
+                                            Provided a zero-day fix that the end user could apply to fix popping
+                                            textures
+                                            when streaming textures.</p>
+                                        <p><strong>Student Summer Job Onsite IT Support</strong><br>
+                                            AZ Delta, Roeselare, Belgium<br>
+                                            2019 - 2022<br>
+                                            Updated and replaced PCs, monitors, and cables. Updated inventory.</p>
+                                    </div>
+                                    <div class="section">
+                                        <h2>Education</h2>
+                                        <p><strong>Breda University of Applied Sciences</strong><br>
+                                            MSc, Master Game Technology<br>
+                                            Breda, Netherlands<br>
+                                            July 2024<br>
+                                            Research on merging Navmeshes from different agent radii into one.</p>
+                                        <p><strong>Howest University of Applied Sciences</strong><br>
+                                            Bachelor, Game Development<br>
+                                            Kortrijk, Belgium<br>
+                                            October 2022<br>
+                                            I made NOX in a group project. Erasmus to Breda University of Applied
+                                            Sciences
+                                            and worked on Child of Lothian as the AI programmer.</p>
+                                        <p><strong>Secondary School</strong><br>
+                                            Electricity Electronics<br>
+                                            Kortrijk, Belgium<br>
+                                            June 2018<br>
+                                            I learned everything about electricity and hardware.</p>
+                                    </div>
+                                    <div class="section">
+                                        <h2>Projects</h2>
+                                        <p><strong>Minimum Distance Encoding for Recast Navmesh (Master Thesis)</strong><br>
+                                            A research thesis about merging Navmeshes into one.</p>
+                                        <p><strong>Code to SVG</strong><br>
+                                            My first Zig project takes in a file with C++ code and returns an SVG file.
+                                        </p>
+                                        <p><strong>Balbino</strong><br>
+                                            C++ Game Engine, originally for school, is now a passion project.</p>
+                                        <p><strong>FawnAlgebra</strong><br>
+                                            A C++ math library with lesser-used things like casing and statistics.</p>
+                                    </div>
+                                    <div class="section">
+                                        <h2>Interests</h2>
+                                        <p><strong>Programming</strong><br>
+                                            Learning new algorithms, updating to new standard versions, problem-solving.
+                                        </p>
+                                        <p><strong>Climbing</strong><br>
+                                            Bouldering and top rope.</p>
+                                        <p><strong>Listening to Music</strong><br>
+                                            All genres.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

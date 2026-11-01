@@ -1,22 +1,32 @@
+/*
+ * Site palette: three backgrounds, two text colours, two accents.
+ * Background 1 is the page, 2 the cards and panels, 3 the navbar, active tab and table headers.
+ * Every text and accent colour reaches at least 4.5:1 on all three, so any of them can be used for text.
+ * --on-photo is for text on the darkened header photos, whatever the theme.
+ */
 @media screen and (prefers-color-scheme: light) {
     :root {
-        --text-color-1: #000000;
-        --text-color-2: #004e33;
-        --accent-color-1: #70382A;
-        --accent-color-2: #428565;
+        --text-color-1: #17211C;
+        --text-color-2: #2F4A3D;
+        --accent-color-1: #7A3222;
+        --accent-color-2: #0B5250;
         --bacground-color-1: #F6F6F2;
-        --bacground-color-2: #8AB79F;
+        --bacground-color-2: #C9DFD2;
+        --bacground-color-3: #A3C7B4;
+        --on-photo: #F6F6F2;
     }
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --text-color-1: #ffffff;
-        --text-color-2: #9895a3;
-        --accent-color-1: #bf5179;
-        --accent-color-2: #404f99;
-        --bacground-color-1: #13101a;
-        --bacground-color-2: #1d1a27;
+        --text-color-1: #F3F1F7;
+        --text-color-2: #BDBAC9;
+        --accent-color-1: #F28DB0;
+        --accent-color-2: #9DACF2;
+        --bacground-color-1: #13101A;
+        --bacground-color-2: #231F2E;
+        --bacground-color-3: #383149;
+        --on-photo: #F3F1F7;
     }
 }
 
@@ -53,7 +63,7 @@ h2, .h2 {
 
 code:not(pre > code) {
     color: var(--text-color-1);
-    background-color: var(--bacground-color-2);
+    background-color: var(--bacground-color-1);
 }
 
 kbd {
@@ -729,6 +739,7 @@ h2, .h2 {
 }
 
 mark, .mark {
+    color: var(--bacground-color-1);
     background-color: var(--accent-color-1);
 }
 
@@ -778,34 +789,17 @@ th {
 
 .btn-primary {
     --bs-btn-color: var(--bacground-color-1);
-    --bs-btn-bg: var(--bacground-color-2);
+    --bs-btn-bg: var(--accent-color-2);
     --bs-btn-border-color: var(--accent-color-2);
     --bs-btn-hover-color: var(--bacground-color-1);
     --bs-btn-hover-bg: var(--accent-color-1);
-    --bs-btn-hover-border-color: var(--accent-color-2);
+    --bs-btn-hover-border-color: var(--accent-color-1);
     --bs-btn-active-color: var(--bacground-color-1);
     --bs-btn-active-bg: var(--accent-color-1);
-    --bs-btn-active-border-color: var(--accent-color-2);
+    --bs-btn-active-border-color: var(--accent-color-1);
     --bs-btn-disabled-color: var(--text-color-1);
-    --bs-btn-disabled-bg: var(--text-color-2);
-    --bs-btn-disabled-border-color: var(--accent-color-2);
-}
-
-@media (prefers-color-scheme: dark) {
-    .btn-primary {
-        --bs-btn-color: var(--text-color-1);
-        --bs-btn-bg: var(--text-color-2);
-        --bs-btn-border-color: var(--accent-color-2);
-        --bs-btn-hover-color: var(--text-color-1);
-        --bs-btn-hover-bg: var(--accent-color-1);
-        --bs-btn-hover-border-color: var(--accent-color-2);
-        --bs-btn-active-color: var(--text-color-1);
-        --bs-btn-active-bg: var(--accent-color-1);
-        --bs-btn-active-border-color: var(--accent-color-2);
-        --bs-btn-disabled-color: var(--bacground-color-1);
-        --bs-btn-disabled-bg: var(--bacground-color-2);
-        --bs-btn-disabled-border-color: var(--accent-color-2);
-    }
+    --bs-btn-disabled-bg: var(--bacground-color-2);
+    --bs-btn-disabled-border-color: var(--bacground-color-2);
 }
 
 .btn-link:focus-visible {
@@ -817,16 +811,16 @@ th {
 }
 
 .nav-link {
-    color: var(--bs-btn-color);
+    color: var(--text-color-1);
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: var(--bs-btn-active-color);
+    color: var(--accent-color-1);
 }
 
 .navbar {
-    --bs-navbar-brand-color: --text-color-1;
-    --bs-navbar-brand-hover-color: --text-color-2;
+    --bs-navbar-brand-color: var(--text-color-1);
+    --bs-navbar-brand-hover-color: var(--text-color-2);
 }
 
 .navbar-brand {
@@ -856,7 +850,7 @@ th {
 }
 
 .card {
-    --bs-card-bg: var(--bacground-color-1);
+    --bs-card-bg: var(--bacground-color-2);
     background-color: var(--bs-card-bg);
 }
 
@@ -976,80 +970,38 @@ th {
         transition: background-color 0.3s ease-in-out;
     }
 
-    #mainNav .navbar-brand {
-        color: var(--bacground-color-1);
-    }
-
-    #mainNav .nav-link {
-        color: var(--bacground-color-1);
+    #mainNav .navbar-brand,
+    #mainNav .nav-link,
+    #mainNav .nav-link:hover,
+    #mainNav .nav-link:active {
+        color: var(--on-photo);
     }
 
     #mainNav .nav-link:hover {
-        color: var(--bacground-color-2);
+        text-decoration: underline;
     }
 
-    #mainNav .nav-link:active {
-        color: var(--bacground-color-2);
+    #mainNav:not(.navbar-shrink) .navbar-brand,
+    #mainNav:not(.navbar-shrink) .nav-link {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     #mainNav.navbar-shrink {
-        background-color: var(--bacground-color-2);
+        background-color: var(--bacground-color-3);
     }
 
-    #mainNav.navbar-shrink .navbar-brand {
-        color: var(--bacground-color-1);
-    }
-
+    #mainNav.navbar-shrink .navbar-brand,
     #mainNav.navbar-shrink .nav-link {
-        color: var(--bacground-color-1);
+        color: var(--text-color-1);
     }
 
-    #mainNav.navbar-shrink .nav-link:hover {
-        color: var(--accent-color-1);
-    }
-
+    #mainNav.navbar-shrink .nav-link:hover,
     #mainNav.navbar-shrink .nav-link:active {
         color: var(--accent-color-1);
     }
 
     #mainNav.navbar-shrink .nav-link.active {
-        color: var(--bacground-color-1);
-        border-bottom: 0.25rem solid var(--text-color-2);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        #mainNav .navbar-brand {
-            color: var(--text-color-1);
-        }
-
-        #mainNav .nav-link {
-            color: var(--text-color-1);
-        }
-
-        #mainNav .nav-link:hover {
-            color: var(--accent-color-1);
-        }
-
-        #mainNav .nav-link:active {
-            color: var(--accent-color-1);
-        }
-
-        #mainNav.navbar-shrink .navbar-brand {
-            color: var(--text-color-1);
-        }
-
-        #mainNav.navbar-shrink .nav-link {
-            color: var(--text-color-1);
-        }
-
-        #mainNav.navbar-shrink .nav-link:hover {
-            color: var(--accent-color-1);
-        }
-
-        #mainNav.navbar-shrink .nav-link:active {
-            color: var(--accent-color-1);
-        }
-
+        border-bottom: 0.25rem solid var(--accent-color-1);
     }
 }
 
@@ -1074,10 +1026,10 @@ th {
 
 .masthead h1, .masthead .h1 {
     font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 2.0rem;
+    font-size: min(2.0rem, 8vw);
     line-height: 2.0rem;
-    letter-spacing: 0.8rem;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1.0) 0%, rgba(255, 255, 255, 0.1) 49%, rgba(255, 255, 255, 1.0) 50%, rgba(255, 255, 255, 0.1) 100%);
+    letter-spacing: 0.25rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1.0) 0%, rgba(255, 255, 255, 0.55) 49%, rgba(255, 255, 255, 1.0) 50%, rgba(255, 255, 255, 0.55) 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -1088,22 +1040,15 @@ th {
     position: relative;
     max-width: 20rem;
     font-size: 1rem;
-    color: var(--bacground-color-2);
-}
-
-@media (prefers-color-scheme: dark) {
-
-    .masthead h2, .masthead .h2 {
-        max-width: 20rem;
-        font-size: 1rem;
-        color: var(--text-color-2);
-    }
+    color: var(--on-photo);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 @media (min-width: 768px) {
     .masthead h1, .masthead .h1 {
         font-size: 4rem;
         line-height: 4rem;
+        letter-spacing: 0.8rem;
     }
 }
 
@@ -1163,8 +1108,7 @@ th {
 
 .signup-section {
     padding: 10rem 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("assets/img/Sponza_signup.png") no-repeat scroll center;
-    background-size: cover;
+    background-color: var(--bacground-color-2);
 }
 
 .signup-section .form-signup input {
@@ -1184,7 +1128,7 @@ th {
 
 .contact-section .card {
     border: 0;
-    border-bottom: 0.25rem solid #64a19d;
+    border-bottom: 0.25rem solid var(--accent-color-2);
 }
 
 .contact-section .card h4, .contact-section .card .h4 {
@@ -1196,7 +1140,7 @@ th {
 
 .contact-section .card hr {
     opacity: 1;
-    border-color: #64a19d;
+    border-color: var(--accent-color-2);
     border-width: 0.25rem;
     width: 3rem;
 }
@@ -1266,4 +1210,92 @@ table {
     .responsive-h1 {
         font-size: 2.5rem;
     }
+}
+
+.icon {
+    display: inline-block;
+    width: auto;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.icon.fa-2x {
+    font-size: 2em;
+}
+
+/* The text sets a card's height; the image scales to fit its side, uncropped and undistorted. */
+.card-image {
+    position: relative;
+    align-self: stretch;
+    min-height: 12rem;
+}
+
+.card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tab-content {
+    padding-top: 1.5rem;
+}
+
+@media (max-width: 575.98px) {
+    .card-image {
+        min-height: 8rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #jobs-tab-pane img {
+        filter: invert(1);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .card-text-side .featured-text,
+    .card-text-side .project-text {
+        padding: 1rem .5rem;
+    }
+
+    .card-text-side h4 {
+        font-size: 1.1rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+.nav-tabs {
+    --bs-nav-tabs-border-color: var(--text-color-2);
+    --bs-nav-tabs-link-hover-border-color: var(--bacground-color-3);
+    --bs-nav-tabs-link-active-color: var(--text-color-1);
+    --bs-nav-tabs-link-active-bg: var(--bacground-color-3);
+    --bs-nav-tabs-link-active-border-color: var(--text-color-2);
+}
+
+thead th {
+    --bs-table-bg: var(--bacground-color-3);
+}
+
+#EmailForm .form-control {
+    margin-bottom: .5rem;
+    color: var(--text-color-1);
+    background-color: var(--bacground-color-1);
+    border: 1px solid var(--text-color-2);
+}
+
+#EmailForm .form-control::placeholder {
+    color: var(--text-color-2);
+    opacity: 1;
+}
+
+:focus-visible,
+#EmailForm .form-control:focus {
+    outline: 3px solid var(--accent-color-1);
+    outline-offset: 2px;
+    box-shadow: none;
 }

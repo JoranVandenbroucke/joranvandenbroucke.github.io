@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import masthead %}
+{% set share_image = page.image.url %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block head %}
+{% include '_math.html' %}
+{% endblock %}
+{% block body %}
+{{ masthead(page.image.url, page.title, subtitle=page.subTitle) }}
+<section class="projects-section" id="Start">
+    <div class="gx-0 mb-0 justify-content-center">
+        <div class="container px-sm-5 px-lg-5 py-sm-2 py-lg-2">
+            <div class="h-100 project">
+                <div class="d-flex h-100 bg-second">
+                    <div class="project-text w-100 my-auto" id="output">
+                        <div class="my-0 py-sm-0 py-lg-0">
+                            <h1>{{ page.title }}</h1>
+                            <p style="margin-right:10px;"><b>Description:</b> {{ page.description }}</p>
+                            <img class="img-thumbnail rounded-circle mb-5" src="{{ page.authorPP }}" alt="{{ page.author }}" loading="lazy">
+                            <p style="margin-right:10px;"><b>Author:</b> {{ page.author }}</p>
+                            <p style="display:inline-block;margin-right:10px;"><b>Published on:</b> {{ page.pubDate }}</p>
+                            <p style="display:inline-block;margin-right:10px;"><b>Read Time (Minutes):</b> {{ page.read_time }}</p>
+                            <p><b>Tags:</b> {{ page.tags | join(', ') }}</p>
+                        </div>
+                        {{ page.html }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="signup-section" id="signup">
+    <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                {{ icon('paper-plane', 'fa-2x mb-2 text-first') }}
+                <h2 class="text-first mb-5">You can mail me some feedback</h2>
+                <form id="EmailForm" data-email="{{ site.email }}">
+                    <div class="input-group-newsletter">
+                        <input class="form-control" type="text" name="name" placeholder="Enter your name..." aria-label="Enter your name..." required>
+                        <input class="form-control" type="email" name="emailAddress" placeholder="Enter email address..." aria-label="Enter email address..." required>
+                        <input class="form-control" type="text" name="subject" placeholder="Enter a subject..." aria-label="Enter a subject..." required>
+                        <textarea class="form-control" name="message" placeholder="Enter your message..." aria-label="Enter your message..." required></textarea>
+                        <button class="btn btn-primary" type="submit" value="Submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import masthead %}
+{% block title %}404 Not Found{% endblock %}
+{% block head_meta %}
+<meta name="robots" content="noindex">
+{% endblock %}
+{% block head %}
+<script>
+    // Old repo URLs: send /balbino, /fawn+algebra, /balbino/git, ... to the GitHub repo.
+    (() => {
+        const github = 'https://github.com/JoranVandenbroucke';
+        const repos = {
+            balbino: 'Balbino', fawnalgebra: 'FawnAlgebra', recast: 'recastnavigation', detour: 'recastnavigation',
+            fawnmemory: 'FawnMemory', fawnvision: 'FawnVision', deerfont: 'DeerFont', codetosvg: 'CodeToSVG',
+        };
+        const parts = location.pathname.toLowerCase().replace(/%20|\+/g, '').split('/').filter(Boolean);
+        const last = parts.pop();
+        if (last === 'git' || last === 'github') location.replace(`${github}/${repos[parts.pop()] ?? ''}`);
+        else if (repos[last]) location.replace(`${github}/${repos[last]}`);
+    })();
+</script>
+{% endblock %}
+{% block body %}
+{{ masthead('/assets/img/Banner.png', '404 - Not Found', '#about', 'Oops! The page you are looking for might be in another castle.') }}
+<section class="about-section text-center" id="about">
+    <div class="container px-sm-4 px-lg-4 px-sm-l px-lg-lg-5">
+        <a class="btn btn-primary mx-sm-5 mx-lg-5 mb-3" href="/">Return to main page</a>
+    </div>
+</section>
+{% endblock %}
